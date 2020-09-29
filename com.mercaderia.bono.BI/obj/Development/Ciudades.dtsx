@@ -1,0 +1,2683 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/22/2020 2:52:44 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-920O5U50"
+  DTS:CreatorName="LAPTOP-920O5U50\Johana"
+  DTS:DTSID="{1E023376-C223-47D3-9E6F-6CD51EB84138}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.93"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="Ciudades"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="61"
+  DTS:VersionGUID="{B1A17227-ECEA-495B-B3E6-46AFCD80D6C0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BDBilleteraVirtual]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6CC4587F-4435-478C-9571-58454A414083}"
+      DTS:ObjectName="BDBilleteraVirtual">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.3.13\BILLETERAVIRTUAL;User ID=billasw;Initial Catalog=BDBilleteraVirtualV2;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Consultas]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{71FDF60A-4A3B-48A0-A73A-46F8A60A4FC5}"
+      DTS:ObjectName="Consultas">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.100.80\mssqlserver2014;User ID=sa;Initial Catalog=Consultas;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Contenedor de secuencias"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contenedor de secuencias"
+      DTS:DTSID="{28AA5834-F415-4FE1-8304-62FD3392F25A}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Contenedor de secuencias">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias\Registrar Finalización"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarea Ejecutar SQL"
+          DTS:DTSID="{A95D255E-130D-4839-9917-F28816CBC938}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Registrar Finalización"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:EventHandlers>
+            <DTS:EventHandler
+              DTS:refId="Package\Contenedor de secuencias\Registrar Finalización.EventHandlers[OnError]"
+              DTS:CreationName="OnError"
+              DTS:DTSID="{1B9A90B8-C0EF-4736-8F0E-D382319EDEFF}"
+              DTS:EventID="0"
+              DTS:EventName="OnError"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="La propiedad de propagación del evento"
+                  DTS:DTSID="{95E27CDF-EECE-40E3-8F82-2A046D107BA1}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\Contenedor de secuencias\Registrar Finalización.EventHandlers[OnError]\Tarea Ejecutar SQL"
+                  DTS:CreationName="Microsoft.ExecuteSQLTask"
+                  DTS:Description="Tarea Ejecutar SQL"
+                  DTS:DTSID="{8CED1AB9-9295-48C8-87EA-3542760D09CB}"
+                  DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Tarea Ejecutar SQL"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{6CC4587F-4435-478C-9571-58454A414083}"
+                      SQLTask:SqlStatementSource="INSERT INTO [dbo].[Auditoria]&#xA;           ([tipo]&#xA;           ,[origen]&#xA;           ,[mensaje]&#xA;           ,[fecha])&#xA;     VALUES&#xA;           ('Error'&#xA;           ,'ETL Productos -'+ ?&#xA;           ,?&#xA;           ,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="0"
+                        SQLTask:DtsVariableName="System::SourceName"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="129"
+                        SQLTask:ParameterSize="-1" />
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="1"
+                        SQLTask:DtsVariableName="System::ErrorDescription"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="129"
+                        SQLTask:ParameterSize="-1" />
+                    </SQLTask:SqlTaskData>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{6CC4587F-4435-478C-9571-58454A414083}"
+              SQLTask:SqlStatementSource="INSERT INTO [dbo].[Auditoria]&#xA;           ([tipo]&#xA;           ,[origen]&#xA;           ,[mensaje]&#xA;           ,[fecha])&#xA;     VALUES&#xA;           ('Mensaje'&#xA;           ,'ETL Ciudades'&#xA;           ,'Finalizó correctamente'&#xA;           ,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias\Registrar Inicio"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarea Ejecutar SQL"
+          DTS:DTSID="{2EA2F37F-0975-4628-A3A6-E8A5F3590695}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Registrar Inicio"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:EventHandlers>
+            <DTS:EventHandler
+              DTS:refId="Package\Contenedor de secuencias\Registrar Inicio.EventHandlers[OnError]"
+              DTS:CreationName="OnError"
+              DTS:DTSID="{F8820397-3F57-438F-8B78-8D2DE922C7D1}"
+              DTS:EventID="0"
+              DTS:EventName="OnError"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="La propiedad de propagación del evento"
+                  DTS:DTSID="{C0045B8B-75C6-4288-865F-29669D71FF26}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\Contenedor de secuencias\Registrar Inicio.EventHandlers[OnError]\Tarea Ejecutar SQL"
+                  DTS:CreationName="Microsoft.ExecuteSQLTask"
+                  DTS:Description="Tarea Ejecutar SQL"
+                  DTS:DTSID="{BC393E8A-D369-464A-B212-175A65C82B76}"
+                  DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Tarea Ejecutar SQL"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{6CC4587F-4435-478C-9571-58454A414083}"
+                      SQLTask:SqlStatementSource="INSERT INTO [dbo].[Auditoria]&#xA;           ([tipo]&#xA;           ,[origen]&#xA;           ,[mensaje]&#xA;           ,[fecha])&#xA;     VALUES&#xA;           ('Error'&#xA;           ,'ETL Productos -'+ ?&#xA;           ,?&#xA;           ,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="0"
+                        SQLTask:DtsVariableName="System::SourceName"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="129"
+                        SQLTask:ParameterSize="-1" />
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="1"
+                        SQLTask:DtsVariableName="System::ErrorDescription"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="129"
+                        SQLTask:ParameterSize="-1" />
+                    </SQLTask:SqlTaskData>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{6CC4587F-4435-478C-9571-58454A414083}"
+              SQLTask:SqlStatementSource="INSERT INTO [dbo].[Auditoria]&#xA;           ([tipo]&#xA;           ,[origen]&#xA;           ,[mensaje]&#xA;           ,[fecha])&#xA;     VALUES&#xA;           ('Mensaje'&#xA;           ,'ETL Ciudades'&#xA;           ,'Inicio Ejecución'&#xA;           ,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias\Tarea Flujo de datos"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarea Flujo de datos"
+          DTS:DTSID="{E7EEA04E-94E8-4D3E-8CDE-4BD5F50E309C}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarea Flujo de datos"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:EventHandlers>
+            <DTS:EventHandler
+              DTS:refId="Package\Contenedor de secuencias\Tarea Flujo de datos.EventHandlers[OnError]"
+              DTS:CreationName="OnError"
+              DTS:DTSID="{C9266B59-1D15-4944-B572-AB226066F53B}"
+              DTS:EventID="0"
+              DTS:EventName="OnError"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="La propiedad de propagación del evento"
+                  DTS:DTSID="{75698B0E-64CB-49DE-9E5E-112255F531D5}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\Contenedor de secuencias\Tarea Flujo de datos.EventHandlers[OnError]\Tarea Ejecutar SQL"
+                  DTS:CreationName="Microsoft.ExecuteSQLTask"
+                  DTS:Description="Tarea Ejecutar SQL"
+                  DTS:DTSID="{528645C8-5E93-4B97-9CD8-0B1D0C4096BE}"
+                  DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Tarea Ejecutar SQL"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{6CC4587F-4435-478C-9571-58454A414083}"
+                      SQLTask:SqlStatementSource="INSERT INTO [dbo].[Auditoria]&#xA;           ([tipo]&#xA;           ,[origen]&#xA;           ,[mensaje]&#xA;           ,[fecha])&#xA;     VALUES&#xA;           ('Error'&#xA;           ,'ETL Productos -'+ ?&#xA;           ,?&#xA;           ,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="0"
+                        SQLTask:DtsVariableName="System::SourceName"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="129"
+                        SQLTask:ParameterSize="-1" />
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="1"
+                        SQLTask:DtsVariableName="System::ErrorDescription"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="129"
+                        SQLTask:ParameterSize="-1" />
+                    </SQLTask:SqlTaskData>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla"
+                  componentClassID="Microsoft.MergeJoin"
+                  contactInfo="Combinación de mezcla;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+                  description="Combina dos flujos de datos ordenados en uno solo mediante la combinación FULL, LEFT o INNER. Se recomienda esta transformación cuando se pueden ordenar los flujos de datos en sus orígenes."
+                  name="Combinación de mezcla"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el tipo de combinación que se debe realizar."
+                      name="JoinType"
+                      typeConverter="JoinType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el número de columnas de la clave de ordenación."
+                      name="NumKeyColumns">2</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si los valores NULL se tratan como valores iguales."
+                      name="TreatNullsAsEqual">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Indica la cantidad máxima solicitada de búferes por entrada antes del bloqueo."
+                      name="MaxBuffersPerInput">5</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla]"
+                      hasSideEffects="true"
+                      name="Entrada izquierda de combinación de mezcla">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[codCiudad]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="codCiudad"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de origen de OLE DB].Columns[codCiudad]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[codDepartamento]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="codDepartamento"
+                          cachedSortKeyPosition="2"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de origen de OLE DB].Columns[codDepartamento]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla]"
+                      hasSideEffects="true"
+                      name="Entrada derecha de combinación de mezcla">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[codCiudad]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="80"
+                          cachedName="codCiudad"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[codCiudad]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[codDpto]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="80"
+                          cachedName="codDpto"
+                          cachedSortKeyPosition="2"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[codDpto]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[nomCiudad]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="80"
+                          cachedName="nomCiudad"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[nomCiudad]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[nomDepartamento]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="80"
+                          cachedName="nomDepartamento"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[nomDepartamento]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[Strlatitud]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="Strlatitud"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[Strlatitud]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[Strlongitud]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="Strlongitud"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[Strlongitud]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[coordenadas_xml]"
+                          cachedDataType="wstr"
+                          cachedLength="500"
+                          cachedName="coordenadas_xml"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[coordenadas_xml]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[Domicilio]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="Domicilio"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[Domicilio]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[Mail_Domicilio]"
+                          cachedDataType="wstr"
+                          cachedLength="256"
+                          cachedName="Mail_Domicilio"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[Mail_Domicilio]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[Telefono_Domicilio]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="Telefono_Domicilio"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[Telefono_Domicilio]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla]"
+                      isSorted="true"
+                      name="Salida de combinación de mezcla">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codCiudad]"
+                          codePage="1252"
+                          dataType="str"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codCiudad]"
+                          name="codCiudad">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[codCiudad]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[nomCiudad]"
+                          codePage="1252"
+                          dataType="str"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[nomCiudad]"
+                          name="nomCiudad">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[nomCiudad]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codDpto]"
+                          codePage="1252"
+                          dataType="str"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codDpto]"
+                          name="codDpto">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[codDpto]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[nomDepartamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[nomDepartamento]"
+                          name="nomDepartamento">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[nomDepartamento]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Strlatitud]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Strlatitud]"
+                          name="Strlatitud">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[Strlatitud]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Strlongitud]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Strlongitud]"
+                          name="Strlongitud">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[Strlongitud]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codCiudadAlmacen]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codCiudadAlmacen]"
+                          name="codCiudadAlmacen"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[codCiudad]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codDepartamentoAlmacen]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codDepartamentoAlmacen]"
+                          name="codDepartamentoAlmacen"
+                          sortKeyPosition="2">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[codDepartamento]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[coordenadas_xml]"
+                          dataType="wstr"
+                          length="500"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[coordenadas_xml]"
+                          name="coordenadas_xml">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[coordenadas_xml]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Domicilio]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Domicilio]"
+                          name="Domicilio">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[Domicilio]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Mail_Domicilio]"
+                          dataType="wstr"
+                          length="256"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Mail_Domicilio]"
+                          name="Mail_Domicilio">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[Mail_Domicilio]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Telefono_Domicilio]"
+                          dataType="wstr"
+                          length="30"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Telefono_Domicilio]"
+                          name="Telefono_Domicilio">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[Telefono_Domicilio]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Conversión de datos;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+                  description="Conversión de datos"
+                  name="Conversión de datos"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]"
+                      name="Entrada de conversión de datos">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Cod_ciudad]"
+                          cachedDataType="wstr"
+                          cachedLength="80"
+                          cachedName="Cod_ciudad"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Cod_ciudad]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[nom_ciudad]"
+                          cachedDataType="wstr"
+                          cachedLength="80"
+                          cachedName="nom_ciudad"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[nom_ciudad]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[cod_dpto]"
+                          cachedDataType="wstr"
+                          cachedLength="80"
+                          cachedName="cod_dpto"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[cod_dpto]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Departamento]"
+                          cachedDataType="wstr"
+                          cachedLength="80"
+                          cachedName="Departamento"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Departamento]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[latitud]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="latitud"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[latitud]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[longitud]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="longitud"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[longitud]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos]"
+                      exclusionGroup="1"
+                      name="Salida de conversión de datos"
+                      synchronousInputId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[codCiudad]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[codCiudad]"
+                          name="codCiudad"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                              name="SourceInputColumnLineageID">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Cod_ciudad]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[nomCiudad]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[nomCiudad]"
+                          name="nomCiudad"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                              name="SourceInputColumnLineageID">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[nom_ciudad]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[codDpto]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[codDpto]"
+                          name="codDpto"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                              name="SourceInputColumnLineageID">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[cod_dpto]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[nomDepartamento]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[nomDepartamento]"
+                          name="nomDepartamento"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                              name="SourceInputColumnLineageID">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Departamento]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Strlatitud]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          length="20"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Strlatitud]"
+                          name="Strlatitud"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                              name="SourceInputColumnLineageID">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[latitud]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Strlongitud]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          length="20"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Strlongitud]"
+                          name="Strlongitud"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                              name="SourceInputColumnLineageID">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[longitud]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de conversión de datos"
+                      synchronousInputId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="División condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+                  description="Enruta filas de datos a diferentes salidas según el contenido de los datos. Se usan condiciones (expresiones de SSIS) para especificar las filas que se van a enrutar. Por ejemplo, se usa para separar los registros que deben limpiarse de los registros listos para ser cargados o para enrutar solamente un subconjunto de registros."
+                  name="División condicional"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional.Inputs[Entrada de división condicional]"
+                      description="Entrada en la transformación División condicional"
+                      name="Entrada de división condicional">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional.Inputs[Entrada de división condicional].Columns[codCiudad]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="80"
+                          cachedName="codCiudad"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codCiudad]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional.Inputs[Entrada de división condicional].Columns[codDpto]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="80"
+                          cachedName="codDpto"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codDpto]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional.Inputs[Entrada de división condicional].Columns[codCiudadAlmacen]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="codCiudadAlmacen"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codCiudadAlmacen]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional.Inputs[Entrada de división condicional].Columns[codDepartamentoAlmacen]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="codDepartamentoAlmacen"
+                          cachedSortKeyPosition="2"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codDepartamentoAlmacen]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional.Outputs[Registrar]"
+                      description="Salida 1 de la transformación División condicional"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Registrar"
+                      synchronousInputId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional.Inputs[Entrada de división condicional]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                          name="Expression">[ISNULL](#{Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codCiudadAlmacen]}) &amp;&amp; [ISNULL](#{Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codDepartamentoAlmacen]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(codCiudadAlmacen) &amp;&amp; ISNULL(codDepartamentoAlmacen)</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional.Outputs[Eliminar]"
+                      description="Salida 2 de la transformación División condicional"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Eliminar"
+                      synchronousInputId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional.Inputs[Entrada de división condicional]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                          name="Expression">[ISNULL](#{Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codCiudad]}) &amp;&amp; [ISNULL](#{Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codDpto]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(codCiudad) &amp;&amp; ISNULL(codDpto)</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                          name="EvaluationOrder">1</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional.Outputs[Salida predeterminada de división condicional]"
+                      description="Salida predeterminada de la transformación División condicional"
+                      exclusionGroup="1"
+                      name="Salida predeterminada de división condicional"
+                      synchronousInputId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional.Inputs[Entrada de división condicional]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional.Outputs[Salida de error de división condicional]"
+                      description="Salida de error de la transformación División condicional"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de división condicional"
+                      synchronousInputId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional.Inputs[Entrada de división condicional]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Eliminar Registros"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+                  description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+                  name="Eliminar Registros"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">delete Ciudad where codCiudad=? and codDepartamento=?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Eliminar Registros.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[BDBilleteraVirtual]"
+                      connectionManagerRefId="Package.ConnectionManagers[BDBilleteraVirtual]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Eliminar Registros.Inputs[Entrada de comando de OLE DB]"
+                      errorOrTruncationOperation="Ejecución de comando"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de comando de OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Eliminar Registros.Inputs[Entrada de comando de OLE DB].Columns[codCiudad]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="80"
+                          cachedName="codCiudad"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Eliminar Registros.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codCiudad]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Eliminar Registros.Inputs[Entrada de comando de OLE DB].Columns[codDpto]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="80"
+                          cachedName="codDpto"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Eliminar Registros.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codDpto]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Eliminar Registros.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Eliminar Registros.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Eliminar Registros.Outputs[Salida de comando de OLE DB]"
+                      exclusionGroup="1"
+                      name="Salida de comando de OLE DB"
+                      synchronousInputId="Package\Contenedor de secuencias\Tarea Flujo de datos\Eliminar Registros.Inputs[Entrada de comando de OLE DB]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Eliminar Registros.Outputs[Salida de error de comando de OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de comando de OLE DB"
+                      synchronousInputId="Package\Contenedor de secuencias\Tarea Flujo de datos\Eliminar Registros.Inputs[Entrada de comando de OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Eliminar Registros.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Eliminar Registros.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Eliminar Registros.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Eliminar Registros.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino de OLE DB"
+                  name="Insertar Registros"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[dbo].[Ciudad]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[BDBilleteraVirtual]"
+                      connectionManagerRefId="Package.ConnectionManagers[BDBilleteraVirtual]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB]"
+                      errorOrTruncationOperation="Insertar"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de destino de OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].Columns[codCiudad]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="80"
+                          cachedName="codCiudad"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].ExternalColumns[codCiudad]"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codCiudad]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].Columns[codDpto]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="80"
+                          cachedName="codDpto"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].ExternalColumns[codDepartamento]"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codDpto]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].Columns[Strlongitud]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="Strlongitud"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].ExternalColumns[longitud]"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Strlongitud]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].Columns[Strlatitud]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="Strlatitud"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].ExternalColumns[latitud]"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Strlatitud]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].Columns[nomDepartamento]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="80"
+                          cachedName="nomDepartamento"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombreDepartamento]"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[nomDepartamento]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].Columns[nomCiudad]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="80"
+                          cachedName="nomCiudad"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombreCiudad]"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[nomCiudad]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].Columns[Mail_Domicilio]"
+                          cachedDataType="wstr"
+                          cachedLength="256"
+                          cachedName="Mail_Domicilio"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].ExternalColumns[email]"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Mail_Domicilio]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].Columns[Telefono_Domicilio]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="Telefono_Domicilio"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].ExternalColumns[telefonoDomicilio]"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Telefono_Domicilio]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].ExternalColumns[codCiudad]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="codCiudad" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].ExternalColumns[codDepartamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="codDepartamento" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombreCiudad]"
+                          codePage="1252"
+                          dataType="str"
+                          length="120"
+                          name="nombreCiudad" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombreDepartamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="120"
+                          name="nombreDepartamento" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].ExternalColumns[latitud]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="latitud" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].ExternalColumns[longitud]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="longitud" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].ExternalColumns[email]"
+                          dataType="wstr"
+                          length="256"
+                          name="email" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB].ExternalColumns[telefonoDomicilio]"
+                          dataType="wstr"
+                          length="30"
+                          name="telefonoDomicilio" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Outputs[Salida de error de destino de OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de destino de OLE DB"
+                      synchronousInputId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origen de OLE DB"
+                  name="Obtener Ciudades"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select Cod_ciudad,
+nom_ciudad,  
+cod_dpto,
+Departamento,
+coordenadas_xml,
+latitud,
+longitud, 
+Domicilio,   
+Mail_Domicilio,  
+Telefono_Domicilio
+from [dbo].[vw_get_ciudades_presencia]
+where Domicilio='Si'</property>
+                    <property
+                      dataType="System.String"
+                      description="Variable que contiene el comando SQL para ejecutar."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Asignaciones entre los parámetros del comando SQL y las variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Consultas]"
+                      connectionManagerRefId="Package.ConnectionManagers[Consultas]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB]"
+                      name="Salida de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Cod_ciudad]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].ExternalColumns[Cod_ciudad]"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Cod_ciudad]"
+                          name="Cod_ciudad"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[nom_ciudad]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].ExternalColumns[nom_ciudad]"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[nom_ciudad]"
+                          name="nom_ciudad"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[cod_dpto]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].ExternalColumns[cod_dpto]"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[cod_dpto]"
+                          name="cod_dpto"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Departamento]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].ExternalColumns[Departamento]"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Departamento]"
+                          name="Departamento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[latitud]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].ExternalColumns[latitud]"
+                          length="20"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[latitud]"
+                          name="latitud"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[longitud]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].ExternalColumns[longitud]"
+                          length="20"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[longitud]"
+                          name="longitud"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[coordenadas_xml]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].ExternalColumns[coordenadas_xml]"
+                          length="500"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[coordenadas_xml]"
+                          name="coordenadas_xml"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Domicilio]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].ExternalColumns[Domicilio]"
+                          length="2"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Domicilio]"
+                          name="Domicilio"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Mail_Domicilio]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].ExternalColumns[Mail_Domicilio]"
+                          length="256"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Mail_Domicilio]"
+                          name="Mail_Domicilio"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Telefono_Domicilio]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].ExternalColumns[Telefono_Domicilio]"
+                          length="30"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Telefono_Domicilio]"
+                          name="Telefono_Domicilio"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].ExternalColumns[Cod_ciudad]"
+                          dataType="wstr"
+                          length="80"
+                          name="Cod_ciudad" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].ExternalColumns[nom_ciudad]"
+                          dataType="wstr"
+                          length="80"
+                          name="nom_ciudad" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].ExternalColumns[cod_dpto]"
+                          dataType="wstr"
+                          length="80"
+                          name="cod_dpto" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].ExternalColumns[Departamento]"
+                          dataType="wstr"
+                          length="80"
+                          name="Departamento" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].ExternalColumns[latitud]"
+                          dataType="wstr"
+                          length="20"
+                          name="latitud" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].ExternalColumns[longitud]"
+                          dataType="wstr"
+                          length="20"
+                          name="longitud" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].ExternalColumns[coordenadas_xml]"
+                          dataType="wstr"
+                          length="500"
+                          name="coordenadas_xml" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].ExternalColumns[Domicilio]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="Domicilio" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].ExternalColumns[Mail_Domicilio]"
+                          dataType="wstr"
+                          length="256"
+                          name="Mail_Domicilio" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].ExternalColumns[Telefono_Domicilio]"
+                          dataType="wstr"
+                          length="30"
+                          name="Telefono_Domicilio" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[Cod_ciudad]"
+                          dataType="wstr"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[Cod_ciudad]"
+                          name="Cod_ciudad" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[nom_ciudad]"
+                          dataType="wstr"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[nom_ciudad]"
+                          name="nom_ciudad" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[cod_dpto]"
+                          dataType="wstr"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[cod_dpto]"
+                          name="cod_dpto" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[Departamento]"
+                          dataType="wstr"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[Departamento]"
+                          name="Departamento" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[coordenadas_xml]"
+                          dataType="wstr"
+                          length="500"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[coordenadas_xml]"
+                          name="coordenadas_xml" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[latitud]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[latitud]"
+                          name="latitud" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[longitud]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[longitud]"
+                          name="longitud" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[Domicilio]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[Domicilio]"
+                          name="Domicilio" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[Mail_Domicilio]"
+                          dataType="wstr"
+                          length="256"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[Mail_Domicilio]"
+                          name="Mail_Domicilio" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[Telefono_Domicilio]"
+                          dataType="wstr"
+                          length="30"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[Telefono_Domicilio]"
+                          name="Telefono_Domicilio" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origen de OLE DB"
+                  name="Obtener Ciudades Almacenadas"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[dbo].[Ciudad]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [codCiudad]
+      ,[codDepartamento]
+  FROM [dbo].[Ciudad]
+order by codCiudad, codDepartamento</property>
+                    <property
+                      dataType="System.String"
+                      description="Variable que contiene el comando SQL para ejecutar."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Asignaciones entre los parámetros del comando SQL y las variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[BDBilleteraVirtual]"
+                      connectionManagerRefId="Package.ConnectionManagers[BDBilleteraVirtual]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de origen de OLE DB]"
+                      isSorted="true"
+                      name="Salida de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de origen de OLE DB].Columns[codCiudad]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de origen de OLE DB].ExternalColumns[codCiudad]"
+                          length="100"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de origen de OLE DB].Columns[codCiudad]"
+                          name="codCiudad"
+                          sortKeyPosition="1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de origen de OLE DB].Columns[codDepartamento]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de origen de OLE DB].ExternalColumns[codDepartamento]"
+                          length="100"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de origen de OLE DB].Columns[codDepartamento]"
+                          name="codDepartamento"
+                          sortKeyPosition="2"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de origen de OLE DB].ExternalColumns[codCiudad]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="codCiudad" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de origen de OLE DB].ExternalColumns[codDepartamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="codDepartamento" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de error de origen de OLE DB]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de error de origen de OLE DB].Columns[codCiudad]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de error de origen de OLE DB].Columns[codCiudad]"
+                          name="codCiudad" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de error de origen de OLE DB].Columns[codDepartamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de error de origen de OLE DB].Columns[codDepartamento]"
+                          name="codDepartamento" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Ordenar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+                  description="Ordena los datos de entrada de manera ascendente o descendente cuando no es posible ordenarlos en su origen. Por ejemplo, se ordenan los datos de ventas por 'id. de cliente' antes de que se escriban en un archivo plano y se entreguen a otro departamento. Nota: no se recomienda realizar esta transformación para grandes flujos de datos."
+                  name="Ordenar"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si la transformación Ordenar quita filas con valores de ordenación duplicados."
+                      name="EliminateDuplicates">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el número máximo de subprocesos que se deben usar para la ordenación."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación]"
+                      name="Entrada de ordenación">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[Cod_ciudad]"
+                          cachedDataType="wstr"
+                          cachedLength="80"
+                          cachedName="Cod_ciudad"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Cod_ciudad]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[nom_ciudad]"
+                          cachedDataType="wstr"
+                          cachedLength="80"
+                          cachedName="nom_ciudad"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[nom_ciudad]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[cod_dpto]"
+                          cachedDataType="wstr"
+                          cachedLength="80"
+                          cachedName="cod_dpto"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[cod_dpto]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[Departamento]"
+                          cachedDataType="wstr"
+                          cachedLength="80"
+                          cachedName="Departamento"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Departamento]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[latitud]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="latitud"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[latitud]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[longitud]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="longitud"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[longitud]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[codCiudad]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="80"
+                          cachedName="codCiudad"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[codCiudad]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[nomCiudad]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="80"
+                          cachedName="nomCiudad"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[nomCiudad]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[codDpto]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="80"
+                          cachedName="codDpto"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[codDpto]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[nomDepartamento]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="80"
+                          cachedName="nomDepartamento"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[nomDepartamento]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[Strlatitud]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="Strlatitud"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Strlatitud]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[Strlongitud]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="Strlongitud"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Strlongitud]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[coordenadas_xml]"
+                          cachedDataType="wstr"
+                          cachedLength="500"
+                          cachedName="coordenadas_xml"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[coordenadas_xml]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[Domicilio]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="Domicilio"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Domicilio]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[Mail_Domicilio]"
+                          cachedDataType="wstr"
+                          cachedLength="256"
+                          cachedName="Mail_Domicilio"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Mail_Domicilio]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación].Columns[Telefono_Domicilio]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="Telefono_Domicilio"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Telefono_Domicilio]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica las opciones de comparación para datos de caracteres."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Especifica el criterio de ordenación de la columna."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación]"
+                      isSorted="true"
+                      name="Salida de ordenación">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[Cod_ciudad]"
+                          dataType="wstr"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[Cod_ciudad]"
+                          name="Cod_ciudad">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Cod_ciudad]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[nom_ciudad]"
+                          dataType="wstr"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[nom_ciudad]"
+                          name="nom_ciudad">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[nom_ciudad]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[cod_dpto]"
+                          dataType="wstr"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[cod_dpto]"
+                          name="cod_dpto">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[cod_dpto]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[Departamento]"
+                          dataType="wstr"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[Departamento]"
+                          name="Departamento">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Departamento]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[latitud]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[latitud]"
+                          name="latitud">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[latitud]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[longitud]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[longitud]"
+                          name="longitud">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[longitud]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[codCiudad]"
+                          codePage="1252"
+                          dataType="str"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[codCiudad]"
+                          name="codCiudad"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[codCiudad]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[nomCiudad]"
+                          codePage="1252"
+                          dataType="str"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[nomCiudad]"
+                          name="nomCiudad">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[nomCiudad]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[codDpto]"
+                          codePage="1252"
+                          dataType="str"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[codDpto]"
+                          name="codDpto"
+                          sortKeyPosition="2">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[codDpto]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[nomDepartamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="80"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[nomDepartamento]"
+                          name="nomDepartamento">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[nomDepartamento]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[Strlatitud]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[Strlatitud]"
+                          name="Strlatitud">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Strlatitud]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[Strlongitud]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[Strlongitud]"
+                          name="Strlongitud">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Strlongitud]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[coordenadas_xml]"
+                          dataType="wstr"
+                          length="500"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[coordenadas_xml]"
+                          name="coordenadas_xml">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[coordenadas_xml]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[Domicilio]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[Domicilio]"
+                          name="Domicilio">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Domicilio]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[Mail_Domicilio]"
+                          dataType="wstr"
+                          length="256"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[Mail_Domicilio]"
+                          name="Mail_Domicilio">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Mail_Domicilio]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[Telefono_Domicilio]"
+                          dataType="wstr"
+                          length="30"
+                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación].Columns[Telefono_Domicilio]"
+                          name="Telefono_Domicilio">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                              name="SortColumnId">#{Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB].Columns[Telefono_Domicilio]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Contenedor de secuencias\Tarea Flujo de datos.Paths[Eliminar]"
+                  endId="Package\Contenedor de secuencias\Tarea Flujo de datos\Eliminar Registros.Inputs[Entrada de comando de OLE DB]"
+                  name="Eliminar"
+                  startId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional.Outputs[Eliminar]" />
+                <path
+                  refId="Package\Contenedor de secuencias\Tarea Flujo de datos.Paths[Registrar]"
+                  endId="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros.Inputs[Entrada de destino de OLE DB]"
+                  name="Registrar"
+                  startId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional.Outputs[Registrar]" />
+                <path
+                  refId="Package\Contenedor de secuencias\Tarea Flujo de datos.Paths[Salida de combinación de mezcla]"
+                  endId="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional.Inputs[Entrada de división condicional]"
+                  name="Salida de combinación de mezcla"
+                  startId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Outputs[Salida de combinación de mezcla]" />
+                <path
+                  refId="Package\Contenedor de secuencias\Tarea Flujo de datos.Paths[Salida de conversión de datos]"
+                  endId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Inputs[Entrada de ordenación]"
+                  name="Salida de conversión de datos"
+                  startId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos]" />
+                <path
+                  refId="Package\Contenedor de secuencias\Tarea Flujo de datos.Paths[Salida de ordenación]"
+                  endId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla]"
+                  name="Salida de ordenación"
+                  startId="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar.Outputs[Salida de ordenación]" />
+                <path
+                  refId="Package\Contenedor de secuencias\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
+                  endId="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]"
+                  name="Salida de origen de OLE DB"
+                  startId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades.Outputs[Salida de origen de OLE DB]" />
+                <path
+                  refId="Package\Contenedor de secuencias\Tarea Flujo de datos.Paths[Salida de origen de OLE DB1]"
+                  endId="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla]"
+                  name="Salida de origen de OLE DB"
+                  startId="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas.Outputs[Salida de origen de OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción]"
+          DTS:CreationName=""
+          DTS:DTSID="{364E192E-8B44-4BB6-82A0-D25BB0E4BCD4}"
+          DTS:From="Package\Contenedor de secuencias\Registrar Inicio"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción"
+          DTS:To="Package\Contenedor de secuencias\Tarea Flujo de datos" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{EE6AB77F-8D7D-448C-AAFD-9638C92B834F}"
+          DTS:From="Package\Contenedor de secuencias\Tarea Flujo de datos"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 1"
+          DTS:To="Package\Contenedor de secuencias\Registrar Finalización" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="sql12">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Contenedor de secuencias\Registrar Finalización"
+          TopLeft="65,200" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Contenedor de secuencias\Registrar Inicio"
+          TopLeft="66,27" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Contenedor de secuencias\Tarea Flujo de datos"
+          TopLeft="73,108" />
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción]"
+          TopLeft="160.75,69">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 1]"
+          TopLeft="160.5,150">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="329,295"
+          Size="329,338"
+          Id="Package\Contenedor de secuencias"
+          TopLeft="244,26" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package\Contenedor de secuencias\Registrar Finalización.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Contenedor de secuencias\Registrar Finalización.EventHandlers[OnError]\Tarea Ejecutar SQL"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Contenedor de secuencias\Registrar Inicio.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Contenedor de secuencias\Registrar Inicio.EventHandlers[OnError]\Tarea Ejecutar SQL"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Contenedor de secuencias\Tarea Flujo de datos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Contenedor de secuencias\Tarea Flujo de datos\Conversión de datos"
+          TopLeft="339,170" />
+        <NodeLayout
+          Size="178,45"
+          Id="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades"
+          TopLeft="334,83" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Contenedor de secuencias\Tarea Flujo de datos\Eliminar Registros"
+          TopLeft="645,426" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros"
+          TopLeft="356,514" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Contenedor de secuencias\Tarea Flujo de datos\División condicional"
+          TopLeft="348,419" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Contenedor de secuencias\Tarea Flujo de datos\Ordenar"
+          TopLeft="342,248" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas"
+          TopLeft="46,328" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Contenedor de secuencias\Tarea Flujo de datos\Combinación de mezcla"
+          TopLeft="340,335" />
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias\Tarea Flujo de datos.Paths[Salida de origen de OLE DB1]"
+          TopLeft="274,352.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66,0"
+              Start="0,0"
+              End="58.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
+          TopLeft="424.75,128">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias\Tarea Flujo de datos.Paths[Salida de ordenación]"
+          TopLeft="432.5,290">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias\Tarea Flujo de datos.Paths[Salida de conversión de datos]"
+          TopLeft="428.25,212">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias\Tarea Flujo de datos.Paths[Salida de combinación de mezcla]"
+          TopLeft="434.25,377">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias\Tarea Flujo de datos.Paths[Registrar]"
+          TopLeft="435.5,461">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-20.37869140625,17.0576171875,40.7573828125,11.384765625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias\Tarea Flujo de datos.Paths[Eliminar]"
+          TopLeft="519,443.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126,0"
+              Start="0,0"
+              End="118.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="118.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="40.98630859375,5,36.5273828125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Contenedor de secuencias\Tarea Flujo de datos.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Contenedor de secuencias\Tarea Flujo de datos.EventHandlers[OnError]\Tarea Ejecutar SQL"
+          TopLeft="370,147" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de secuencias\Tarea Flujo de datos\Insertar Registros">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de secuencias\Tarea Flujo de datos\Obtener Ciudades Almacenadas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

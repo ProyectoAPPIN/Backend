@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BilleteraVirtualModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Departamento">
+    <Key>
+      <PropertyRef Name="codDepartamento" />
+    </Key>
+    <Property Name="codDepartamento" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="activo" Type="bit" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Dominio">
+    <Key>
+      <PropertyRef Name="nombre" />
+      <PropertyRef Name="valor" />
+      <PropertyRef Name="descripcion" />
+    </Key>
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="valor" Type="varchar(max)" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Institucion">
+    <Key>
+      <PropertyRef Name="codInstitucion" />
+    </Key>
+    <Property Name="codInstitucion" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="nit" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="50" />
+    <Property Name="codMunicipio" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="activo" Type="bit" />
+  </EntityType>
+  <EntityType Name="Municipio">
+    <Key>
+      <PropertyRef Name="codMunicipio" />
+    </Key>
+    <Property Name="codMunicipio" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="codDepartamento" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="activo" Type="bit" />
+  </EntityType>
+  <EntityType Name="Perfil">
+    <Key>
+      <PropertyRef Name="codPerfil" />
+    </Key>
+    <Property Name="codPerfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="activo" Type="bit" />
+  </EntityType>
+  <EntityType Name="RegistroSintoma">
+    <Key>
+      <PropertyRef Name="codRegistro" />
+    </Key>
+    <Property Name="codRegistro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codSintoma" Type="int" Nullable="false" />
+    <Property Name="codUsuario" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="date" Nullable="false" />
+    <Property Name="activo" Type="bit" />
+  </EntityType>
+  <EntityType Name="Sintoma">
+    <Key>
+      <PropertyRef Name="codSintoma" />
+    </Key>
+    <Property Name="codSintoma" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoDocumento">
+    <Key>
+      <PropertyRef Name="codDocumento" />
+    </Key>
+    <Property Name="codDocumento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomenclatura" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="codUsuario" />
+    </Key>
+    <Property Name="codUsuario" Type="int" Nullable="false" />
+    <Property Name="nombres" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="apellidos" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TipoDocumento" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="numeroDocumento" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="celular" Type="varchar" MaxLength="20" />
+    <Property Name="codPerfil" Type="int" Nullable="false" />
+    <Property Name="codInstitucion" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="correo" Type="varchar" MaxLength="100" />
+    <Property Name="sexo" Type="bit" />
+    <Property Name="activo" Type="bit" />
+    <Property Name="codigoActivacion" Type="varchar" MaxLength="20" />
+    <Property Name="codActivacionExpira" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_Institucion_Municipio">
+    <End Role="Municipio" Type="Self.Municipio" Multiplicity="1" />
+    <End Role="Institucion" Type="Self.Institucion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Municipio">
+        <PropertyRef Name="codMunicipio" />
+      </Principal>
+      <Dependent Role="Institucion">
+        <PropertyRef Name="codMunicipio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Municipio_Departamento">
+    <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
+    <End Role="Municipio" Type="Self.Municipio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamento">
+        <PropertyRef Name="codDepartamento" />
+      </Principal>
+      <Dependent Role="Municipio">
+        <PropertyRef Name="codDepartamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegistroSintoma_Sintoma">
+    <End Role="Sintoma" Type="Self.Sintoma" Multiplicity="1" />
+    <End Role="RegistroSintoma" Type="Self.RegistroSintoma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sintoma">
+        <PropertyRef Name="codSintoma" />
+      </Principal>
+      <Dependent Role="RegistroSintoma">
+        <PropertyRef Name="codSintoma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegistroSintoma_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="RegistroSintoma" Type="Self.RegistroSintoma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="codUsuario" />
+      </Principal>
+      <Dependent Role="RegistroSintoma">
+        <PropertyRef Name="codUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Perfil">
+    <End Role="Perfil" Type="Self.Perfil" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Perfil">
+        <PropertyRef Name="codPerfil" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="codPerfil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BilleteraVirtualModelStoreContainer">
+    <EntitySet Name="Departamento" EntityType="Self.Departamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Institucion" EntityType="Self.Institucion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Municipio" EntityType="Self.Municipio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Perfil" EntityType="Self.Perfil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RegistroSintoma" EntityType="Self.RegistroSintoma" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sintoma" EntityType="Self.Sintoma" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoDocumento" EntityType="Self.TipoDocumento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dominio" EntityType="Self.Dominio" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Dominio].[nombre] AS [nombre], 
+    [Dominio].[valor] AS [valor], 
+    [Dominio].[descripcion] AS [descripcion]
+    FROM [dbo].[Dominio] AS [Dominio]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Institucion_Municipio" Association="Self.FK_Institucion_Municipio">
+      <End Role="Municipio" EntitySet="Municipio" />
+      <End Role="Institucion" EntitySet="Institucion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Municipio_Departamento" Association="Self.FK_Municipio_Departamento">
+      <End Role="Departamento" EntitySet="Departamento" />
+      <End Role="Municipio" EntitySet="Municipio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegistroSintoma_Sintoma" Association="Self.FK_RegistroSintoma_Sintoma">
+      <End Role="Sintoma" EntitySet="Sintoma" />
+      <End Role="RegistroSintoma" EntitySet="RegistroSintoma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegistroSintoma_Usuario" Association="Self.FK_RegistroSintoma_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="RegistroSintoma" EntitySet="RegistroSintoma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Perfil" Association="Self.FK_Usuario_Perfil">
+      <End Role="Perfil" EntitySet="Perfil" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bonos.Api.Rest</name>
+    </assembly>
+    <members>
+        <member name="M:Bonos.Api.Rest.Controllers.DominioController.GetTipoDocumentos">
+            <summary>
+            Método que devuelve los tipos de documento registrados en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Bonos.Api.Rest.Helper.TokenValidationHandler">
+            <summary>
+            Token validator for Authorization Request using a DelegatingHandler
+            </summary>
+        </member>
+        <member name="M:Bonos.Api.Rest.Helper.TokenValidationHandler.HttpResponseIsNotCorsRequest(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            Construye HttpResponseMessage si IsNotCorsRequest
+            </summary>
+        </member>
+        <member name="M:Bonos.Api.Rest.Helper.TokenValidationHandler.HttpResponseIsPreflightRequest(System.Net.Http.HttpRequestMessage,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Construye HttpResponseMessage si isPreflightRequest
+            </summary>
+        </member>
+        <member name="M:Bonos.Api.Rest.Helper.TokenValidationHandler.VerificarRequestLocal(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            Verifica si el metodo es público y valida token
+            </summary>
+        </member>
+        <member name="M:Bonos.Api.Rest.Helper.TokenValidationHandler.VerificarRequest(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            Verifica si el metodo es público y valida token
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,738 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2017\professional\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="15.0">
+ <Namespaces>
+  <Namespace Name="com.mercaderia.bono.DAL">
+   <Messages>
+    <Message Id="DAL" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'DAL' en el nombre del espacio de nombres 'com.mercaderia.bono.DAL' cambiándolo a 'Dal'.</Issue>
+    </Message>
+    <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'bono' en el nombre del espacio de nombres 'com.mercaderia.bono.DAL' cambiándolo a 'Bono'.</Issue>
+    </Message>
+    <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'com' en el nombre del espacio de nombres 'com.mercaderia.bono.DAL' cambiándolo a 'Com'.</Issue>
+    </Message>
+    <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'mercaderia' en el nombre del espacio de nombres 'com.mercaderia.bono.DAL' cambiándolo a 'Mercaderia'.</Issue>
+    </Message>
+   </Messages>
+  </Namespace>
+  <Namespace Name="com.mercaderia.bono.Entidades.ModeloEntidades">
+   <Messages>
+    <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+     <Issue Certainty="50" Level="Warning">Considere combinar los tipos definidos en 'com.mercaderia.bono.Entidades.ModeloEntidades' con otro espacio de nombres.</Issue>
+    </Message>
+    <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'bono' en el nombre del espacio de nombres 'com.mercaderia.bono.Entidades.ModeloEntidades' cambiándolo a 'Bono'.</Issue>
+    </Message>
+    <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'com' en el nombre del espacio de nombres 'com.mercaderia.bono.Entidades.ModeloEntidades' cambiándolo a 'Com'.</Issue>
+    </Message>
+    <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+     <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'mercaderia' en el nombre del espacio de nombres 'com.mercaderia.bono.Entidades.ModeloEntidades' cambiándolo a 'Mercaderia'.</Issue>
+    </Message>
+   </Messages>
+  </Namespace>
+ </Namespaces>
+ <Targets>
+  <Target Name="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\bin\Release\com.mercaderia.bono.DAL.dll">
+   <Modules>
+    <Module Name="com.mercaderia.bono.dal.dll">
+     <Messages>
+      <Message Id="DAL" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+       <Issue Name="Assembly" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'DAL' en el nombre del ensamblado 'com.mercaderia.bono.DAL.dll' cambiándolo a 'Dal'.</Issue>
+      </Message>
+      <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+       <Issue Name="Assembly" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'bono' en el nombre del ensamblado 'com.mercaderia.bono.DAL.dll' cambiándolo a 'Bono'.</Issue>
+      </Message>
+      <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+       <Issue Name="Assembly" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'com' en el nombre del ensamblado 'com.mercaderia.bono.DAL.dll' cambiándolo a 'Com'.</Issue>
+      </Message>
+      <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+       <Issue Name="Assembly" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'mercaderia' en el nombre del ensamblado 'com.mercaderia.bono.DAL.dll' cambiándolo a 'Mercaderia'.</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="com.mercaderia.bono.DAL">
+       <Types>
+        <Type Name="AuditoriaRepositorio" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ObtenerPorID(System.Int64)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="AuditoriaRepositorio.cs" Line="20">Corrija el uso de mayúsculas y minúsculas en 'ID' en el nombre del miembro 'AuditoriaRepositorio.ObtenerPorID(long)' cambiándolo a 'Id'. 'Id' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BonoRepositorio" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ConsultaBonoPorID(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="BonoRepositorio.cs" Line="46">Corrija el uso de mayúsculas y minúsculas en 'ID' en el nombre del miembro 'BonoRepositorio.ConsultaBonoPorID(string)' cambiándolo a 'Id'. 'Id' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ConsultaPersonaBonoPorID(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="BonoRepositorio.cs" Line="61">Corrija el uso de mayúsculas y minúsculas en 'ID' en el nombre del miembro 'BonoRepositorio.ConsultaPersonaBonoPorID(string)' cambiándolo a 'Id'. 'Id' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ConsultaTransaccionBonoPorID(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="BonoRepositorio.cs" Line="51">Corrija el uso de mayúsculas y minúsculas en 'ID' en el nombre del miembro 'BonoRepositorio.ConsultaTransaccionBonoPorID(string)' cambiándolo a 'Id'. 'Id' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerBonosporID(System.Collections.Generic.List`1&lt;System.String&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="BonoRepositorio.cs" Line="32">Cambie ''List&lt;string&gt;'' en 'BonoRepositorio.ObtenerBonosporID(List&lt;string&gt;)' para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="BonoRepositorio.cs" Line="32">Corrija el uso de mayúsculas y minúsculas en 'ID' en el nombre del miembro 'BonoRepositorio.ObtenerBonosporID(List&lt;string&gt;)' cambiándolo a 'Id'. 'Id' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerBonosporIDPersona(System.Collections.Generic.List`1&lt;System.String&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="BonoRepositorio.cs" Line="37">Cambie ''List&lt;string&gt;'' en 'BonoRepositorio.ObtenerBonosporIDPersona(List&lt;string&gt;)' para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="BonoRepositorio.cs" Line="37">Corrija el uso de mayúsculas y minúsculas en 'ID' en el nombre del miembro 'BonoRepositorio.ObtenerBonosporIDPersona(List&lt;string&gt;)' cambiándolo a 'Id'. 'Id' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerPorID(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="BonoRepositorio.cs" Line="22">Corrija el uso de mayúsculas y minúsculas en 'ID' en el nombre del miembro 'BonoRepositorio.ObtenerPorID(string)' cambiándolo a 'Id'. 'Id' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerSaldoBonosporID(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="BonoRepositorio.cs" Line="42">Corrija el uso de mayúsculas y minúsculas en 'ID' en el nombre del miembro 'BonoRepositorio.ObtenerSaldoBonosporID(string)' cambiándolo a 'Id'. 'Id' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="CategoriaRepositorio" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ObtenerCategorias()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="CategoriaRepositorio.cs" Line="25">Cambie ''List&lt;Categoria&gt;'' en 'CategoriaRepositorio.ObtenerCategorias()' para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="CiudadRepositorio" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ObtenerCiudades()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="CiudadRepositorio.cs" Line="25">Cambie ''List&lt;Ciudad&gt;'' en 'CiudadRepositorio.ObtenerCiudades()' para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="DominioRepositorio" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#EsListaDominio(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Es" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="DominioRepositorio.cs" Line="40">Corrija el uso de mayúsculas y minúsculas en 'Es' en el nombre del miembro 'DominioRepositorio.EsListaDominio(string)' cambiándolo a 'ES'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ListarPorId(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="DominioRepositorio.cs" Line="30">Cambie ''List&lt;Dominio&gt;'' en 'DominioRepositorio.ListarPorId(string)' para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerPorID(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="DominioRepositorio.cs" Line="20">Corrija el uso de mayúsculas y minúsculas en 'ID' en el nombre del miembro 'DominioRepositorio.ObtenerPorID(string)' cambiándolo a 'Id'. 'Id' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="EmpresaRepositorio" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ObtenerListadoBonoMasivo(System.String,System.String,com.mercaderia.bono.DAL.UnitOfWork,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="EmpresaRepositorio.cs" Line="85">Cambie ''List&lt;CodigoReenviarDTO&gt;'' en 'EmpresaRepositorio.ObtenerListadoBonoMasivo(string, string, UnitOfWork, string)' para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message Id="System.Collections.Generic.List`1&lt;com.mercaderia.bono.Entidades.Dto.CodigoReenviarDTO&gt;" TypeName="DoNotIgnoreMethodResults" Category="Microsoft.Usage" CheckId="CA1806" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="NonBreaking">
+             <Issue Name="ObjectCreation" Certainty="95" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="EmpresaRepositorio.cs" Line="90">'EmpresaRepositorio.ObtenerListadoBonoMasivo(string, string, UnitOfWork, string)' crea una nueva instancia de 'List&lt;CodigoReenviarDTO&gt;' que no se usa nunca. Pase la instancia como un argumento a otro método, asigne la instancia a una variable o quite la creación del objeto si no es necesaria.</Issue>
+            </Message>
+            <Message Id="System.Collections.Generic.List`1&lt;com.mercaderia.bono.Entidades.Dto.PersonaBonoEmpresaDTO&gt;" TypeName="DoNotIgnoreMethodResults" Category="Microsoft.Usage" CheckId="CA1806" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="NonBreaking">
+             <Issue Name="ObjectCreation" Certainty="95" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="EmpresaRepositorio.cs" Line="85">'EmpresaRepositorio.ObtenerListadoBonoMasivo(string, string, UnitOfWork, string)' crea una nueva instancia de 'List&lt;PersonaBonoEmpresaDTO&gt;' que no se usa nunca. Pase la instancia como un argumento a otro método, asigne la instancia a una variable o quite la creación del objeto si no es necesaria.</Issue>
+            </Message>
+            <Message Id="unitOfWork" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="EmpresaRepositorio.cs" Line="85">Nunca se usa el parámetro 'unitOfWork' de 'EmpresaRepositorio.ObtenerListadoBonoMasivo(string, string, UnitOfWork, string)'. Quite el parámetro o utilícelo en el cuerpo del método.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerListadoEmpresas(System.String,com.mercaderia.bono.DAL.UnitOfWork)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="EmpresaRepositorio.cs" Line="38">Cambie ''List&lt;EmpresasDTO&gt;'' en 'EmpresaRepositorio.ObtenerListadoEmpresas(string, UnitOfWork)' para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message Id="System.String.ToLower" TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="EmpresaRepositorio.cs" Line="65">Puesto que el comportamiento de 'string.ToLower()' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada de 'EmpresaRepositorio.ObtenerListadoEmpresas(string, UnitOfWork)' por una llamada a 'string.ToLower(CultureInfo)'. Si el resultado de 'string.ToLower(CultureInfo)' se mostrará al usuario, especifique 'CultureInfo.CurrentCulture' como parámetro 'CultureInfo'. De lo contrario, si el resultado se va a almacenar y software obtendrá acceso a él, como cuando se guarda en un disco o una base de datos, especifique 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="EmpresaRepositorio.cs" Line="65">Puesto que el comportamiento de 'string.ToLower()' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada de 'EmpresaRepositorio.ObtenerListadoEmpresas(string, UnitOfWork)' por una llamada a 'string.ToLower(CultureInfo)'. Si el resultado de 'string.ToLower(CultureInfo)' se mostrará al usuario, especifique 'CultureInfo.CurrentCulture' como parámetro 'CultureInfo'. De lo contrario, si el resultado se va a almacenar y software obtendrá acceso a él, como cuando se guarda en un disco o una base de datos, especifique 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="1" TypeName="Validar argumentos de métodos públicos" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="EmpresaRepositorio.cs" Line="38">En el método 'EmpresaRepositorio.ObtenerListadoEmpresas(string, UnitOfWork)' visible externamente, valide el parámetro 'unitOfWork' antes de usarlo.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerPorID(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="EmpresaRepositorio.cs" Line="18">Corrija el uso de mayúsculas y minúsculas en 'ID' en el nombre del miembro 'EmpresaRepositorio.ObtenerPorID(string)' cambiándolo a 'Id'. 'Id' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="MonederoRepositorio" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#GetEmpresaMonederoByPersonaId(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Identificacion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="402">En el miembro 'MonederoRepositorio.GetEmpresaMonederoByPersonaId(string)', corrija el uso de mayúsculas y minúsculas en 'Identificacion' en el nombre del parámetro 'Identificacion' cambiándolo a 'identificacion'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerBonosMonederoEmpresa(System.String,System.String,System.String,com.mercaderia.bono.DAL.UnitOfWork)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="AvoidExcessiveClassCoupling" Category="Microsoft.Maintainability" CheckId="CA1506" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="Method" Certainty="90" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="226">'MonederoRepositorio.ObtenerBonosMonederoEmpresa(string, string, string, UnitOfWork)' está acoplado con 47 tipos diferentes de 10 espacios de nombres diferentes. Escriba de nuevo o refactorice el método para reducir el acoplamiento de clases o considere mover el método a uno de los otros tipos con los que está estrechamente acoplado. Un acoplamiento de clases por encima de 40 indica un mantenimiento pobre, un acoplamiento de clases entre 40 y 30 indica un mantenimiento moderado y un acoplamiento de clases por debajo de 30 indica un buen mantenimiento.</Issue>
+            </Message>
+            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="226">'MonederoRepositorio.ObtenerBonosMonederoEmpresa(string, string, string, UnitOfWork)' tiene una complejidad ciclomática de 40. Vuelva a escribir o refactorice el método para reducir la complejidad a 25.</Issue>
+            </Message>
+            <Message TypeName="AvoidUnmaintainableCode" Category="Microsoft.Maintainability" CheckId="CA1505" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="NonBreaking">
+             <Issue Name="Method" Certainty="75" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="226">'MonederoRepositorio.ObtenerBonosMonederoEmpresa(string, string, string, UnitOfWork)' tiene un índice de mantenimiento de 15. Escriba de nuevo o refactorice el método para aumentar su índice de mantenimiento (MI). Un MI por debajo de 10 indica un mantenimiento pobre, un MI entre 10 y 20 indica un mantenimiento moderado y un MI por encima de 20 indica un buen mantenimiento.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="226">Cambie ''List&lt;MonederoBonosDTO&gt;'' en 'MonederoRepositorio.ObtenerBonosMonederoEmpresa(string, string, string, UnitOfWork)' para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message Id="unitOfWork" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="226">Nunca se usa el parámetro 'unitOfWork' de 'MonederoRepositorio.ObtenerBonosMonederoEmpresa(string, string, string, UnitOfWork)'. Quite el parámetro o utilícelo en el cuerpo del método.</Issue>
+            </Message>
+            <Message Id="System.Convert.ToInt32(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="231">Puesto que el comportamiento de 'Convert.ToInt32(object)' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'MonederoRepositorio.ObtenerBonosMonederoEmpresa(string, string, string, UnitOfWork)' por una llamada a 'Convert.ToInt32(object, IFormatProvider)'. Si el resultado de 'Convert.ToInt32(object, IFormatProvider)' estará basado en los datos proporcionados por el usuario, especifique 'CultureInfo.CurrentCulture' como parámetro 'IFormatProvider'. De lo contrario, si el resultado estará basado en datos almacenados a los que tiene acceso el software, como cuando se cargan desde un disco o una base de datos, especifique 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.DateTime.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="237">Puesto que el comportamiento de 'DateTime.Parse(string)' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'MonederoRepositorio.ObtenerBonosMonederoEmpresa(string, string, string, UnitOfWork)' por una llamada a 'DateTime.Parse(string, IFormatProvider)'. Si el resultado de 'DateTime.Parse(string, IFormatProvider)' estará basado en los datos proporcionados por el usuario, especifique 'CultureInfo.CurrentCulture' como parámetro 'IFormatProvider'. De lo contrario, si el resultado estará basado en datos almacenados a los que tiene acceso el software, como cuando se cargan desde un disco o una base de datos, especifique 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="238">Puesto que el comportamiento de 'DateTime.Parse(string)' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'MonederoRepositorio.ObtenerBonosMonederoEmpresa(string, string, string, UnitOfWork)' por una llamada a 'DateTime.Parse(string, IFormatProvider)'. Si el resultado de 'DateTime.Parse(string, IFormatProvider)' estará basado en los datos proporcionados por el usuario, especifique 'CultureInfo.CurrentCulture' como parámetro 'IFormatProvider'. De lo contrario, si el resultado estará basado en datos almacenados a los que tiene acceso el software, como cuando se cargan desde un disco o una base de datos, especifique 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerMonederosPorID(System.Collections.Generic.List`1&lt;System.String&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="30">Cambie ''List&lt;string&gt;'' en 'MonederoRepositorio.ObtenerMonederosPorID(List&lt;string&gt;)' para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="30">Corrija el uso de mayúsculas y minúsculas en 'ID' en el nombre del miembro 'MonederoRepositorio.ObtenerMonederosPorID(List&lt;string&gt;)' cambiándolo a 'Id'. 'Id' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerPorID(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="21">Corrija el uso de mayúsculas y minúsculas en 'ID' en el nombre del miembro 'MonederoRepositorio.ObtenerPorID(string)' cambiándolo a 'Id'. 'Id' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerTransaccionMonedero(System.String,System.String,System.String,com.mercaderia.bono.DAL.UnitOfWork)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="AvoidExcessiveClassCoupling" Category="Microsoft.Maintainability" CheckId="CA1506" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="Method" Certainty="75" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="44">'MonederoRepositorio.ObtenerTransaccionMonedero(string, string, string, UnitOfWork)' está acoplado con 39 tipos diferentes de 9 espacios de nombres diferentes. Escriba de nuevo o refactorice el método para reducir el acoplamiento de clases o considere mover el método a uno de los otros tipos con los que está estrechamente acoplado. Un acoplamiento de clases por encima de 40 indica un mantenimiento pobre, un acoplamiento de clases entre 40 y 30 indica un mantenimiento moderado y un acoplamiento de clases por debajo de 30 indica un buen mantenimiento.</Issue>
+            </Message>
+            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="44">'MonederoRepositorio.ObtenerTransaccionMonedero(string, string, string, UnitOfWork)' tiene una complejidad ciclomática de 46. Vuelva a escribir o refactorice el método para reducir la complejidad a 25.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="44">Cambie ''List&lt;TransaccionEmpresaDto&gt;'' en 'MonederoRepositorio.ObtenerTransaccionMonedero(string, string, string, UnitOfWork)' para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message Id="System.Convert.ToInt16(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="46">Puesto que el comportamiento de 'Convert.ToInt16(string)' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'MonederoRepositorio.ObtenerTransaccionMonedero(string, string, string, UnitOfWork)' por una llamada a 'Convert.ToInt16(string, IFormatProvider)'. Si el resultado de 'Convert.ToInt16(string, IFormatProvider)' estará basado en los datos proporcionados por el usuario, especifique 'CultureInfo.CurrentCulture' como parámetro 'IFormatProvider'. De lo contrario, si el resultado estará basado en datos almacenados a los que tiene acceso el software, como cuando se cargan desde un disco o una base de datos, especifique 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="System.DateTime.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="55">Puesto que el comportamiento de 'DateTime.Parse(string)' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'MonederoRepositorio.ObtenerTransaccionMonedero(string, string, string, UnitOfWork)' por una llamada a 'DateTime.Parse(string, IFormatProvider)'. Si el resultado de 'DateTime.Parse(string, IFormatProvider)' estará basado en los datos proporcionados por el usuario, especifique 'CultureInfo.CurrentCulture' como parámetro 'IFormatProvider'. De lo contrario, si el resultado estará basado en datos almacenados a los que tiene acceso el software, como cuando se cargan desde un disco o una base de datos, especifique 'CultureInfo.InvariantCulture'.</Issue>
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="56">Puesto que el comportamiento de 'DateTime.Parse(string)' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'MonederoRepositorio.ObtenerTransaccionMonedero(string, string, string, UnitOfWork)' por una llamada a 'DateTime.Parse(string, IFormatProvider)'. Si el resultado de 'DateTime.Parse(string, IFormatProvider)' estará basado en los datos proporcionados por el usuario, especifique 'CultureInfo.CurrentCulture' como parámetro 'IFormatProvider'. De lo contrario, si el resultado estará basado en datos almacenados a los que tiene acceso el software, como cuando se cargan desde un disco o una base de datos, especifique 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+            <Message Id="3" TypeName="Validar argumentos de métodos públicos" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="59">En el método 'MonederoRepositorio.ObtenerTransaccionMonedero(string, string, string, UnitOfWork)' visible externamente, valide el parámetro 'unitOfWork' antes de usarlo.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerUltimaTransaccionMonedero(System.String,System.String,com.mercaderia.bono.DAL.UnitOfWork)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="131">'MonederoRepositorio.ObtenerUltimaTransaccionMonedero(string, string, UnitOfWork)' tiene una complejidad ciclomática de 49. Vuelva a escribir o refactorice el método para reducir la complejidad a 25.</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="131">Cambie ''List&lt;TransaccionEmpresaDto&gt;'' en 'MonederoRepositorio.ObtenerUltimaTransaccionMonedero(string, string, UnitOfWork)' para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message Id="2" TypeName="Validar argumentos de métodos públicos" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="MonederoRepositorio.cs" Line="131">En el método 'MonederoRepositorio.ObtenerUltimaTransaccionMonedero(string, string, UnitOfWork)' visible externamente, valide el parámetro 'unitOfWork' antes de usarlo.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="PedidoRepositorio" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ObtenerPorID(System.String,System.String,com.mercaderia.bono.Entidades.Enumeradores.Enums+EstadoPedido)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="PedidoRepositorio.cs" Line="24">Corrija el uso de mayúsculas y minúsculas en 'ID' en el nombre del miembro 'PedidoRepositorio.ObtenerPorID(string, string, Enums.EstadoPedido)' cambiándolo a 'Id'. 'Id' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="PersonaRepositorio" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#esCorreoExistente(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="es" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="PersonaRepositorio.cs" Line="75">Corrija el uso de mayúsculas y minúsculas en 'es' en el nombre del miembro 'PersonaRepositorio.esCorreoExistente(string)' cambiándolo a 'ES'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#esCorreoInvalidoIdentificacion(System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="es" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="PersonaRepositorio.cs" Line="63">Corrija el uso de mayúsculas y minúsculas en 'es' en el nombre del miembro 'PersonaRepositorio.esCorreoInvalidoIdentificacion(string, string, string)' cambiándolo a 'ES'.</Issue>
+            </Message>
+            <Message Id="tipoIdentificacion" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="PersonaRepositorio.cs" Line="63">Nunca se usa el parámetro 'tipoIdentificacion' de 'PersonaRepositorio.esCorreoInvalidoIdentificacion(string, string, string)'. Quite el parámetro o utilícelo en el cuerpo del método.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#esIdentificacionExistente(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="es" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="PersonaRepositorio.cs" Line="37">Corrija el uso de mayúsculas y minúsculas en 'es' en el nombre del miembro 'PersonaRepositorio.esIdentificacionExistente(string, string)' cambiándolo a 'ES'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#esIdentificacionExistente(System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="UID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberParameter" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="PersonaRepositorio.cs" Line="49">En el miembro 'PersonaRepositorio.esIdentificacionExistente(string, string, string)', corrija el uso de mayúsculas y minúsculas en 'UID' en el nombre del parámetro 'UIDUsuario' cambiándolo a 'uid'.</Issue>
+            </Message>
+            <Message Id="es" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="PersonaRepositorio.cs" Line="49">Corrija el uso de mayúsculas y minúsculas en 'es' en el nombre del miembro 'PersonaRepositorio.esIdentificacionExistente(string, string, string)' cambiándolo a 'ES'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerPersonasPorRUToNombre(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="PersonaRepositorio.cs" Line="116">Cambie ''List&lt;PersonaDto&gt;'' en 'PersonaRepositorio.ObtenerPersonasPorRUToNombre(string, string)' para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerPorID(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="PersonaRepositorio.cs" Line="24">Corrija el uso de mayúsculas y minúsculas en 'ID' en el nombre del miembro 'PersonaRepositorio.ObtenerPorID(string, string)' cambiándolo a 'Id'. 'Id' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ProductoRepositorio" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ConsultarPorCiudad(System.String,System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="ProductoRepositorio.cs" Line="68">Cambie ''List&lt;Producto&gt;'' en 'ProductoRepositorio.ConsultarPorCiudad(string, int, int)' para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ConsultarPorCiudadYCategoria(System.String,System.String,System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="ProductoRepositorio.cs" Line="29">Cambie ''List&lt;Producto&gt;'' en 'ProductoRepositorio.ConsultarPorCiudadYCategoria(string, string, int, int)' para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message Id="System.Convert.ToInt32(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="ProductoRepositorio.cs" Line="29">Puesto que el comportamiento de 'Convert.ToInt32(string)' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'ProductoRepositorio.ConsultarPorCiudadYCategoria(string, string, int, int)' por una llamada a 'Convert.ToInt32(string, IFormatProvider)'. Si el resultado de 'Convert.ToInt32(string, IFormatProvider)' estará basado en los datos proporcionados por el usuario, especifique 'CultureInfo.CurrentCulture' como parámetro 'IFormatProvider'. De lo contrario, si el resultado estará basado en datos almacenados a los que tiene acceso el software, como cuando se cargan desde un disco o una base de datos, especifique 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ConsultarPorCiudadYTexto(System.String,System.String,System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="ProductoRepositorio.cs" Line="58">Cambie ''List&lt;Producto&gt;'' en 'ProductoRepositorio.ConsultarPorCiudadYTexto(string, string, int, int)' para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ListarProductosPorReferenciaCiudad(System.Collections.Generic.List`1&lt;com.mercaderia.bono.Entidades.ModeloEntidades.Producto&gt;,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="ProductoRepositorio.cs" Line="83">Cambie ''List&lt;Producto&gt;'' en 'ProductoRepositorio.ListarProductosPorReferenciaCiudad(List&lt;Producto&gt;, string)' para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Issue>
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="ProductoRepositorio.cs" Line="83">Cambie ''List&lt;Producto&gt;'' en 'ProductoRepositorio.ListarProductosPorReferenciaCiudad(List&lt;Producto&gt;, string)' para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TotalPorCiudad(System.String,System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="from" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="ProductoRepositorio.cs" Line="73">Nunca se usa el parámetro 'from' de 'ProductoRepositorio.TotalPorCiudad(string, int, int)'. Quite el parámetro o utilícelo en el cuerpo del método.</Issue>
+            </Message>
+            <Message Id="to" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="ProductoRepositorio.cs" Line="73">Nunca se usa el parámetro 'to' de 'ProductoRepositorio.TotalPorCiudad(string, int, int)'. Quite el parámetro o utilícelo en el cuerpo del método.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TotalPorCiudadYCategoria(System.String,System.String,System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="from" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="ProductoRepositorio.cs" Line="46">Nunca se usa el parámetro 'from' de 'ProductoRepositorio.TotalPorCiudadYCategoria(string, string, int, int)'. Quite el parámetro o utilícelo en el cuerpo del método.</Issue>
+            </Message>
+            <Message Id="to" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="ProductoRepositorio.cs" Line="46">Nunca se usa el parámetro 'to' de 'ProductoRepositorio.TotalPorCiudadYCategoria(string, string, int, int)'. Quite el parámetro o utilícelo en el cuerpo del método.</Issue>
+            </Message>
+            <Message Id="System.Convert.ToInt32(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="NonBreaking">
+             <Issue Name="IFormatProviderAlternate" Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="ProductoRepositorio.cs" Line="46">Puesto que el comportamiento de 'Convert.ToInt32(string)' podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en 'ProductoRepositorio.TotalPorCiudadYCategoria(string, string, int, int)' por una llamada a 'Convert.ToInt32(string, IFormatProvider)'. Si el resultado de 'Convert.ToInt32(string, IFormatProvider)' estará basado en los datos proporcionados por el usuario, especifique 'CultureInfo.CurrentCulture' como parámetro 'IFormatProvider'. De lo contrario, si el resultado estará basado en datos almacenados a los que tiene acceso el software, como cuando se cargan desde un disco o una base de datos, especifique 'CultureInfo.InvariantCulture'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TotalPorCiudadYTexto(System.String,System.String,System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="from" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="ProductoRepositorio.cs" Line="63">Nunca se usa el parámetro 'from' de 'ProductoRepositorio.TotalPorCiudadYTexto(string, string, int, int)'. Quite el parámetro o utilícelo en el cuerpo del método.</Issue>
+            </Message>
+            <Message Id="to" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="ProductoRepositorio.cs" Line="63">Nunca se usa el parámetro 'to' de 'ProductoRepositorio.TotalPorCiudadYTexto(string, string, int, int)'. Quite el parámetro o utilícelo en el cuerpo del método.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ProvinciaRepositorio" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ObtenerProvincias()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="ProvinciaRepositorio.cs" Line="23">Cambie ''List&lt;Provincias&gt;'' en 'ProvinciaRepositorio.ObtenerProvincias()' para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message Id="System.Collections.Generic.List`1&lt;com.mercaderia.bono.Entidades.ModeloEntidades.Provincias&gt;" TypeName="DoNotIgnoreMethodResults" Category="Microsoft.Usage" CheckId="CA1806" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="NonBreaking">
+             <Issue Name="ObjectCreation" Certainty="95" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="ProvinciaRepositorio.cs" Line="23">'ProvinciaRepositorio.ObtenerProvincias()' crea una nueva instancia de 'List&lt;Provincias&gt;' que no se usa nunca. Pase la instancia como un argumento a otro método, asigne la instancia a una variable o quite la creación del objeto si no es necesaria.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="RangoConsulta" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor(System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="from-1" TypeName="OperationsShouldNotOverflow" Category="Microsoft.Usage" CheckId="CA2233" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="CriticalWarning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Utils" File="RangoConsulta.cs" Line="15">Corrija el desbordamiento potencial en la operación 'from-1' en 'RangoConsulta.RangoConsulta(int, int)'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Repositorio`1" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#EjecutarSentenciaSQL`1(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="SQL" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Base" File="Repositorio.cs" Line="243">Corrija el uso de mayúsculas y minúsculas en 'SQL' en el nombre del miembro 'Repositorio&lt;TEntity&gt;.EjecutarSentenciaSQL&lt;T&gt;(string)' cambiándolo a 'Sql'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="TiendaRepositorio" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ObtenerTiendas(System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="TiendaRepositorio.cs" Line="31">Cambie ''List&lt;Tienda&gt;'' en 'TiendaRepositorio.ObtenerTiendas(int, int)' para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerTiendasPorCodigoCiudad(System.String,System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="TiendaRepositorio.cs" Line="52">Cambie ''List&lt;Tienda&gt;'' en 'TiendaRepositorio.ObtenerTiendasPorCodigoCiudad(string, int, int)' para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerTotalTiendas(System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="pFrom" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="TiendaRepositorio.cs" Line="72">Nunca se usa el parámetro 'pFrom' de 'TiendaRepositorio.ObtenerTotalTiendas(int, int)'. Quite el parámetro o utilícelo en el cuerpo del método.</Issue>
+            </Message>
+            <Message Id="pTo" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="TiendaRepositorio.cs" Line="72">Nunca se usa el parámetro 'pTo' de 'TiendaRepositorio.ObtenerTotalTiendas(int, int)'. Quite el parámetro o utilícelo en el cuerpo del método.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerTotalTiendasPorCodigoCiudad(System.String,System.Int32,System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="pFrom" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="TiendaRepositorio.cs" Line="90">Nunca se usa el parámetro 'pFrom' de 'TiendaRepositorio.ObtenerTotalTiendasPorCodigoCiudad(string, int, int)'. Quite el parámetro o utilícelo en el cuerpo del método.</Issue>
+            </Message>
+            <Message Id="pTo" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="DependsOnFix">
+             <Issue Certainty="95" Level="Warning" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="TiendaRepositorio.cs" Line="90">Nunca se usa el parámetro 'pTo' de 'TiendaRepositorio.ObtenerTotalTiendasPorCodigoCiudad(string, int, int)'. Quite el parámetro o utilícelo en el cuerpo del método.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="TransaccionBonoRepositorio" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ObtenerPorID(System.Int64)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="TransaccionBonoRepositorio.cs" Line="20">Corrija el uso de mayúsculas y minúsculas en 'ID' en el nombre del miembro 'TransaccionBonoRepositorio.ObtenerPorID(long)' cambiándolo a 'Id'. 'Id' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="TransaccionRepositorio" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ObtenerPorID(System.Int64)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="TransaccionRepositorio.cs" Line="21">Corrija el uso de mayúsculas y minúsculas en 'ID' en el nombre del miembro 'TransaccionRepositorio.ObtenerPorID(long)' cambiándolo a 'Id'. 'Id' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="TransferenciaRepositorio" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ObtenerPorID(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="TransferenciaRepositorio.cs" Line="19">Corrija el uso de mayúsculas y minúsculas en 'ID' en el nombre del miembro 'TransferenciaRepositorio.ObtenerPorID(string)' cambiándolo a 'Id'. 'Id' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerPorIDPendientes(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="TransferenciaRepositorio.cs" Line="23">Corrija el uso de mayúsculas y minúsculas en 'ID' en el nombre del miembro 'TransferenciaRepositorio.ObtenerPorIDPendientes(string)' cambiándolo a 'Id'. 'Id' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="UsuarioRepositorio" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ObtenerPorID(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ID" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="MemberAbbreviation" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="UsuarioRepositorio.cs" Line="22">Corrija el uso de mayúsculas y minúsculas en 'ID' en el nombre del miembro 'UsuarioRepositorio.ObtenerPorID(string)' cambiándolo a 'Id'. 'Id' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Issue>
+             <Issue Name="MemberParameterAbbreviation" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Repositorios" File="UsuarioRepositorio.cs" Line="22">En el miembro 'UsuarioRepositorio.ObtenerPorID(string)', corrija el uso de mayúsculas y minúsculas en 'ID' en el nombre del parámetro 'uIDUsuario' cambiándolo a 'Id'. 'Id' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="com.mercaderia.bono.Entidades.ModeloEntidades">
+       <Types>
+        <Type Name="BilleteraEntities" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#sysdiagrams" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="sysdiagrams" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-05-22 20:38:44Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.DAL\Modelo" File="BilleteraModel.Context.cs" Line="48">Corrija el uso de mayúsculas y minúsculas en 'sysdiagrams' en el nombre del miembro 'BilleteraEntities.sysdiagrams' cambiándolo a 'Sysdiagrams'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="AvoidExcessiveClassCoupling" Category="Microsoft.Maintainability" CheckId="CA1506">
+   <Name>Evite el acoplamiento excesivo de clases</Name>
+   <Description>Los tipos y métodos con un alto grado de acoplamiento de clases pueden ser difíciles de mantener.</Description>
+   <Resolution Name="Method">{0} está acoplado con {1} tipos diferentes de {2} espacios de nombres diferentes. Escriba de nuevo o refactorice el método para reducir el acoplamiento de clases o considere mover el método a uno de los otros tipos con los que está estrechamente acoplado. Un acoplamiento de clases por encima de {3} indica un mantenimiento pobre, un acoplamiento de clases entre {3} y {4} indica un mantenimiento moderado y un acoplamiento de clases por debajo de {4} indica un buen mantenimiento.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb397994.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Warning</MessageLevel>
+   <File Name="maintainabilityrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502">
+   <Name>Evite la excesiva complejidad</Name>
+   <Description>Las implementaciones de método que son excesivamente complejas aumentan el reto de comprender y mantener el código.</Description>
+   <Resolution Name="Default">{0} tiene una complejidad ciclomática de {1}. Vuelva a escribir o refactorice el método para reducir la complejidad a {2}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182212.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Warning</MessageLevel>
+   <File Name="maintainabilityrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020">
+   <Name>Evitar espacios de nombres con pocos tipos</Name>
+   <Description>Un espacio de nombres debe tener generalmente más de cinco tipos.</Description>
+   <Resolution Name="Default">Considere combinar los tipos definidos en '{0}' con otro espacio de nombres.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182130.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="50">Warning</MessageLevel>
+   <File Name="designrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUnmaintainableCode" Category="Microsoft.Maintainability" CheckId="CA1505">
+   <Name>Evite código que no se puede mantener</Name>
+   <Description>Los tipos y métodos con un alto grado de acoplamiento de clases, complejidad ciclomática y longitud de programa pueden ser difíciles de mantener.</Description>
+   <Resolution Name="Method">{0} tiene un índice de mantenimiento de {1}. Escriba de nuevo o refactorice el método para aumentar su índice de mantenimiento (MI). Un MI por debajo de {2} indica un mantenimiento pobre, un MI entre {2} y {3} indica un mantenimiento moderado y un MI por encima de {3} indica un buen mantenimiento.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb386043.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Warning</MessageLevel>
+   <File Name="maintainabilityrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002">
+   <Name>No exponer listas genéricas</Name>
+   <Description>No exponga List&lt;T&gt; en modelos de objetos. Utilice Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt; en su lugar. Debe utilizar List&lt;T&gt; desde la implementación, no en la API de modelo de objetos. List&lt;T&gt; está optimizado para el rendimiento de versiones a largo plazo. Por ejemplo, si devuelve List&lt;T&gt; al código del cliente, no podrá recibir notificaciones cuando el código del cliente modifique la colección.</Description>
+   <Resolution Name="Default">Cambie '{0}' en {1} para que use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; o KeyedCollection&lt;K,V&gt;</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182142.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotIgnoreMethodResults" Category="Microsoft.Usage" CheckId="CA1806">
+   <Name>No omitir resultados del método</Name>
+   <Description>El resultado de los métodos que devuelven nuevas instancias de cadenas debe estar asignado a una variable y usarse en consecuencia. Si el resultado de un método que crea un objeto nuevo, como String.ToLower(), no está asignado a una variable, la llamada no sirve para nada.</Description>
+   <Resolution Name="ObjectCreation">{0} crea una nueva instancia de {1} que no se usa nunca. Pase la instancia como un argumento a otro método, asigne la instancia a una variable o quite la creación del objeto si no es necesaria.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182273.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709">
+   <Name>Los identificadores deberían utilizar las mayúsculas y minúsculas correctamente</Name>
+   <Description>Los identificadores de tipo, espacio de nombres y miembro usan las mayúsculas y minúsculas como en Pascal. Los identificadores de parámetro usan las mayúsculas y minúsculas como en Camel. Los acrónimos de dos letras en estos identificadores deben ir en mayúsculas; por ejemplo, use System.IO en lugar de System.Io. Los acrónimos de tres o más letras deben usar las mayúsculas y minúsculas como en Pascal; por ejemplo, use System.Xml en lugar de System.XML. La convención de mayúsculas y minúsculas Pascal pone en mayúscula la primera letra de cada palabra, como en BackColor. La convención de mayúsculas y minúsculas Camel pone en minúscula la primera letra de la primera palabra y, en mayúscula, la primera letra de las palabras siguientes, como en backgroundColor. Si bien puede ser una práctica común para algunos acrónimos de dos letras no ponerlos totalmente en mayúsculas, no se deben excluir las infracciones de esta regla por esta razón. Por ejemplo, 'DbConnection', es común pero incorrecto; use DBConnection. Una infracción de esta regla puede ser necesaria por compatibilidad con esquemas de símbolos no administrados existentes. En general, sin embargo, estos símbolos no deberían estar visibles fuera del ensamblado que los usa.</Description>
+   <Resolution Name="Assembly">Corrija el uso de mayúsculas y minúsculas en '{0}' en el nombre del ensamblado {1} cambiándolo a '{2}'.</Resolution>
+   <Resolution Name="Member">Corrija el uso de mayúsculas y minúsculas en '{0}' en el nombre del miembro {1} cambiándolo a '{2}'.</Resolution>
+   <Resolution Name="MemberAbbreviation">Corrija el uso de mayúsculas y minúsculas en '{0}' en el nombre del miembro {1} cambiándolo a '{2}'. '{2}' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Resolution>
+   <Resolution Name="MemberParameter">En el miembro {0}, corrija el uso de mayúsculas y minúsculas en '{1}' en el nombre del parámetro {2} cambiándolo a '{3}'.</Resolution>
+   <Resolution Name="MemberParameterAbbreviation">En el miembro {0}, corrija el uso de mayúsculas y minúsculas en '{1}' en el nombre del parámetro {2} cambiándolo a '{3}'. '{3}' es una abreviación y, por tanto, no está sujeto a las directrices de mayúsculas y minúsculas para acrónimos.</Resolution>
+   <Resolution Name="Namespace">Corrija el uso de mayúsculas y minúsculas en '{0}' en el nombre del espacio de nombres '{1}' cambiándolo a '{2}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182240.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="85">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="OperationsShouldNotOverflow" Category="Microsoft.Usage" CheckId="CA2233">
+   <Name>Las operaciones no deben desbordarse</Name>
+   <Description>No se deben realizar las operaciones aritméticas sin validar primero los operandos para evitar el desbordamiento.</Description>
+   <Resolution Name="Default">Corrija el desbordamiento potencial en la operación '{0}' en {1}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182354.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
+   <File Name="usagerules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801">
+   <Name>Revisar parámetros sin utilizar</Name>
+   <Description>Revise los parámetros de los métodos no virtuales que no se usan en el cuerpo del método para asegurar que no existe corrección al error de acceso a los mismos. Los parámetros sin usar conllevan un costo por mantenimiento y rendimiento. Algunas veces la infracción de esta regla puede señalar un error de implementación en el método (por ejemplo el parámetro debe haberse usado en el cuerpo del método). Excluya las advertencias de esta regla si el parámetro debe existir por compatibilidad con versiones anteriores.</Description>
+   <Resolution Name="Default">Nunca se usa el parámetro {0} de {1}. Quite el parámetro o utilícelo en el cuerpo del método.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182268.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304">
+   <Name>Especificar CultureInfo</Name>
+   <Description>Si existe una sobrecarga que toma un argumento CultureInfo, se debe llamar siempre en favor de una sobrecarga que no lo haga. El tipo CultureInfo contiene información específica de la referencia cultural requerida para llevar a cabo operaciones numéricas y de cadena, como definir mayúsculas y minúsculas, dar formato y comparar cadenas. En escenarios donde el comportamiento de conversión y análisis no debe cambiar nunca entre referencias culturales, especifique CultureInfo.InvariantCulture; de lo contrario, especifique CultureInfo.CurrentCulture.</Description>
+   <Resolution Name="Default">Puesto que el comportamiento de {0} podría variar en función de la configuración regional del usuario actual, reemplace esta llamada de {1} por una llamada a {2}. Si el resultado de {2} se mostrará al usuario, especifique 'CultureInfo.CurrentCulture' como parámetro 'CultureInfo'. De lo contrario, si el resultado se va a almacenar y software obtendrá acceso a él, como cuando se guarda en un disco o una base de datos, especifique 'CultureInfo.InvariantCulture'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182189.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+   <Name>Especificar IFormatProvider</Name>
+   <Description>Si existe una sobrecarga que toma un argumento IFormatProvider, se debe llamar siempre en favor de una sobrecarga que no lo haga. Algunos métodos del runtime convierten un valor a o desde una representación de cadena y toman un parámetro de cadena que contiene uno o varios caracteres, denominados especificadores de formato, que indican cómo se debe convertir el valor. Si el significado del especificador de formato varía por referencia cultural, un objeto de formato proporciona los caracteres usados en la representación de cadena. En escenarios donde el comportamiento de ordenación y comparación no debería cambiar nunca entre referecias culturales, especifique CultureInfo.InvariantCulture; de lo contrario, especifique CultureInfo.CurrentCulture.</Description>
+   <Resolution Name="IFormatProviderAlternate">Puesto que el comportamiento de {0} podría variar en función de la configuración regional del usuario actual, reemplace esta llamada en {1} por una llamada a {2}. Si el resultado de {2} estará basado en los datos proporcionados por el usuario, especifique {3} como parámetro 'IFormatProvider'. De lo contrario, si el resultado estará basado en datos almacenados a los que tiene acceso el software, como cuando se cargan desde un disco o una base de datos, especifique {4}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182190.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="Validar argumentos de métodos públicos" Category="Microsoft.Design" CheckId="CA1062">
+   <Name>Validar argumentos de métodos públicos</Name>
+   <Description>Todos los argumentos de referencia pasados a métodos visibles externamente deben comprobarse para ver si son NULL (Nothing en VB). Si procede, produzca una excepción System.ArgumentNullException cuando el argumento sea NULL.</Description>
+   <Resolution Name="Default">En el método {0} visible externamente, valide el parámetro '{1}' antes de usarlo.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182182.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="15.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Categoría</String>
+  <String Key="Certainty">Certeza</String>
+  <String Key="CollapseAll">Contraer todo</String>
+  <String Key="CheckId">Comprobar id.</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">errores</String>
+  <String Key="ExpandAll">Expandir todo</String>
+  <String Key="Help">Ayuda</String>
+  <String Key="Line">Línea</String>
+  <String Key="Messages">mensajes</String>
+  <String Key="LocationNotStoredInPdb">[Ubicación no almacenada en Pdb]</String>
+  <String Key="Project">Proyecto</String>
+  <String Key="Resolution">Resolución</String>
+  <String Key="Rule">Regla</String>
+  <String Key="RuleFile">Archivo de regla</String>
+  <String Key="RuleDescription">Descripción de la regla</String>
+  <String Key="Source">Origen</String>
+  <String Key="Status">Estado</String>
+  <String Key="Target">Círculos concéntricos</String>
+  <String Key="Warning">Advertencia</String>
+  <String Key="Warnings">advertencias</String>
+  <String Key="ReportTitle">Informe de análisis del código</String>
+ </Localized>
+</FxCopReport>

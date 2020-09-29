@@ -1,0 +1,17 @@
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Utilidades.Auditoria\bin\Release\log4net.config
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Utilidades.Auditoria\bin\Release\com.mercaderia.bono.Utilidades.Auditoria.dll
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Utilidades.Auditoria\bin\Release\com.mercaderia.bono.Utilidades.Auditoria.pdb
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Utilidades.Auditoria\bin\Release\com.mercaderia.bono.Utilidades.Auditoria.dll.CodeAnalysisLog.xml
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Utilidades.Auditoria\bin\Release\com.mercaderia.bono.Utilidades.Auditoria.dll.lastcodeanalysissucceeded
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Utilidades.Auditoria\bin\Release\com.mercaderia.bono.Entidades.dll
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Utilidades.Auditoria\bin\Release\com.mercaderia.bono.Utilidades.Excepciones.dll
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Utilidades.Auditoria\bin\Release\log4net.dll
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Utilidades.Auditoria\bin\Release\com.mercaderia.bono.Entidades.pdb
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Utilidades.Auditoria\bin\Release\com.mercaderia.bono.Entidades.dll.config
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Utilidades.Auditoria\bin\Release\com.mercaderia.bono.Utilidades.Excepciones.pdb
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Utilidades.Auditoria\bin\Release\log4net.xml
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Utilidades.Auditoria\obj\Release\com.mercaderia.bono.Utilidades.Auditoria.csprojAssemblyReference.cache
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Utilidades.Auditoria\obj\Release\com.mercaderia.bono.Utilidades.Auditoria.csproj.CoreCompileInputs.cache
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Utilidades.Auditoria\obj\Release\com.mercaderia.bono.Utilidades.Auditoria.csproj.CopyComplete
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Utilidades.Auditoria\obj\Release\com.mercaderia.bono.Utilidades.Auditoria.dll
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Utilidades.Auditoria\obj\Release\com.mercaderia.bono.Utilidades.Auditoria.pdb

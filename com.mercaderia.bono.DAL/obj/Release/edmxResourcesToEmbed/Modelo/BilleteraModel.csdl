@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BilleteraVirtualModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BilleteraEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Auditoria" EntityType="BilleteraVirtualModel.Auditoria" />
+    <EntitySet Name="Bono" EntityType="BilleteraVirtualModel.Bono" />
+    <EntitySet Name="Categoria" EntityType="BilleteraVirtualModel.Categoria" />
+    <EntitySet Name="Ciudad" EntityType="BilleteraVirtualModel.Ciudad" />
+    <EntitySet Name="HistoricoPedido" EntityType="BilleteraVirtualModel.HistoricoPedido" />
+    <EntitySet Name="Monedero" EntityType="BilleteraVirtualModel.Monedero" />
+    <EntitySet Name="Pedido" EntityType="BilleteraVirtualModel.Pedido" />
+    <EntitySet Name="PedidoAuditoria" EntityType="BilleteraVirtualModel.PedidoAuditoria" />
+    <EntitySet Name="PedidoDetalle" EntityType="BilleteraVirtualModel.PedidoDetalle" />
+    <EntitySet Name="Persona" EntityType="BilleteraVirtualModel.Persona" />
+    <EntitySet Name="Producto" EntityType="BilleteraVirtualModel.Producto" />
+    <EntitySet Name="Provincias" EntityType="BilleteraVirtualModel.Provincias" />
+    <EntitySet Name="Tienda" EntityType="BilleteraVirtualModel.Tienda" />
+    <EntitySet Name="Transaccion" EntityType="BilleteraVirtualModel.Transaccion" />
+    <EntitySet Name="Transferencia" EntityType="BilleteraVirtualModel.Transferencia" />
+    <EntitySet Name="Usuario" EntityType="BilleteraVirtualModel.Usuario" />
+    <EntitySet Name="Dominio" EntityType="BilleteraVirtualModel.Dominio" />
+    <AssociationSet Name="FK_Bono_Monedero" Association="BilleteraVirtualModel.FK_Bono_Monedero">
+      <End Role="Monedero" EntitySet="Monedero" />
+      <End Role="Bono" EntitySet="Bono" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bono_Persona" Association="BilleteraVirtualModel.FK_Bono_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="Bono" EntitySet="Bono" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HistoricoPedido_Pedido" Association="BilleteraVirtualModel.FK_HistoricoPedido_Pedido">
+      <End Role="Pedido" EntitySet="Pedido" />
+      <End Role="HistoricoPedido" EntitySet="HistoricoPedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Monedero_Persona" Association="BilleteraVirtualModel.FK_Monedero_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="Monedero" EntitySet="Monedero" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transaccion_Monedero" Association="BilleteraVirtualModel.FK_Transaccion_Monedero">
+      <End Role="Monedero" EntitySet="Monedero" />
+      <End Role="Transaccion" EntitySet="Transaccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PedidoAuditoria_Pedido" Association="BilleteraVirtualModel.FK_PedidoAuditoria_Pedido">
+      <End Role="Pedido" EntitySet="Pedido" />
+      <End Role="PedidoAuditoria" EntitySet="PedidoAuditoria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PedidoDetalle_Pedido" Association="BilleteraVirtualModel.FK_PedidoDetalle_Pedido">
+      <End Role="Pedido" EntitySet="Pedido" />
+      <End Role="PedidoDetalle" EntitySet="PedidoDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Persona_Provincias" Association="BilleteraVirtualModel.FK_Persona_Provincias">
+      <End Role="Provincias" EntitySet="Provincias" />
+      <End Role="Persona" EntitySet="Persona" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Persona_Usuario1" Association="BilleteraVirtualModel.FK_Persona_Usuario1">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Persona" EntitySet="Persona" />
+    </AssociationSet>
+    <EntitySet Name="TransaccionBono" EntityType="BilleteraVirtualModel.TransaccionBono" />
+    <AssociationSet Name="FK_Transaccion_Bono" Association="BilleteraVirtualModel.FK_Transaccion_Bono">
+      <End Role="Bono" EntitySet="Bono" />
+      <End Role="TransaccionBono" EntitySet="TransaccionBono" />
+    </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="BilleteraVirtualModel.sysdiagrams" />
+    <EntitySet Name="Empresa" EntityType="BilleteraVirtualModel.Empresa" />
+    <FunctionImport Name="AddBonosMasivos">
+      <Parameter Name="json" Mode="In" Type="String" />
+      <Parameter Name="nombreArchivo" Mode="In" Type="String" />
+      <Parameter Name="idEncargado" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Auditoria">
+    <Key>
+      <PropertyRef Name="auditoriaId" />
+    </Key>
+    <Property Name="auditoriaId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="origen" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="mensaje" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Bono">
+    <Key>
+      <PropertyRef Name="numBono" />
+    </Key>
+    <Property Name="numBono" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="codigoSeguridad" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="numMonedero" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tipoIdentificacion" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="identificacion" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="valor" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="fechaOperacion" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Monedero" Relationship="BilleteraVirtualModel.FK_Bono_Monedero" FromRole="Bono" ToRole="Monedero" />
+    <NavigationProperty Name="Persona" Relationship="BilleteraVirtualModel.FK_Bono_Persona" FromRole="Bono" ToRole="Persona" />
+    <NavigationProperty Name="TransaccionBono" Relationship="BilleteraVirtualModel.FK_Transaccion_Bono" FromRole="Bono" ToRole="TransaccionBono" />
+    <Property Name="token" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="tokenExpira" Type="DateTime" Precision="3" />
+    <Property Name="fechaActualizacion" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="codCategoria" />
+      <PropertyRef Name="codSubCategoria" />
+    </Key>
+    <Property Name="codCategoria" Type="Int16" Nullable="false" />
+    <Property Name="codSubCategoria" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="descripcionCategoria" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="descripcionSubCategoria" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Ciudad">
+    <Key>
+      <PropertyRef Name="codCiudad" />
+      <PropertyRef Name="codDepartamento" />
+    </Key>
+    <Property Name="codCiudad" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="codDepartamento" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="nombreCiudad" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="nombreDepartamento" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="latitud" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="longitud" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="telefonoDomicilio" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HistoricoPedido">
+    <Key>
+      <PropertyRef Name="historicoId" />
+    </Key>
+    <Property Name="historicoId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pedidoId" Type="Int64" Nullable="false" />
+    <Property Name="estado" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="fechaOperacion" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Pedido" Relationship="BilleteraVirtualModel.FK_HistoricoPedido_Pedido" FromRole="HistoricoPedido" ToRole="Pedido" />
+  </EntityType>
+  <EntityType Name="Monedero">
+    <Key>
+      <PropertyRef Name="numMondero" />
+    </Key>
+    <Property Name="numMondero" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tipoIdentificacion" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="identificacion" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="saldo" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="token" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="tokenExpira" Type="DateTime" Precision="3" />
+    <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fechaActualizacion" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Bono" Relationship="BilleteraVirtualModel.FK_Bono_Monedero" FromRole="Monedero" ToRole="Bono" />
+    <NavigationProperty Name="Persona" Relationship="BilleteraVirtualModel.FK_Monedero_Persona" FromRole="Monedero" ToRole="Persona" />
+    <NavigationProperty Name="Transaccion" Relationship="BilleteraVirtualModel.FK_Transaccion_Monedero" FromRole="Monedero" ToRole="Transaccion" />
+    <Property Name="SoporteArchivo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Pedido">
+    <Key>
+      <PropertyRef Name="pedidoId" />
+    </Key>
+    <Property Name="pedidoId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipoIdentificacion" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="identificacion" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="codCiudad" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="nombreCiudad" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="total" Type="Decimal" Nullable="false" Precision="14" Scale="2" />
+    <Property Name="direccionEnvio" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="barrioEnvio" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="InformacionAdicionalEnvio" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="medioPago" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fechaActualizacion" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="HistoricoPedido" Relationship="BilleteraVirtualModel.FK_HistoricoPedido_Pedido" FromRole="Pedido" ToRole="HistoricoPedido" />
+    <NavigationProperty Name="PedidoAuditoria" Relationship="BilleteraVirtualModel.FK_PedidoAuditoria_Pedido" FromRole="Pedido" ToRole="PedidoAuditoria" />
+    <NavigationProperty Name="PedidoDetalle" Relationship="BilleteraVirtualModel.FK_PedidoDetalle_Pedido" FromRole="Pedido" ToRole="PedidoDetalle" />
+  </EntityType>
+  <EntityType Name="PedidoAuditoria">
+    <Key>
+      <PropertyRef Name="auditoriaId" />
+    </Key>
+    <Property Name="auditoriaId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pedidoId" Type="Int64" Nullable="false" />
+    <Property Name="versionAnterior" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="nuevaVersion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="fechaOperacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="usuario" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Pedido" Relationship="BilleteraVirtualModel.FK_PedidoAuditoria_Pedido" FromRole="PedidoAuditoria" ToRole="Pedido" />
+  </EntityType>
+  <EntityType Name="PedidoDetalle">
+    <Key>
+      <PropertyRef Name="pedidoDetalleId" />
+    </Key>
+    <Property Name="pedidoDetalleId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pedidoId" Type="Int64" Nullable="false" />
+    <Property Name="productoId" Type="Int32" Nullable="false" />
+    <Property Name="nombreProducto" Type="String" Nullable="false" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="precioUnit" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="imageUrl" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="referencia" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fechaActualizacion" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Pedido" Relationship="BilleteraVirtualModel.FK_PedidoDetalle_Pedido" FromRole="PedidoDetalle" ToRole="Pedido" />
+  </EntityType>
+  <EntityType Name="Persona">
+    <Key>
+      <PropertyRef Name="tipoIdentificacion" />
+      <PropertyRef Name="identificacion" />
+    </Key>
+    <Property Name="UIDUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tipoIdentificacion" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="identificacion" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="nombres" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="apellidos" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="numeroCelular" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="direccion" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="fechaOperacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IdProvincia" Type="Int32" />
+    <NavigationProperty Name="Bono" Relationship="BilleteraVirtualModel.FK_Bono_Persona" FromRole="Persona" ToRole="Bono" />
+    <NavigationProperty Name="Monedero" Relationship="BilleteraVirtualModel.FK_Monedero_Persona" FromRole="Persona" ToRole="Monedero" />
+    <NavigationProperty Name="Provincias" Relationship="BilleteraVirtualModel.FK_Persona_Provincias" FromRole="Persona" ToRole="Provincias" />
+    <NavigationProperty Name="Usuario" Relationship="BilleteraVirtualModel.FK_Persona_Usuario1" FromRole="Persona" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="idItem" />
+      <PropertyRef Name="codigoCiudad" />
+    </Key>
+    <Property Name="idItem" Type="Int32" Nullable="false" />
+    <Property Name="codigoCiudad" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="referencia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="categoria" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="subCategoria" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="tipoMarca" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="nombreMarca" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="PesoUnidadMedida" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="unidadMedida" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="presentacion" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="precio" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="precioUnidadMedida" Type="Decimal" Precision="32" Scale="15" />
+    <Property Name="imageUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="codCategoria" Type="Int32" />
+    <Property Name="codSubCategoria" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Provincias">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Persona" Relationship="BilleteraVirtualModel.FK_Persona_Provincias" FromRole="Provincias" ToRole="Persona" />
+  </EntityType>
+  <EntityType Name="Tienda">
+    <Key>
+      <PropertyRef Name="codTienda" />
+    </Key>
+    <Property Name="codTienda" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nombreTienda" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="direccion" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="latitud" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="longitud" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="codCiudad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nombreCiudad" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="horaApertura" Type="Time" Precision="7" />
+    <Property Name="horaCierre" Type="Time" Precision="7" />
+    <Property Name="codDepartamento" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nombreDepartamento" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Transaccion">
+    <Key>
+      <PropertyRef Name="transaccionId" />
+    </Key>
+    <Property Name="transaccionId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="numMonedero" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tipoMovimiento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="valor" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="tipoOrigen" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="numOrigen" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="saldoAnterior" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="nuevoSaldo" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="fechaOperacion" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Monedero" Relationship="BilleteraVirtualModel.FK_Transaccion_Monedero" FromRole="Transaccion" ToRole="Monedero" />
+    <Property Name="soporteTranBonoArchivo" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="idAsesorEncargado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Transferencia">
+    <Key>
+      <PropertyRef Name="referencia" />
+    </Key>
+    <Property Name="referencia" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="valor" Type="Decimal" Nullable="false" Precision="16" Scale="2" />
+    <Property Name="moneda" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="firma" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fechaConfirmacion" Type="DateTime" Precision="3" />
+    <Property Name="mensaje" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="emailTarjetaHab" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="UIDUsuario" />
+    </Key>
+    <Property Name="UIDUsuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="codigoImei" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="tipoDispositivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fechaOperacion" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Persona" Relationship="BilleteraVirtualModel.FK_Persona_Usuario1" FromRole="Usuario" ToRole="Persona" />
+  </EntityType>
+  <EntityType Name="Dominio">
+    <Key>
+      <PropertyRef Name="nombre" />
+      <PropertyRef Name="valor" />
+      <PropertyRef Name="descripcion" />
+    </Key>
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="valor" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Bono_Monedero">
+    <End Type="BilleteraVirtualModel.Monedero" Role="Monedero" Multiplicity="1" />
+    <End Type="BilleteraVirtualModel.Bono" Role="Bono" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Monedero">
+        <PropertyRef Name="numMondero" />
+      </Principal>
+      <Dependent Role="Bono">
+        <PropertyRef Name="numMonedero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bono_Persona">
+    <End Type="BilleteraVirtualModel.Persona" Role="Persona" Multiplicity="1" />
+    <End Type="BilleteraVirtualModel.Bono" Role="Bono" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="tipoIdentificacion" />
+        <PropertyRef Name="identificacion" />
+      </Principal>
+      <Dependent Role="Bono">
+        <PropertyRef Name="tipoIdentificacion" />
+        <PropertyRef Name="identificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HistoricoPedido_Pedido">
+    <End Type="BilleteraVirtualModel.Pedido" Role="Pedido" Multiplicity="1" />
+    <End Type="BilleteraVirtualModel.HistoricoPedido" Role="HistoricoPedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pedido">
+        <PropertyRef Name="pedidoId" />
+      </Principal>
+      <Dependent Role="HistoricoPedido">
+        <PropertyRef Name="pedidoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Monedero_Persona">
+    <End Type="BilleteraVirtualModel.Persona" Role="Persona" Multiplicity="1" />
+    <End Type="BilleteraVirtualModel.Monedero" Role="Monedero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="tipoIdentificacion" />
+        <PropertyRef Name="identificacion" />
+      </Principal>
+      <Dependent Role="Monedero">
+        <PropertyRef Name="tipoIdentificacion" />
+        <PropertyRef Name="identificacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transaccion_Monedero">
+    <End Type="BilleteraVirtualModel.Monedero" Role="Monedero" Multiplicity="1" />
+    <End Type="BilleteraVirtualModel.Transaccion" Role="Transaccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Monedero">
+        <PropertyRef Name="numMondero" />
+      </Principal>
+      <Dependent Role="Transaccion">
+        <PropertyRef Name="numMonedero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PedidoAuditoria_Pedido">
+    <End Type="BilleteraVirtualModel.Pedido" Role="Pedido" Multiplicity="1" />
+    <End Type="BilleteraVirtualModel.PedidoAuditoria" Role="PedidoAuditoria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pedido">
+        <PropertyRef Name="pedidoId" />
+      </Principal>
+      <Dependent Role="PedidoAuditoria">
+        <PropertyRef Name="pedidoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PedidoDetalle_Pedido">
+    <End Type="BilleteraVirtualModel.Pedido" Role="Pedido" Multiplicity="1" />
+    <End Type="BilleteraVirtualModel.PedidoDetalle" Role="PedidoDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pedido">
+        <PropertyRef Name="pedidoId" />
+      </Principal>
+      <Dependent Role="PedidoDetalle">
+        <PropertyRef Name="pedidoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Persona_Provincias">
+    <End Type="BilleteraVirtualModel.Provincias" Role="Provincias" Multiplicity="0..1" />
+    <End Type="BilleteraVirtualModel.Persona" Role="Persona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provincias">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="IdProvincia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Persona_Usuario1">
+    <End Type="BilleteraVirtualModel.Usuario" Role="Usuario" Multiplicity="0..1" />
+    <End Type="BilleteraVirtualModel.Persona" Role="Persona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="UIDUsuario" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="UIDUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TransaccionBono">
+    <Key>
+      <PropertyRef Name="transaccionId" />
+    </Key>
+    <Property Name="transaccionId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="numBono" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tipoMovimiento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="valor" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="tipoOrigen" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="saldoAnterior" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="nuevoSaldo" Type="Decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="fechaOperacion" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Bono" Relationship="BilleteraVirtualModel.FK_Transaccion_Bono" FromRole="TransaccionBono" ToRole="Bono" />
+    <Property Name="idSucursal" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="idTransaccionPost" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="idAsesorEncargado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Transaccion_Bono">
+    <End Type="BilleteraVirtualModel.Bono" Role="Bono" Multiplicity="1" />
+    <End Type="BilleteraVirtualModel.TransaccionBono" Role="TransaccionBono" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bono">
+        <PropertyRef Name="numBono" />
+      </Principal>
+      <Dependent Role="TransaccionBono">
+        <PropertyRef Name="numBono" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="UIDUsuario" />
+    </Key>
+    <Property Name="UIDUsuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nombreEmpresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fechaOperacion" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+</Schema>

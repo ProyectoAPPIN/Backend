@@ -1,0 +1,1273 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/23/2020 11:08:28 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-920O5U50"
+  DTS:CreatorName="LAPTOP-920O5U50\Johana"
+  DTS:DTSID="{F69D8A35-12AB-423D-BE6D-8D4E9E156681}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.93"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="ProductosV1"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="84"
+  DTS:VersionGUID="{FCEF5690-D097-4B01-9952-33DB7C20EB87}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BDBilleteraVirtual]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B19FEC61-711F-415B-A8F9-088D88F540F1}"
+      DTS:ObjectName="BDBilleteraVirtual">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.3.13\BILLETERAVIRTUAL;User ID=billasw;Initial Catalog=BDBilleteraVirtualV2;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Consultas]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{44CE9080-2E0C-44F1-93BE-7081E566103F}"
+      DTS:ObjectName="Consultas">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.100.80\mssqlserver2014;User ID=sa;Initial Catalog=Consultas;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DE8C2763-C9C2-412E-9CCC-F1EC2590EC00}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CodCiudad">
+      <DTS:VariableValue
+        DTS:DataType="8">11001</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{70CE118D-881A-41A4-9027-25AA948F9D17}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ObjCiudad">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2992A803-673F-4DCC-9B25-DC71BEA68B25}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT * FROM [dbo].[fnc_items_catalogo_ciudad_online] ('&quot;+ @[User::CodCiudad]+&quot;' )&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="QueryProductos">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT * FROM [dbo].[fnc_items_catalogo_ciudad_online] ('11001' )</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Eliminar Registros"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{10AA4E78-7551-4CE2-B227-A3E4CA0AE61D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Eliminar Registros"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Eliminar Registros.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{35174CD3-7B3D-4463-B389-4FBC65BCA6E6}"
+          DTS:EventID="0"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="La propiedad de propagación del evento"
+              DTS:DTSID="{5D0B7880-2329-4598-8A0A-5DE21BF4D8E9}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Eliminar Registros.EventHandlers[OnError]\Tarea Ejecutar SQL"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Tarea Ejecutar SQL"
+              DTS:DTSID="{E24C20E0-EA84-4D21-A94D-C1DB03E2D164}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Tarea Ejecutar SQL"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{B19FEC61-711F-415B-A8F9-088D88F540F1}"
+                  SQLTask:SqlStatementSource="INSERT INTO [dbo].[Auditoria]&#xA;           ([tipo]&#xA;           ,[origen]&#xA;           ,[mensaje]&#xA;           ,[fecha])&#xA;     VALUES&#xA;           ('Error'&#xA;           ,'ETL Productos -'+ ?&#xA;           ,?&#xA;           ,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="System::SourceName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="System::ErrorDescription"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B19FEC61-711F-415B-A8F9-088D88F540F1}"
+          SQLTask:SqlStatementSource="truncate table producto" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insertar Productos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{80A21D07-2A93-4A0B-A314-3D9951CA3A3D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar Productos"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Insertar Productos.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{3BE7EAB8-E976-45A0-8BC6-A5038E29EC60}"
+          DTS:EventID="0"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="La propiedad de propagación del evento"
+              DTS:DTSID="{9DC6400A-CBA6-41B9-BA43-4F0373081390}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Insertar Productos.EventHandlers[OnError]\Tarea Ejecutar SQL"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Tarea Ejecutar SQL"
+              DTS:DTSID="{524D5CEF-F94E-4E83-A8A6-F26961E32CFA}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Tarea Ejecutar SQL"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{B19FEC61-711F-415B-A8F9-088D88F540F1}"
+                  SQLTask:SqlStatementSource="INSERT INTO [dbo].[Auditoria]&#xA;           ([tipo]&#xA;           ,[origen]&#xA;           ,[mensaje]&#xA;           ,[fecha])&#xA;     VALUES&#xA;           ('Error'&#xA;           ,'ETL Productos -'+ ?&#xA;           ,?&#xA;           ,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="System::SourceName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="System::ErrorDescription"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Insertar Productos\Insertar destino"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Insertar destino"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[Producto]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insertar Productos\Insertar destino.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[BDBilleteraVirtual]"
+                  connectionManagerRefId="Package.ConnectionManagers[BDBilleteraVirtual]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[IdItem]"
+                      cachedDataType="i4"
+                      cachedName="IdItem"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[idItem]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[IdItem]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[codigo_ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="codigo_ciudad"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[codigoCiudad]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[codigo_ciudad]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[Referencia]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Referencia"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[referencia]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Referencia]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[Descripcion]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Descripcion"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[descripcion]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Descripcion]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[Categoria]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Categoria"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[categoria]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Categoria]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[SubCategoria]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="SubCategoria"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[subCategoria]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[SubCategoria]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[TipoMarca]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="TipoMarca"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[tipoMarca]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[TipoMarca]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[NombreMarca]"
+                      cachedDataType="wstr"
+                      cachedLength="2000"
+                      cachedName="NombreMarca"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombreMarca]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[NombreMarca]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[PesoUnidadMedida]"
+                      cachedDataType="numeric"
+                      cachedName="PesoUnidadMedida"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[PesoUnidadMedida]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[PesoUnidadMedida]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[UnidadMedida]"
+                      cachedDataType="wstr"
+                      cachedLength="2000"
+                      cachedName="UnidadMedida"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[unidadMedida]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[UnidadMedida]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[Presentacion]"
+                      cachedDataType="wstr"
+                      cachedLength="2000"
+                      cachedName="Presentacion"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[presentacion]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Presentacion]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[Precio]"
+                      cachedDataType="cy"
+                      cachedName="Precio"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[precio]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Precio]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[PrecioUnidadMedida]"
+                      cachedDataType="numeric"
+                      cachedName="PrecioUnidadMedida"
+                      cachedPrecision="32"
+                      cachedScale="15"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[precioUnidadMedida]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[PrecioUnidadMedida]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[image_url]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="image_url"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[imageUrl]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[image_url]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[cod_categoria]"
+                      cachedDataType="i4"
+                      cachedName="cod_categoria"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[codCategoria]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[cod_categoria]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[cod_subcategoria]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="cod_subcategoria"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[codSubCategoria]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[cod_subcategoria]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[idItem]"
+                      dataType="i4"
+                      name="idItem" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[codigoCiudad]"
+                      dataType="wstr"
+                      length="80"
+                      name="codigoCiudad" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[referencia]"
+                      dataType="wstr"
+                      length="50"
+                      name="referencia" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[descripcion]"
+                      dataType="wstr"
+                      length="50"
+                      name="descripcion" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[categoria]"
+                      dataType="wstr"
+                      length="120"
+                      name="categoria" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[subCategoria]"
+                      codePage="1252"
+                      dataType="str"
+                      length="120"
+                      name="subCategoria" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[tipoMarca]"
+                      dataType="wstr"
+                      length="120"
+                      name="tipoMarca" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombreMarca]"
+                      dataType="wstr"
+                      length="2000"
+                      name="nombreMarca" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[PesoUnidadMedida]"
+                      dataType="numeric"
+                      name="PesoUnidadMedida"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[unidadMedida]"
+                      dataType="wstr"
+                      length="2000"
+                      name="unidadMedida" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[presentacion]"
+                      dataType="wstr"
+                      length="2000"
+                      name="presentacion" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[precio]"
+                      dataType="cy"
+                      name="precio" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[precioUnidadMedida]"
+                      dataType="numeric"
+                      name="precioUnidadMedida"
+                      precision="32"
+                      scale="15" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[imageUrl]"
+                      dataType="wstr"
+                      length="1000"
+                      name="imageUrl" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[codCategoria]"
+                      dataType="i4"
+                      name="codCategoria" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[codSubCategoria]"
+                      dataType="wstr"
+                      length="100"
+                      name="codSubCategoria" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insertar Productos\Insertar destino.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insertar Productos\Insertar destino.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insertar Productos\Insertar destino.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insertar Productos\Productos"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Productos"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select distinct
+       IdItem,
+        CAST(codigo_ciudad AS nvarchar(80)) codigo_ciudad,
+       CAST(Referencia AS nvarchar(50)) Referencia,  
+       CAST(Descripcion AS nvarchar(40)) Descripcion, 
+       CAST(cod_categoria AS int) cod_categoria,
+       CAST(Categoria AS nvarchar(100)) Categoria,
+       CAST(cod_subcategoria AS nvarchar(100)) cod_subcategoria,
+       SubCategoria,
+       TipoMarca,
+       NombreMarca,
+       PesoUnidadMedida,
+       UnidadMedida,
+       Presentacion,
+       CAST(Precio AS money) Precio,
+       PrecioUnidadMedida,
+       image_url       
+       from VW_Teletendero_Productos_Ciudades</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insertar Productos\Productos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Consultas]"
+                  connectionManagerRefId="Package.ConnectionManagers[Consultas]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[IdItem]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[IdItem]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[IdItem]"
+                      name="IdItem"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[codigo_ciudad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[codigo_ciudad]"
+                      length="80"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[codigo_ciudad]"
+                      name="codigo_ciudad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Referencia]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[Referencia]"
+                      length="50"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Referencia]"
+                      name="Referencia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Descripcion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[Descripcion]"
+                      length="40"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Descripcion]"
+                      name="Descripcion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[cod_categoria]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[cod_categoria]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[cod_categoria]"
+                      name="cod_categoria"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Categoria]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[Categoria]"
+                      length="100"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Categoria]"
+                      name="Categoria"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[cod_subcategoria]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[cod_subcategoria]"
+                      length="100"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[cod_subcategoria]"
+                      name="cod_subcategoria"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[SubCategoria]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[SubCategoria]"
+                      length="100"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[SubCategoria]"
+                      name="SubCategoria"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[TipoMarca]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[TipoMarca]"
+                      length="100"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[TipoMarca]"
+                      name="TipoMarca"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[NombreMarca]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[NombreMarca]"
+                      length="2000"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[NombreMarca]"
+                      name="NombreMarca"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[PesoUnidadMedida]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[PesoUnidadMedida]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[PesoUnidadMedida]"
+                      name="PesoUnidadMedida"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[UnidadMedida]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[UnidadMedida]"
+                      length="2000"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[UnidadMedida]"
+                      name="UnidadMedida"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Presentacion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[Presentacion]"
+                      length="2000"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Presentacion]"
+                      name="Presentacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Precio]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[Precio]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Precio]"
+                      name="Precio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[PrecioUnidadMedida]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[PrecioUnidadMedida]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[PrecioUnidadMedida]"
+                      name="PrecioUnidadMedida"
+                      precision="32"
+                      scale="15"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[image_url]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[image_url]"
+                      length="255"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[image_url]"
+                      name="image_url"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[IdItem]"
+                      dataType="i4"
+                      name="IdItem" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[codigo_ciudad]"
+                      dataType="wstr"
+                      length="80"
+                      name="codigo_ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[Referencia]"
+                      dataType="wstr"
+                      length="50"
+                      name="Referencia" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[Descripcion]"
+                      dataType="wstr"
+                      length="40"
+                      name="Descripcion" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[cod_categoria]"
+                      dataType="i4"
+                      name="cod_categoria" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[Categoria]"
+                      dataType="wstr"
+                      length="100"
+                      name="Categoria" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[cod_subcategoria]"
+                      dataType="wstr"
+                      length="100"
+                      name="cod_subcategoria" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[SubCategoria]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="SubCategoria" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[TipoMarca]"
+                      dataType="wstr"
+                      length="100"
+                      name="TipoMarca" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[NombreMarca]"
+                      dataType="wstr"
+                      length="2000"
+                      name="NombreMarca" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[PesoUnidadMedida]"
+                      dataType="numeric"
+                      name="PesoUnidadMedida"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[UnidadMedida]"
+                      dataType="wstr"
+                      length="2000"
+                      name="UnidadMedida" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[Presentacion]"
+                      dataType="wstr"
+                      length="2000"
+                      name="Presentacion" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[Precio]"
+                      dataType="cy"
+                      name="Precio" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[PrecioUnidadMedida]"
+                      dataType="numeric"
+                      name="PrecioUnidadMedida"
+                      precision="32"
+                      scale="15" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[image_url]"
+                      dataType="wstr"
+                      length="255"
+                      name="image_url" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[IdItem]"
+                      dataType="i4"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[IdItem]"
+                      name="IdItem" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[codigo_ciudad]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[codigo_ciudad]"
+                      name="codigo_ciudad" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[Referencia]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[Referencia]"
+                      name="Referencia" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[Descripcion]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[Descripcion]"
+                      name="Descripcion" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[cod_categoria]"
+                      dataType="i4"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[cod_categoria]"
+                      name="cod_categoria" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[Categoria]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[Categoria]"
+                      name="Categoria" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[cod_subcategoria]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[cod_subcategoria]"
+                      name="cod_subcategoria" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[SubCategoria]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[SubCategoria]"
+                      name="SubCategoria" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[TipoMarca]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[TipoMarca]"
+                      name="TipoMarca" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[NombreMarca]"
+                      dataType="wstr"
+                      length="2000"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[NombreMarca]"
+                      name="NombreMarca" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[PesoUnidadMedida]"
+                      dataType="numeric"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[PesoUnidadMedida]"
+                      name="PesoUnidadMedida"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[UnidadMedida]"
+                      dataType="wstr"
+                      length="2000"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[UnidadMedida]"
+                      name="UnidadMedida" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[Presentacion]"
+                      dataType="wstr"
+                      length="2000"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[Presentacion]"
+                      name="Presentacion" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[Precio]"
+                      dataType="cy"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[Precio]"
+                      name="Precio" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[PrecioUnidadMedida]"
+                      dataType="numeric"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[PrecioUnidadMedida]"
+                      name="PrecioUnidadMedida"
+                      precision="32"
+                      scale="15" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[image_url]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[image_url]"
+                      name="image_url" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Insertar Productos.Paths[Salida de origen de OLE DB]"
+              endId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Registrar Finalización"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{0535891A-FD1D-4680-BE32-09FBC914817D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Registrar Finalización"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B19FEC61-711F-415B-A8F9-088D88F540F1}"
+          SQLTask:SqlStatementSource="INSERT INTO [dbo].[Auditoria]&#xA;           ([tipo]&#xA;           ,[origen]&#xA;           ,[mensaje]&#xA;           ,[fecha])&#xA;     VALUES&#xA;           ('Mensaje'&#xA;           ,'ETL Productos'&#xA;           ,'Finalizó correctamente'&#xA;           ,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Registrar Inicio"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{919EE502-7BC7-4DAF-8312-2BDD802E471D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Registrar Inicio"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Registrar Inicio.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{07385C7C-0605-49BA-940B-5D066237FA2E}"
+          DTS:EventID="0"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="La propiedad de propagación del evento"
+              DTS:DTSID="{CFA61B2F-6D18-482C-93EF-F5FAB0017671}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Registrar Inicio.EventHandlers[OnError]\Tarea Ejecutar SQL"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Tarea Ejecutar SQL"
+              DTS:DTSID="{9A92FD46-2FEA-4F06-A687-B3DBB45A0961}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Tarea Ejecutar SQL"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{B19FEC61-711F-415B-A8F9-088D88F540F1}"
+                  SQLTask:SqlStatementSource="INSERT INTO [dbo].[Auditoria]&#xA;           ([tipo]&#xA;           ,[origen]&#xA;           ,[mensaje]&#xA;           ,[fecha])&#xA;     VALUES&#xA;           ('Error'&#xA;           ,'ETL Productos -'+ ?&#xA;           ,?&#xA;           ,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="System::SourceName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="System::ErrorDescription"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B19FEC61-711F-415B-A8F9-088D88F540F1}"
+          SQLTask:SqlStatementSource="INSERT INTO [dbo].[Auditoria]&#xA;           ([tipo]&#xA;           ,[origen]&#xA;           ,[mensaje]&#xA;           ,[fecha])&#xA;     VALUES&#xA;           ('Mensaje'&#xA;           ,'ETL Productos'&#xA;           ,'Inicio Ejecución'&#xA;           ,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{5E1B78A7-E67B-4A2D-AC9C-112EB1565277}"
+      DTS:From="Package\Registrar Inicio"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Eliminar Registros" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{A5645874-4E03-43DB-9714-105129AB68F5}"
+      DTS:From="Package\Insertar Productos"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\Registrar Finalización" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{BD80F6B4-66FC-4810-8F93-21DED5ED0CA4}"
+      DTS:From="Package\Eliminar Registros"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\Insertar Productos" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="sql12">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="252,42"
+          Id="Package\Insertar Productos"
+          TopLeft="77.25,215.333333333333" />
+        <NodeLayout
+          Size="252,42"
+          Id="Package\Registrar Finalización"
+          TopLeft="77.25,301" />
+        <NodeLayout
+          Size="252,42"
+          Id="Package\Registrar Inicio"
+          TopLeft="77.25,44" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="203.25,257.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.6666666666667"
+              Start="0,0"
+              End="0,36.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="252,42"
+          Id="Package\Eliminar Registros"
+          TopLeft="77.25,129.666666666667" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="203.25,86">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.6666666666667"
+              Start="0,0"
+              End="0,36.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="203.25,171.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.6666666666667"
+              Start="0,0"
+              End="0,36.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Insertar Productos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Insertar Productos\Productos"
+          TopLeft="198.5,5.5" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Insertar Productos\Insertar destino"
+          TopLeft="198.5,142.5" />
+        <EdgeLayout
+          Id="Package\Insertar Productos.Paths[Salida de origen de OLE DB]"
+          TopLeft="301.75,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,95"
+              Start="0,0"
+              End="0,87.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,87.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Insertar Productos.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Insertar Productos.EventHandlers[OnError]\Tarea Ejecutar SQL"
+          TopLeft="440,159" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insertar Productos\Productos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insertar Productos\Insertar destino">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\Registrar Inicio.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Registrar Inicio.EventHandlers[OnError]\Tarea Ejecutar SQL"
+          TopLeft="428,51" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Eliminar Registros.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Eliminar Registros.EventHandlers[OnError]\Tarea Ejecutar SQL"
+          TopLeft="428,51" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

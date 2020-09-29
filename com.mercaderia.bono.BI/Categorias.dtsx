@@ -1,0 +1,1529 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/22/2020 2:52:44 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-920O5U50"
+  DTS:CreatorName="LAPTOP-920O5U50\Johana"
+  DTS:DTSID="{C188B061-23FD-40BE-B4B0-B2CECED396A6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.93"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="Categorias"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="55"
+  DTS:VersionGUID="{1FBA271A-3BEC-403E-90F2-C7FB969CB9EA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BDBilleteraVirtual]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{ACE6F903-05DC-4DFA-9C5C-9D65E3EFFE98}"
+      DTS:ObjectName="BDBilleteraVirtual">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.3.13\BILLETERAVIRTUAL;User ID=billasw;Initial Catalog=BDBilleteraVirtualV2;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"></DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Consultas]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FBD6BB23-1C47-45C9-96C7-25429F0BCD16}"
+      DTS:ObjectName="Consultas">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.100.80\mssqlserver2014;User ID=sa;Initial Catalog=Consultas;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"></DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Contenedor de secuencias"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contenedor de secuencias"
+      DTS:DTSID="{EFDE0E34-DB55-40D6-8B19-5A5D4094E629}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Contenedor de secuencias">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias\Registrar Categorias"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarea Flujo de datos"
+          DTS:DTSID="{24ECE6EC-EB60-479D-B603-9670B656AF34}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Registrar Categorias"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:EventHandlers>
+            <DTS:EventHandler
+              DTS:refId="Package\Contenedor de secuencias\Registrar Categorias.EventHandlers[OnError]"
+              DTS:CreationName="OnError"
+              DTS:DTSID="{FF5EA990-3D45-41CE-9961-DAE6308E6F45}"
+              DTS:EventID="0"
+              DTS:EventName="OnError"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="La propiedad de propagación del evento"
+                  DTS:DTSID="{11930EC7-1B5A-48F7-A2F5-4851859FDC19}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\Contenedor de secuencias\Registrar Categorias.EventHandlers[OnError]\Tarea Ejecutar SQL"
+                  DTS:CreationName="Microsoft.ExecuteSQLTask"
+                  DTS:Description="Tarea Ejecutar SQL"
+                  DTS:DTSID="{53C6490C-CD13-4984-BFAD-5A57138216D6}"
+                  DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Tarea Ejecutar SQL"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{ACE6F903-05DC-4DFA-9C5C-9D65E3EFFE98}"
+                      SQLTask:SqlStatementSource="INSERT INTO [dbo].[Auditoria]&#xA;           ([tipo]&#xA;           ,[origen]&#xA;           ,[mensaje]&#xA;           ,[fecha])&#xA;     VALUES&#xA;           ('Error'&#xA;           ,'ETL Productos - '+ ?&#xA;           ,?&#xA;           ,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="0"
+                        SQLTask:DtsVariableName="System::SourceName"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="129"
+                        SQLTask:ParameterSize="-1" />
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="1"
+                        SQLTask:DtsVariableName="System::ErrorDescription"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="129"
+                        SQLTask:ParameterSize="-1" />
+                    </SQLTask:SqlTaskData>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origen de OLE DB"
+                  name="Categorias Billetera"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[dbo].[Ciudad]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [codCategoria]
+      ,[codSubCategoria]     
+  FROM [dbo].[Categoria] order by [codCategoria]
+      ,[codSubCategoria]</property>
+                    <property
+                      dataType="System.String"
+                      description="Variable que contiene el comando SQL para ejecutar."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Asignaciones entre los parámetros del comando SQL y las variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[BDBilleteraVirtual]"
+                      connectionManagerRefId="Package.ConnectionManagers[BDBilleteraVirtual]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de origen de OLE DB]"
+                      isSorted="true"
+                      name="Salida de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de origen de OLE DB].Columns[codCategoria]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de origen de OLE DB].ExternalColumns[codCategoria]"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de origen de OLE DB].Columns[codCategoria]"
+                          name="codCategoria"
+                          sortKeyPosition="1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de origen de OLE DB].Columns[codSubCategoria]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de origen de OLE DB].ExternalColumns[codSubCategoria]"
+                          length="10"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de origen de OLE DB].Columns[codSubCategoria]"
+                          name="codSubCategoria"
+                          sortKeyPosition="2"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de origen de OLE DB].ExternalColumns[codCategoria]"
+                          dataType="i2"
+                          name="codCategoria" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de origen de OLE DB].ExternalColumns[codSubCategoria]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="codSubCategoria" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de error de origen de OLE DB]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de error de origen de OLE DB].Columns[codCategoria]"
+                          dataType="i2"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de error de origen de OLE DB].Columns[codCategoria]"
+                          name="codCategoria" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de error de origen de OLE DB].Columns[codSubCategoria]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de error de origen de OLE DB].Columns[codSubCategoria]"
+                          name="codSubCategoria" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla"
+                  componentClassID="Microsoft.MergeJoin"
+                  contactInfo="Combinación de mezcla;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+                  description="Combina dos flujos de datos ordenados en uno solo mediante la combinación FULL, LEFT o INNER. Se recomienda esta transformación cuando se pueden ordenar los flujos de datos en sus orígenes."
+                  name="Combinación de mezcla"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el tipo de combinación que se debe realizar."
+                      name="JoinType"
+                      typeConverter="JoinType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el número de columnas de la clave de ordenación."
+                      name="NumKeyColumns">2</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si los valores NULL se tratan como valores iguales."
+                      name="TreatNullsAsEqual">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Indica la cantidad máxima solicitada de búferes por entrada antes del bloqueo."
+                      name="MaxBuffersPerInput">5</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla]"
+                      hasSideEffects="true"
+                      name="Entrada izquierda de combinación de mezcla">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[codCategoria]"
+                          cachedDataType="i2"
+                          cachedName="codCategoria"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de origen de OLE DB].Columns[codCategoria]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[codSubCategoria]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="codSubCategoria"
+                          cachedSortKeyPosition="2"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de origen de OLE DB].Columns[codSubCategoria]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla]"
+                      hasSideEffects="true"
+                      name="Entrada derecha de combinación de mezcla">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[cod_categoria]"
+                          cachedDataType="i2"
+                          cachedName="cod_categoria"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[cod_categoria]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[sub_categoria]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="sub_categoria"
+                          cachedSortKeyPosition="2"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[sub_categoria]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[categoria]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="categoria"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[categoria]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[cod_subcategoria]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="4"
+                          cachedName="cod_subcategoria"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[cod_subcategoria]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla]"
+                      isSorted="true"
+                      name="Salida de combinación de mezcla">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[cod_categoria]"
+                          dataType="i2"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[cod_categoria]"
+                          name="cod_categoria">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[cod_categoria]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[categoria]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[categoria]"
+                          name="categoria">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[categoria]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[sub_categoria]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[sub_categoria]"
+                          name="sub_categoria">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[sub_categoria]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[cod_subcategoria]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[cod_subcategoria]"
+                          name="cod_subcategoria">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[cod_subcategoria]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codCategoriaBilletera]"
+                          dataType="i2"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codCategoriaBilletera]"
+                          name="codCategoriaBilletera"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[codCategoria]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codSubCategoriaBilletera]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codSubCategoriaBilletera]"
+                          name="codSubCategoriaBilletera"
+                          sortKeyPosition="2">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="La columna de entrada asociada a esta columna de salida"
+                              name="InputColumnID">#{Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[codSubCategoria]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de secuencias\Registrar Categorias\División condicional"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="División condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+                  description="Enruta filas de datos a diferentes salidas según el contenido de los datos. Se usan condiciones (expresiones de SSIS) para especificar las filas que se van a enrutar. Por ejemplo, se usa para separar los registros que deben limpiarse de los registros listos para ser cargados o para enrutar solamente un subconjunto de registros."
+                  name="División condicional"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\División condicional.Inputs[Entrada de división condicional]"
+                      description="Entrada en la transformación División condicional"
+                      name="Entrada de división condicional">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\División condicional.Inputs[Entrada de división condicional].Columns[cod_categoria]"
+                          cachedDataType="i2"
+                          cachedName="cod_categoria"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[cod_categoria]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\División condicional.Inputs[Entrada de división condicional].Columns[sub_categoria]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="sub_categoria"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[sub_categoria]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\División condicional.Inputs[Entrada de división condicional].Columns[codCategoriaBilletera]"
+                          cachedDataType="i2"
+                          cachedName="codCategoriaBilletera"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codCategoriaBilletera]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\División condicional.Inputs[Entrada de división condicional].Columns[codSubCategoriaBilletera]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="codSubCategoriaBilletera"
+                          cachedSortKeyPosition="2"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codSubCategoriaBilletera]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\División condicional.Outputs[Registrar]"
+                      description="Salida 1 de la transformación División condicional"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Registrar"
+                      synchronousInputId="Package\Contenedor de secuencias\Registrar Categorias\División condicional.Inputs[Entrada de división condicional]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                          name="Expression">[ISNULL](#{Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codCategoriaBilletera]}) &amp;&amp; [ISNULL](#{Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codSubCategoriaBilletera]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(codCategoriaBilletera) &amp;&amp; ISNULL(codSubCategoriaBilletera)</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\División condicional.Outputs[Eliminar]"
+                      description="Salida 2 de la transformación División condicional"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Eliminar"
+                      synchronousInputId="Package\Contenedor de secuencias\Registrar Categorias\División condicional.Inputs[Entrada de división condicional]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                          name="Expression">[ISNULL](#{Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[cod_categoria]}) &amp;&amp; [ISNULL](#{Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[sub_categoria]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(cod_categoria) &amp;&amp; ISNULL(sub_categoria)</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                          name="EvaluationOrder">1</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\División condicional.Outputs[Salida predeterminada de división condicional]"
+                      description="Salida predeterminada de la transformación División condicional"
+                      exclusionGroup="1"
+                      name="Salida predeterminada de división condicional"
+                      synchronousInputId="Package\Contenedor de secuencias\Registrar Categorias\División condicional.Inputs[Entrada de división condicional]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\División condicional.Outputs[Salida de error de división condicional]"
+                      description="Salida de error de la transformación División condicional"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de división condicional"
+                      synchronousInputId="Package\Contenedor de secuencias\Registrar Categorias\División condicional.Inputs[Entrada de división condicional]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de secuencias\Registrar Categorias\Eliminar Categorias"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+                  description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+                  name="Eliminar Categorias"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">delete Categoria where [codCategoria]=? and [codSubCategoria]=? </property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\Eliminar Categorias.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[BDBilleteraVirtual]"
+                      connectionManagerRefId="Package.ConnectionManagers[BDBilleteraVirtual]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\Eliminar Categorias.Inputs[Entrada de comando de OLE DB]"
+                      errorOrTruncationOperation="Ejecución de comando"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de comando de OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Eliminar Categorias.Inputs[Entrada de comando de OLE DB].Columns[codCategoriaBilletera]"
+                          cachedDataType="i2"
+                          cachedName="codCategoriaBilletera"
+                          cachedSortKeyPosition="1"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Registrar Categorias\Eliminar Categorias.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codCategoriaBilletera]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Eliminar Categorias.Inputs[Entrada de comando de OLE DB].Columns[codSubCategoriaBilletera]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="codSubCategoriaBilletera"
+                          cachedSortKeyPosition="2"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Registrar Categorias\Eliminar Categorias.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codSubCategoriaBilletera]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Eliminar Categorias.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                          dataType="i2"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Eliminar Categorias.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\Eliminar Categorias.Outputs[Salida de comando de OLE DB]"
+                      exclusionGroup="1"
+                      name="Salida de comando de OLE DB"
+                      synchronousInputId="Package\Contenedor de secuencias\Registrar Categorias\Eliminar Categorias.Inputs[Entrada de comando de OLE DB]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\Eliminar Categorias.Outputs[Salida de error de comando de OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de comando de OLE DB"
+                      synchronousInputId="Package\Contenedor de secuencias\Registrar Categorias\Eliminar Categorias.Inputs[Entrada de comando de OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Eliminar Categorias.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Eliminar Categorias.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Eliminar Categorias.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Eliminar Categorias.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino de OLE DB"
+                  name="Insertar Categorias"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[dbo].[Categoria]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[BDBilleteraVirtual]"
+                      connectionManagerRefId="Package.ConnectionManagers[BDBilleteraVirtual]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Inputs[Entrada de destino de OLE DB]"
+                      errorOrTruncationOperation="Insertar"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de destino de OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Inputs[Entrada de destino de OLE DB].Columns[cod_categoria]"
+                          cachedDataType="i2"
+                          cachedName="cod_categoria"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Inputs[Entrada de destino de OLE DB].ExternalColumns[codCategoria]"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[cod_categoria]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Inputs[Entrada de destino de OLE DB].Columns[categoria]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="categoria"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Inputs[Entrada de destino de OLE DB].ExternalColumns[descripcionCategoria]"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[categoria]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Inputs[Entrada de destino de OLE DB].Columns[cod_subcategoria]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="4"
+                          cachedName="cod_subcategoria"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Inputs[Entrada de destino de OLE DB].ExternalColumns[codSubCategoria]"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[cod_subcategoria]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Inputs[Entrada de destino de OLE DB].Columns[sub_categoria]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="sub_categoria"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Inputs[Entrada de destino de OLE DB].ExternalColumns[descripcionSubCategoria]"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[sub_categoria]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Inputs[Entrada de destino de OLE DB].ExternalColumns[codCategoria]"
+                          dataType="i2"
+                          name="codCategoria" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Inputs[Entrada de destino de OLE DB].ExternalColumns[codSubCategoria]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="codSubCategoria" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Inputs[Entrada de destino de OLE DB].ExternalColumns[descripcionCategoria]"
+                          codePage="1252"
+                          dataType="str"
+                          length="120"
+                          name="descripcionCategoria" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Inputs[Entrada de destino de OLE DB].ExternalColumns[descripcionSubCategoria]"
+                          codePage="1252"
+                          dataType="str"
+                          length="120"
+                          name="descripcionSubCategoria" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Outputs[Salida de error de destino de OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de destino de OLE DB"
+                      synchronousInputId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Inputs[Entrada de destino de OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origen de OLE DB"
+                  name="Origen de OLE DB"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select cast(cod_categoria as smallint) cod_categoria ,categoria,sub_categoria,cod_subcategoria
+from [dbo].vw_get_categorias_subcategorias order by  cast(cod_categoria as smallint) ,sub_categoria</property>
+                    <property
+                      dataType="System.String"
+                      description="Variable que contiene el comando SQL para ejecutar."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Asignaciones entre los parámetros del comando SQL y las variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Consultas]"
+                      connectionManagerRefId="Package.ConnectionManagers[Consultas]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB]"
+                      isSorted="true"
+                      name="Salida de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[cod_categoria]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[cod_categoria]"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[cod_categoria]"
+                          name="cod_categoria"
+                          sortKeyPosition="1"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[categoria]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[categoria]"
+                          length="40"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[categoria]"
+                          name="categoria"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[sub_categoria]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[sub_categoria]"
+                          length="40"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[sub_categoria]"
+                          name="sub_categoria"
+                          sortKeyPosition="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[cod_subcategoria]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[cod_subcategoria]"
+                          length="4"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[cod_subcategoria]"
+                          name="cod_subcategoria"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[cod_categoria]"
+                          dataType="i2"
+                          name="cod_categoria" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[categoria]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="categoria" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[sub_categoria]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="sub_categoria" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[cod_subcategoria]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          name="cod_subcategoria" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[cod_categoria]"
+                          dataType="i2"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[cod_categoria]"
+                          name="cod_categoria" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[categoria]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[categoria]"
+                          name="categoria" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[sub_categoria]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[sub_categoria]"
+                          name="sub_categoria" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[cod_subcategoria]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[cod_subcategoria]"
+                          name="cod_subcategoria" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Contenedor de secuencias\Registrar Categorias.Paths[Eliminar]"
+                  endId="Package\Contenedor de secuencias\Registrar Categorias\Eliminar Categorias.Inputs[Entrada de comando de OLE DB]"
+                  name="Eliminar"
+                  startId="Package\Contenedor de secuencias\Registrar Categorias\División condicional.Outputs[Eliminar]" />
+                <path
+                  refId="Package\Contenedor de secuencias\Registrar Categorias.Paths[Registrar]"
+                  endId="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias.Inputs[Entrada de destino de OLE DB]"
+                  name="Registrar"
+                  startId="Package\Contenedor de secuencias\Registrar Categorias\División condicional.Outputs[Registrar]" />
+                <path
+                  refId="Package\Contenedor de secuencias\Registrar Categorias.Paths[Salida de combinación de mezcla]"
+                  endId="Package\Contenedor de secuencias\Registrar Categorias\División condicional.Inputs[Entrada de división condicional]"
+                  name="Salida de combinación de mezcla"
+                  startId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Outputs[Salida de combinación de mezcla]" />
+                <path
+                  refId="Package\Contenedor de secuencias\Registrar Categorias.Paths[Salida de origen de OLE DB]"
+                  endId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla]"
+                  name="Salida de origen de OLE DB"
+                  startId="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera.Outputs[Salida de origen de OLE DB]" />
+                <path
+                  refId="Package\Contenedor de secuencias\Registrar Categorias.Paths[Salida de origen de OLE DB1]"
+                  endId="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla]"
+                  name="Salida de origen de OLE DB"
+                  startId="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB.Outputs[Salida de origen de OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias\Registrar Finalización"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarea Ejecutar SQL"
+          DTS:DTSID="{E7722936-A9F8-4E44-B331-6FE8C0215294}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Registrar Finalización"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:EventHandlers>
+            <DTS:EventHandler
+              DTS:refId="Package\Contenedor de secuencias\Registrar Finalización.EventHandlers[OnError]"
+              DTS:CreationName="OnError"
+              DTS:DTSID="{2F1837D8-07CA-45A6-B5AE-D557EA2DA9B2}"
+              DTS:EventID="0"
+              DTS:EventName="OnError"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="La propiedad de propagación del evento"
+                  DTS:DTSID="{3C90921C-9290-4F0A-89CB-84BA721A05DF}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\Contenedor de secuencias\Registrar Finalización.EventHandlers[OnError]\Tarea Ejecutar SQL"
+                  DTS:CreationName="Microsoft.ExecuteSQLTask"
+                  DTS:Description="Tarea Ejecutar SQL"
+                  DTS:DTSID="{1DB94C4B-45D8-486B-85F9-3C74A0BAC79D}"
+                  DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Tarea Ejecutar SQL"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{ACE6F903-05DC-4DFA-9C5C-9D65E3EFFE98}"
+                      SQLTask:SqlStatementSource="INSERT INTO [dbo].[Auditoria]&#xA;           ([tipo]&#xA;           ,[origen]&#xA;           ,[mensaje]&#xA;           ,[fecha])&#xA;     VALUES&#xA;           ('Error'&#xA;           ,'ETL Productos - '+ ?&#xA;           ,?&#xA;           ,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="0"
+                        SQLTask:DtsVariableName="System::SourceName"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="129"
+                        SQLTask:ParameterSize="-1" />
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="1"
+                        SQLTask:DtsVariableName="System::ErrorDescription"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="129"
+                        SQLTask:ParameterSize="-1" />
+                    </SQLTask:SqlTaskData>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{ACE6F903-05DC-4DFA-9C5C-9D65E3EFFE98}"
+              SQLTask:SqlStatementSource="INSERT INTO [dbo].[Auditoria]&#xA;           ([tipo]&#xA;           ,[origen]&#xA;           ,[mensaje]&#xA;           ,[fecha])&#xA;     VALUES&#xA;           ('Mensaje'&#xA;           ,'ETL Categorias'&#xA;           ,'Finalizó correctamente'&#xA;           ,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias\Registrar Inicio"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarea Ejecutar SQL"
+          DTS:DTSID="{C741D99F-B08C-4691-9746-CD3E95F4DFF3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Registrar Inicio"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:EventHandlers>
+            <DTS:EventHandler
+              DTS:refId="Package\Contenedor de secuencias\Registrar Inicio.EventHandlers[OnError]"
+              DTS:CreationName="OnError"
+              DTS:DTSID="{F28CD63D-1760-4A2B-BBD3-A3BBD90F241D}"
+              DTS:EventID="0"
+              DTS:EventName="OnError"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="La propiedad de propagación del evento"
+                  DTS:DTSID="{5442D09F-F625-457A-95C8-71EC60CCC34D}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\Contenedor de secuencias\Registrar Inicio.EventHandlers[OnError]\Tarea Ejecutar SQL"
+                  DTS:CreationName="Microsoft.ExecuteSQLTask"
+                  DTS:Description="Tarea Ejecutar SQL"
+                  DTS:DTSID="{4F570146-6DC6-4C09-9834-576DC1E22AE1}"
+                  DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Tarea Ejecutar SQL"
+                  DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{ACE6F903-05DC-4DFA-9C5C-9D65E3EFFE98}"
+                      SQLTask:SqlStatementSource="INSERT INTO [dbo].[Auditoria]&#xA;           ([tipo]&#xA;           ,[origen]&#xA;           ,[mensaje]&#xA;           ,[fecha])&#xA;     VALUES&#xA;           ('Error'&#xA;           ,'ETL Productos - '+ ?&#xA;           ,?&#xA;           ,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="0"
+                        SQLTask:DtsVariableName="System::SourceName"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="129"
+                        SQLTask:ParameterSize="-1" />
+                      <SQLTask:ParameterBinding
+                        SQLTask:ParameterName="1"
+                        SQLTask:DtsVariableName="System::ErrorDescription"
+                        SQLTask:ParameterDirection="Input"
+                        SQLTask:DataType="129"
+                        SQLTask:ParameterSize="-1" />
+                    </SQLTask:SqlTaskData>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{ACE6F903-05DC-4DFA-9C5C-9D65E3EFFE98}"
+              SQLTask:SqlStatementSource="INSERT INTO [dbo].[Auditoria]&#xA;           ([tipo]&#xA;           ,[origen]&#xA;           ,[mensaje]&#xA;           ,[fecha])&#xA;     VALUES&#xA;           ('Mensaje'&#xA;           ,'ETL Categorias'&#xA;           ,'Inicio Ejecución'&#xA;           ,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción]"
+          DTS:CreationName=""
+          DTS:DTSID="{AF9F844A-C271-453E-8944-5773886F7D71}"
+          DTS:From="Package\Contenedor de secuencias\Registrar Inicio"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción"
+          DTS:To="Package\Contenedor de secuencias\Registrar Categorias" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{60206F17-3872-446B-8521-CBEEE71E58E9}"
+          DTS:From="Package\Contenedor de secuencias\Registrar Categorias"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 1"
+          DTS:To="Package\Contenedor de secuencias\Registrar Finalización" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="sql12">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Contenedor de secuencias\Registrar Categorias"
+          TopLeft="56,107" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Contenedor de secuencias\Registrar Finalización"
+          TopLeft="58,198" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Contenedor de secuencias\Registrar Inicio"
+          TopLeft="57,27" />
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción]"
+          TopLeft="150.5,69">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 1]"
+          TopLeft="151.25,149">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="307,295"
+          Size="307,338"
+          Id="Package\Contenedor de secuencias"
+          TopLeft="380,69" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Contenedor de secuencias\Registrar Categorias">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias"
+          TopLeft="342.25,429" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Contenedor de secuencias\Registrar Categorias\División condicional"
+          TopLeft="342.25,331.666666666667" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB"
+          TopLeft="342.25,137" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Contenedor de secuencias\Registrar Categorias\Combinación de mezcla"
+          TopLeft="342.25,234.333333333333" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera"
+          TopLeft="80,242" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Contenedor de secuencias\Registrar Categorias\Eliminar Categorias"
+          TopLeft="618,336" />
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias\Registrar Categorias.Paths[Salida de origen de OLE DB1]"
+          TopLeft="437.25,179">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.3333333333333"
+              Start="0,0"
+              End="0,47.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias\Registrar Categorias.Paths[Salida de origen de OLE DB]"
+          TopLeft="250,259.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="92.25,0"
+              Start="0,0"
+              End="84.75,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="84.75,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias\Registrar Categorias.Paths[Salida de combinación de mezcla]"
+          TopLeft="437.25,276.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.3333333333333"
+              Start="0,0"
+              End="0,47.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias\Registrar Categorias.Paths[Registrar]"
+          TopLeft="437.25,373.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.3333333333333"
+              Start="0,0"
+              End="0,47.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-20.37869140625,18.2242838541667,40.7573828125,11.384765625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias\Registrar Categorias.Paths[Eliminar]"
+          TopLeft="532.25,354.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85.75,0"
+              Start="0,0"
+              End="78.25,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="78.25,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="20.86130859375,5,36.5273828125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Contenedor de secuencias\Registrar Categorias.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Contenedor de secuencias\Registrar Categorias.EventHandlers[OnError]\Tarea Ejecutar SQL"
+          TopLeft="484,162" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de secuencias\Registrar Categorias\Insertar Categorias">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de secuencias\Registrar Categorias\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de secuencias\Registrar Categorias\Categorias Billetera">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\Contenedor de secuencias\Registrar Finalización.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Contenedor de secuencias\Registrar Finalización.EventHandlers[OnError]\Tarea Ejecutar SQL"
+          TopLeft="464,152" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Contenedor de secuencias\Registrar Inicio.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Contenedor de secuencias\Registrar Inicio.EventHandlers[OnError]\Tarea Ejecutar SQL"
+          TopLeft="505,120" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

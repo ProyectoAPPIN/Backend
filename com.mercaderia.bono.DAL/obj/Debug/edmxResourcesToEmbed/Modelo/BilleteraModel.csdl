@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BilleteraVirtualModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BilleteraEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="AddBonosMasivos">
+      <Parameter Name="json" Mode="In" Type="String" />
+      <Parameter Name="nombreArchivo" Mode="In" Type="String" />
+      <Parameter Name="idEncargado" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddGiftCardsMasivos">
+      <Parameter Name="json" Mode="In" Type="String" />
+      <Parameter Name="nombreArchivo" Mode="In" Type="String" />
+      <Parameter Name="idEncargado" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="TipoDocumento" EntityType="BilleteraVirtualModel.TipoDocumento" />
+    <EntitySet Name="Departamento" EntityType="BilleteraVirtualModel.Departamento" />
+    <EntitySet Name="Institucion" EntityType="BilleteraVirtualModel.Institucion" />
+    <EntitySet Name="Municipio" EntityType="BilleteraVirtualModel.Municipio" />
+    <EntitySet Name="Perfil" EntityType="BilleteraVirtualModel.Perfil" />
+    <EntitySet Name="RegistroSintoma" EntityType="BilleteraVirtualModel.RegistroSintoma" />
+    <EntitySet Name="Sintoma" EntityType="BilleteraVirtualModel.Sintoma" />
+    <EntitySet Name="Usuario" EntityType="BilleteraVirtualModel.Usuario" />
+    <EntitySet Name="Dominio" EntityType="BilleteraVirtualModel.Dominio" />
+    <AssociationSet Name="FK_Municipio_Departamento" Association="BilleteraVirtualModel.FK_Municipio_Departamento">
+      <End Role="Departamento" EntitySet="Departamento" />
+      <End Role="Municipio" EntitySet="Municipio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Institucion_Municipio" Association="BilleteraVirtualModel.FK_Institucion_Municipio">
+      <End Role="Municipio" EntitySet="Municipio" />
+      <End Role="Institucion" EntitySet="Institucion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Perfil" Association="BilleteraVirtualModel.FK_Usuario_Perfil">
+      <End Role="Perfil" EntitySet="Perfil" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegistroSintoma_Sintoma" Association="BilleteraVirtualModel.FK_RegistroSintoma_Sintoma">
+      <End Role="Sintoma" EntitySet="Sintoma" />
+      <End Role="RegistroSintoma" EntitySet="RegistroSintoma" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegistroSintoma_Usuario" Association="BilleteraVirtualModel.FK_RegistroSintoma_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="RegistroSintoma" EntitySet="RegistroSintoma" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TipoDocumento">
+    <Key>
+      <PropertyRef Name="codDocumento" />
+    </Key>
+    <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="codDocumento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomenclatura" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Departamento">
+    <Key>
+      <PropertyRef Name="codDepartamento" />
+    </Key>
+    <Property Name="codDepartamento" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="activo" Type="Boolean" />
+    <NavigationProperty Name="Municipio" Relationship="BilleteraVirtualModel.FK_Municipio_Departamento" FromRole="Departamento" ToRole="Municipio" />
+  </EntityType>
+  <EntityType Name="Institucion">
+    <Key>
+      <PropertyRef Name="codInstitucion" />
+    </Key>
+    <Property Name="codInstitucion" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="nit" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="codMunicipio" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="activo" Type="Boolean" />
+    <NavigationProperty Name="Municipio" Relationship="BilleteraVirtualModel.FK_Institucion_Municipio" FromRole="Institucion" ToRole="Municipio" />
+  </EntityType>
+  <EntityType Name="Municipio">
+    <Key>
+      <PropertyRef Name="codMunicipio" />
+    </Key>
+    <Property Name="codMunicipio" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="codDepartamento" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="activo" Type="Boolean" />
+    <NavigationProperty Name="Departamento" Relationship="BilleteraVirtualModel.FK_Municipio_Departamento" FromRole="Municipio" ToRole="Departamento" />
+    <NavigationProperty Name="Institucion" Relationship="BilleteraVirtualModel.FK_Institucion_Municipio" FromRole="Municipio" ToRole="Institucion" />
+  </EntityType>
+  <EntityType Name="Perfil">
+    <Key>
+      <PropertyRef Name="codPerfil" />
+    </Key>
+    <Property Name="codPerfil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="activo" Type="Boolean" />
+    <NavigationProperty Name="Usuario" Relationship="BilleteraVirtualModel.FK_Usuario_Perfil" FromRole="Perfil" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="RegistroSintoma">
+    <Key>
+      <PropertyRef Name="codRegistro" />
+    </Key>
+    <Property Name="codRegistro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codSintoma" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="activo" Type="Boolean" />
+    <NavigationProperty Name="Sintoma" Relationship="BilleteraVirtualModel.FK_RegistroSintoma_Sintoma" FromRole="RegistroSintoma" ToRole="Sintoma" />
+    <Property Name="codUsuario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Usuario" Relationship="BilleteraVirtualModel.FK_RegistroSintoma_Usuario" FromRole="RegistroSintoma" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Sintoma">
+    <Key>
+      <PropertyRef Name="codSintoma" />
+    </Key>
+    <Property Name="codSintoma" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RegistroSintoma" Relationship="BilleteraVirtualModel.FK_RegistroSintoma_Sintoma" FromRole="Sintoma" ToRole="RegistroSintoma" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="codUsuario" />
+    </Key>
+    <Property Name="codUsuario" Type="Int32" Nullable="false" />
+    <Property Name="nombres" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="apellidos" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TipoDocumento" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="numeroDocumento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="celular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="codPerfil" Type="Int32" Nullable="false" />
+    <Property Name="codInstitucion" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sexo" Type="Boolean" />
+    <Property Name="activo" Type="Boolean" />
+    <NavigationProperty Name="Perfil" Relationship="BilleteraVirtualModel.FK_Usuario_Perfil" FromRole="Usuario" ToRole="Perfil" />
+    <Property Name="codigoActivacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="codActivacionExpira" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="RegistroSintoma" Relationship="BilleteraVirtualModel.FK_RegistroSintoma_Usuario" FromRole="Usuario" ToRole="RegistroSintoma" />
+  </EntityType>
+  <EntityType Name="Dominio">
+    <Key>
+      <PropertyRef Name="nombre" />
+      <PropertyRef Name="valor" />
+      <PropertyRef Name="descripcion" />
+    </Key>
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="valor" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Municipio_Departamento">
+    <End Type="BilleteraVirtualModel.Departamento" Role="Departamento" Multiplicity="1" />
+    <End Type="BilleteraVirtualModel.Municipio" Role="Municipio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamento">
+        <PropertyRef Name="codDepartamento" />
+      </Principal>
+      <Dependent Role="Municipio">
+        <PropertyRef Name="codDepartamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Institucion_Municipio">
+    <End Type="BilleteraVirtualModel.Municipio" Role="Municipio" Multiplicity="1" />
+    <End Type="BilleteraVirtualModel.Institucion" Role="Institucion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Municipio">
+        <PropertyRef Name="codMunicipio" />
+      </Principal>
+      <Dependent Role="Institucion">
+        <PropertyRef Name="codMunicipio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Perfil">
+    <End Type="BilleteraVirtualModel.Perfil" Role="Perfil" Multiplicity="1" />
+    <End Type="BilleteraVirtualModel.Usuario" Role="Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Perfil">
+        <PropertyRef Name="codPerfil" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="codPerfil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegistroSintoma_Sintoma">
+    <End Type="BilleteraVirtualModel.Sintoma" Role="Sintoma" Multiplicity="1" />
+    <End Type="BilleteraVirtualModel.RegistroSintoma" Role="RegistroSintoma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sintoma">
+        <PropertyRef Name="codSintoma" />
+      </Principal>
+      <Dependent Role="RegistroSintoma">
+        <PropertyRef Name="codSintoma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegistroSintoma_Usuario">
+    <End Type="BilleteraVirtualModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="BilleteraVirtualModel.RegistroSintoma" Role="RegistroSintoma" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="codUsuario" />
+      </Principal>
+      <Dependent Role="RegistroSintoma">
+        <PropertyRef Name="codUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

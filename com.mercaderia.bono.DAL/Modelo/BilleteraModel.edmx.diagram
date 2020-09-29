@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a609b77bfa0f479c8ad2d1311e5ee3f6" Name="Diagram1">
+        <EntityTypeShape EntityType="BilleteraVirtualModel.TipoDocumento" Width="1.5" PointX="1.625" PointY="1.375" />
+        <EntityTypeShape EntityType="BilleteraVirtualModel.Departamento" Width="1.5" PointX="4.75" PointY="1.25" />
+        <EntityTypeShape EntityType="BilleteraVirtualModel.Institucion" Width="1.5" PointX="9.25" PointY="1" />
+        <EntityTypeShape EntityType="BilleteraVirtualModel.Municipio" Width="1.5" PointX="7" PointY="1" />
+        <EntityTypeShape EntityType="BilleteraVirtualModel.Perfil" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="BilleteraVirtualModel.RegistroSintoma" Width="1.5" PointX="8" PointY="4.875" />
+        <EntityTypeShape EntityType="BilleteraVirtualModel.Sintoma" Width="1.5" PointX="5.75" PointY="5.125" />
+        <EntityTypeShape EntityType="BilleteraVirtualModel.Usuario" Width="1.5" PointX="3" PointY="5" />
+        <EntityTypeShape EntityType="BilleteraVirtualModel.Dominio" Width="1.5" PointX="5.75" PointY="7.75" />
+        <AssociationConnector Association="BilleteraVirtualModel.FK_Municipio_Departamento" />
+        <AssociationConnector Association="BilleteraVirtualModel.FK_Institucion_Municipio" />
+        <AssociationConnector Association="BilleteraVirtualModel.FK_Usuario_Perfil" />
+        <AssociationConnector Association="BilleteraVirtualModel.FK_RegistroSintoma_Sintoma" />
+        <AssociationConnector Association="BilleteraVirtualModel.FK_RegistroSintoma_Usuario" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

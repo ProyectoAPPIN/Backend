@@ -1,0 +1,14 @@
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Notificaciones\bin\Release\com.mercaderia.bono.Notificaciones.dll
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Notificaciones\bin\Release\com.mercaderia.bono.Notificaciones.pdb
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Notificaciones\bin\Release\com.mercaderia.bono.Entidades.dll
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Notificaciones\bin\Release\com.mercaderia.bono.Utilidades.Excepciones.dll
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Notificaciones\bin\Release\Newtonsoft.Json.dll
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Notificaciones\bin\Release\com.mercaderia.bono.Entidades.pdb
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Notificaciones\bin\Release\com.mercaderia.bono.Entidades.dll.config
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Notificaciones\bin\Release\com.mercaderia.bono.Utilidades.Excepciones.pdb
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Notificaciones\bin\Release\Newtonsoft.Json.xml
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Notificaciones\obj\Release\com.mercaderia.bono.Notificaciones.csprojAssemblyReference.cache
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Notificaciones\obj\Release\com.mercaderia.bono.Notificaciones.csproj.CoreCompileInputs.cache
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Notificaciones\obj\Release\com.mercaderia.bono.Notificaciones.csproj.CopyComplete
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Notificaciones\obj\Release\com.mercaderia.bono.Notificaciones.dll
+C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Notificaciones\obj\Release\com.mercaderia.bono.Notificaciones.pdb

@@ -1,0 +1,3068 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/23/2020 11:08:28 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-920O5U50"
+  DTS:CreatorName="LAPTOP-920O5U50\Johana"
+  DTS:DTSID="{946F0589-8039-4E2A-8EC8-5003FC034DA0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.93"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="Productos"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="78"
+  DTS:VersionGUID="{ABF95984-FB9B-4DC6-BA43-7D0743057CB7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BDBilleteraVirtual]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A4FCA622-AE3A-486D-8809-1DD871039D74}"
+      DTS:ObjectName="BDBilleteraVirtual">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.100.80\mssqlserver2014;User ID=sa;Initial Catalog=BDBilleteraVirtual;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Consultas]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C2B907EA-B1AF-4A76-80A0-2A01769DB4C8}"
+      DTS:ObjectName="Consultas">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=192.168.100.80\mssqlserver2014;User ID=sa;Initial Catalog=Consultas;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C3DCABC6-7601-4026-85D6-8EA291A42A50}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CodCiudad">
+      <DTS:VariableValue
+        DTS:DataType="8">11001</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E70E8CE5-32DD-406A-9260-8758CCC1A015}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ObjCiudad">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9288601D-62ED-4FCE-9297-58086F310C64}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT * FROM [dbo].[fnc_items_catalogo_ciudad_online] ('&quot;+ @[User::CodCiudad]+&quot;' )&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="QueryProductos">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT * FROM [dbo].[fnc_items_catalogo_ciudad_online] ('11001' )</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Eliminar Registros"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{82F84CD5-7FC8-492B-8E47-FD18ED38783B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Eliminar Registros"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Eliminar Registros.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{BB800841-0E06-4039-96AE-F412F773CD90}"
+          DTS:EventID="0"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="La propiedad de propagación del evento"
+              DTS:DTSID="{F855CD62-E213-493A-A666-D4A0E07693B5}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Eliminar Registros.EventHandlers[OnError]\Tarea Ejecutar SQL"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Tarea Ejecutar SQL"
+              DTS:DTSID="{44A908E0-B4CF-4F23-AB53-E9091302A945}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Tarea Ejecutar SQL"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A4FCA622-AE3A-486D-8809-1DD871039D74}"
+                  SQLTask:SqlStatementSource="INSERT INTO [dbo].[Auditoria]&#xA;           ([tipo]&#xA;           ,[origen]&#xA;           ,[mensaje]&#xA;           ,[fecha])&#xA;     VALUES&#xA;           ('Error'&#xA;           ,'ETL Productos -'+ ?&#xA;           ,?&#xA;           ,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="System::SourceName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="System::ErrorDescription"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Eliminar Registros\Combinación de mezcla"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Combinación de mezcla;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Combina dos flujos de datos ordenados en uno solo mediante la combinación FULL, LEFT o INNER. Se recomienda esta transformación cuando se pueden ordenar los flujos de datos en sus orígenes."
+              name="Combinación de mezcla"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de combinación que se debe realizar."
+                  name="JoinType"
+                  typeConverter="JoinType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número de columnas de la clave de ordenación."
+                  name="NumKeyColumns">2</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores NULL se tratan como valores iguales."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indica la cantidad máxima solicitada de búferes por entrada antes del bloqueo."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Eliminar Registros\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla]"
+                  hasSideEffects="true"
+                  name="Entrada izquierda de combinación de mezcla">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Eliminar Registros\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[IdItem]"
+                      cachedDataType="i4"
+                      cachedName="IdItem"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Eliminar Registros\Productos.Outputs[Salida de origen de OLE DB].Columns[IdItem]" />
+                    <inputColumn
+                      refId="Package\Eliminar Registros\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[codigo_ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="codigo_ciudad"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\Eliminar Registros\Productos.Outputs[Salida de origen de OLE DB].Columns[codigo_ciudad]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Eliminar Registros\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla]"
+                  hasSideEffects="true"
+                  name="Entrada derecha de combinación de mezcla">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Eliminar Registros\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[idItem]"
+                      cachedDataType="i4"
+                      cachedName="idItem"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de origen de OLE DB].Columns[idItem]" />
+                    <inputColumn
+                      refId="Package\Eliminar Registros\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[codigoCiudad]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="codigoCiudad"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de origen de OLE DB].Columns[codigoCiudad]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Eliminar Registros\Combinación de mezcla.Outputs[Salida de combinación de mezcla]"
+                  isSorted="true"
+                  name="Salida de combinación de mezcla">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Eliminar Registros\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[IdItem]"
+                      dataType="i4"
+                      lineageId="Package\Eliminar Registros\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[IdItem]"
+                      name="IdItem"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\Eliminar Registros\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[IdItem]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Eliminar Registros\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codigo_ciudad]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\Eliminar Registros\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codigo_ciudad]"
+                      name="codigo_ciudad"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\Eliminar Registros\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[codigo_ciudad]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Eliminar Registros\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[idItemBilletera]"
+                      dataType="i4"
+                      lineageId="Package\Eliminar Registros\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[idItemBilletera]"
+                      name="idItemBilletera">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\Eliminar Registros\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[idItem]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Eliminar Registros\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codigoCiudadBilletera]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\Eliminar Registros\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codigoCiudadBilletera]"
+                      name="codigoCiudadBilletera">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\Eliminar Registros\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[codigoCiudad]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Eliminar Registros\División condicional"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="División condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Enruta filas de datos a diferentes salidas según el contenido de los datos. Se usan condiciones (expresiones de SSIS) para especificar las filas que se van a enrutar. Por ejemplo, se usa para separar los registros que deben limpiarse de los registros listos para ser cargados o para enrutar solamente un subconjunto de registros."
+              name="División condicional"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Eliminar Registros\División condicional.Inputs[Entrada de división condicional]"
+                  description="Entrada en la transformación División condicional"
+                  name="Entrada de división condicional">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Eliminar Registros\División condicional.Inputs[Entrada de división condicional].Columns[IdItem]"
+                      cachedDataType="i4"
+                      cachedName="IdItem"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Eliminar Registros\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[IdItem]" />
+                    <inputColumn
+                      refId="Package\Eliminar Registros\División condicional.Inputs[Entrada de división condicional].Columns[codigo_ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="codigo_ciudad"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\Eliminar Registros\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codigo_ciudad]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Eliminar Registros\División condicional.Outputs[Elimininar]"
+                  description="Salida 1 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Elimininar"
+                  synchronousInputId="Package\Eliminar Registros\División condicional.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">[ISNULL](#{Package\Eliminar Registros\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[IdItem]}) &amp;&amp; [ISNULL](#{Package\Eliminar Registros\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codigo_ciudad]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(IdItem) &amp;&amp; ISNULL(codigo_ciudad)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Eliminar Registros\División condicional.Outputs[Salida predeterminada de división condicional]"
+                  description="Salida predeterminada de la transformación División condicional"
+                  exclusionGroup="1"
+                  name="Salida predeterminada de división condicional"
+                  synchronousInputId="Package\Eliminar Registros\División condicional.Inputs[Entrada de división condicional]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Eliminar Registros\División condicional.Outputs[Salida de error de división condicional]"
+                  description="Salida de error de la transformación División condicional"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de división condicional"
+                  synchronousInputId="Package\Eliminar Registros\División condicional.Inputs[Entrada de división condicional]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Eliminar Registros\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Eliminar Registros\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Eliminar Registros\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Eliminar Registros\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Eliminar Registros\Eliminar Registros"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+              name="Eliminar Registros"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">delete Producto where idItem=? and codigoCiudad=?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Eliminar Registros\Eliminar Registros.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[BDBilleteraVirtual]"
+                  connectionManagerRefId="Package.ConnectionManagers[BDBilleteraVirtual]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Eliminar Registros\Eliminar Registros.Inputs[Entrada de comando de OLE DB]"
+                  errorOrTruncationOperation="Ejecución de comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de comando de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Eliminar Registros\Eliminar Registros.Inputs[Entrada de comando de OLE DB].Columns[idItemBilletera]"
+                      cachedDataType="i4"
+                      cachedName="idItemBilletera"
+                      externalMetadataColumnId="Package\Eliminar Registros\Eliminar Registros.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\Eliminar Registros\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[idItemBilletera]" />
+                    <inputColumn
+                      refId="Package\Eliminar Registros\Eliminar Registros.Inputs[Entrada de comando de OLE DB].Columns[codigoCiudadBilletera]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="codigoCiudadBilletera"
+                      externalMetadataColumnId="Package\Eliminar Registros\Eliminar Registros.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\Eliminar Registros\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[codigoCiudadBilletera]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Eliminar Registros\Eliminar Registros.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Eliminar Registros\Eliminar Registros.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="80"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Eliminar Registros\Eliminar Registros.Outputs[Salida de comando de OLE DB]"
+                  exclusionGroup="1"
+                  name="Salida de comando de OLE DB"
+                  synchronousInputId="Package\Eliminar Registros\Eliminar Registros.Inputs[Entrada de comando de OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Eliminar Registros\Eliminar Registros.Outputs[Salida de error de comando de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de comando de OLE DB"
+                  synchronousInputId="Package\Eliminar Registros\Eliminar Registros.Inputs[Entrada de comando de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Eliminar Registros\Eliminar Registros.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Eliminar Registros\Eliminar Registros.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Eliminar Registros\Eliminar Registros.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Eliminar Registros\Eliminar Registros.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Eliminar Registros\Productos"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Productos"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select distinct
+       IdItem,
+       CAST(codigo_ciudad AS nvarchar(80)) codigo_ciudad        
+       from VW_Teletendero_Productos_Ciudades
+       order by IdItem,
+       CAST(codigo_ciudad AS nvarchar(80))</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Eliminar Registros\Productos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Consultas]"
+                  connectionManagerRefId="Package.ConnectionManagers[Consultas]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Eliminar Registros\Productos.Outputs[Salida de origen de OLE DB]"
+                  isSorted="true"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Eliminar Registros\Productos.Outputs[Salida de origen de OLE DB].Columns[IdItem]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Eliminar Registros\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[IdItem]"
+                      lineageId="Package\Eliminar Registros\Productos.Outputs[Salida de origen de OLE DB].Columns[IdItem]"
+                      name="IdItem"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Eliminar Registros\Productos.Outputs[Salida de origen de OLE DB].Columns[codigo_ciudad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Eliminar Registros\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[codigo_ciudad]"
+                      length="80"
+                      lineageId="Package\Eliminar Registros\Productos.Outputs[Salida de origen de OLE DB].Columns[codigo_ciudad]"
+                      name="codigo_ciudad"
+                      sortKeyPosition="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Eliminar Registros\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[IdItem]"
+                      dataType="i4"
+                      name="IdItem" />
+                    <externalMetadataColumn
+                      refId="Package\Eliminar Registros\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[codigo_ciudad]"
+                      dataType="wstr"
+                      length="80"
+                      name="codigo_ciudad" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Eliminar Registros\Productos.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Eliminar Registros\Productos.Outputs[Salida de error de origen de OLE DB].Columns[IdItem]"
+                      dataType="i4"
+                      lineageId="Package\Eliminar Registros\Productos.Outputs[Salida de error de origen de OLE DB].Columns[IdItem]"
+                      name="IdItem" />
+                    <outputColumn
+                      refId="Package\Eliminar Registros\Productos.Outputs[Salida de error de origen de OLE DB].Columns[codigo_ciudad]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\Eliminar Registros\Productos.Outputs[Salida de error de origen de OLE DB].Columns[codigo_ciudad]"
+                      name="codigo_ciudad" />
+                    <outputColumn
+                      refId="Package\Eliminar Registros\Productos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Eliminar Registros\Productos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Eliminar Registros\Productos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Eliminar Registros\Productos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Eliminar Registros\Productos Billetera"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Productos Billetera"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select idItem, codigoCiudad from Producto order by idItem, codigoCiudad</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Eliminar Registros\Productos Billetera.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[BDBilleteraVirtual]"
+                  connectionManagerRefId="Package.ConnectionManagers[BDBilleteraVirtual]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de origen de OLE DB]"
+                  isSorted="true"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de origen de OLE DB].Columns[idItem]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de origen de OLE DB].ExternalColumns[idItem]"
+                      lineageId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de origen de OLE DB].Columns[idItem]"
+                      name="idItem"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de origen de OLE DB].Columns[codigoCiudad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de origen de OLE DB].ExternalColumns[codigoCiudad]"
+                      length="80"
+                      lineageId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de origen de OLE DB].Columns[codigoCiudad]"
+                      name="codigoCiudad"
+                      sortKeyPosition="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de origen de OLE DB].ExternalColumns[idItem]"
+                      dataType="i4"
+                      name="idItem" />
+                    <externalMetadataColumn
+                      refId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de origen de OLE DB].ExternalColumns[codigoCiudad]"
+                      dataType="wstr"
+                      length="80"
+                      name="codigoCiudad" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de error de origen de OLE DB].Columns[idItem]"
+                      dataType="i4"
+                      lineageId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de error de origen de OLE DB].Columns[idItem]"
+                      name="idItem" />
+                    <outputColumn
+                      refId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de error de origen de OLE DB].Columns[codigoCiudad]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de error de origen de OLE DB].Columns[codigoCiudad]"
+                      name="codigoCiudad" />
+                    <outputColumn
+                      refId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Eliminar Registros.Paths[Elimininar]"
+              endId="Package\Eliminar Registros\Eliminar Registros.Inputs[Entrada de comando de OLE DB]"
+              name="Elimininar"
+              startId="Package\Eliminar Registros\División condicional.Outputs[Elimininar]" />
+            <path
+              refId="Package\Eliminar Registros.Paths[Salida de combinación de mezcla]"
+              endId="Package\Eliminar Registros\División condicional.Inputs[Entrada de división condicional]"
+              name="Salida de combinación de mezcla"
+              startId="Package\Eliminar Registros\Combinación de mezcla.Outputs[Salida de combinación de mezcla]" />
+            <path
+              refId="Package\Eliminar Registros.Paths[Salida de origen de OLE DB]"
+              endId="Package\Eliminar Registros\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Eliminar Registros\Productos Billetera.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\Eliminar Registros.Paths[Salida de origen de OLE DB1]"
+              endId="Package\Eliminar Registros\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Eliminar Registros\Productos.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insertar Productos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{9A8BCC47-414A-44A7-9318-0A3E8598A58A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar Productos"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Insertar Productos.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{1578A141-4798-4723-B223-FCF3A91B044A}"
+          DTS:EventID="0"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="La propiedad de propagación del evento"
+              DTS:DTSID="{DA875771-B133-4F3A-AD1F-78258A5F3029}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Insertar Productos.EventHandlers[OnError]\Tarea Ejecutar SQL"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Tarea Ejecutar SQL"
+              DTS:DTSID="{C0376AA7-4358-4552-A666-F41BC2546E89}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Tarea Ejecutar SQL"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A4FCA622-AE3A-486D-8809-1DD871039D74}"
+                  SQLTask:SqlStatementSource="INSERT INTO [dbo].[Auditoria]&#xA;           ([tipo]&#xA;           ,[origen]&#xA;           ,[mensaje]&#xA;           ,[fecha])&#xA;     VALUES&#xA;           ('Error'&#xA;           ,'ETL Productos -'+ ?&#xA;           ,?&#xA;           ,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="System::SourceName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="System::ErrorDescription"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Insertar Productos\Actualizar destino"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+              name="Actualizar destino"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[Producto] SET [categoria] = ?,[codCategoria] = ?,[codSubCategoria] = ?,[descripcion] = ?,[imageUrl] = ?,[nombreMarca] = ?,[PesoUnidadMedida] = ?,[precio] = ?,[precioUnidadMedida] = ?,[presentacion] = ?,[referencia] = ?,[subCategoria] = ?,[tipoMarca] = ?,[unidadMedida] = ? WHERE [codigoCiudad] = ? AND [idItem] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insertar Productos\Actualizar destino.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[BDBilleteraVirtual]"
+                  connectionManagerRefId="Package.ConnectionManagers[BDBilleteraVirtual]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB]"
+                  errorOrTruncationOperation="Ejecución de comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de comando de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].Columns[Categoria]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Categoria"
+                      externalMetadataColumnId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Categoria]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].Columns[cod_categoria]"
+                      cachedDataType="i4"
+                      cachedName="cod_categoria"
+                      externalMetadataColumnId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[cod_categoria]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].Columns[codigo_ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="codigo_ciudad"
+                      externalMetadataColumnId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_14]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[codigo_ciudad]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].Columns[cod_subcategoria]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="cod_subcategoria"
+                      externalMetadataColumnId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_2]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[cod_subcategoria]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].Columns[Descripcion]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Descripcion"
+                      externalMetadataColumnId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_3]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Descripcion]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].Columns[IdItem]"
+                      cachedDataType="i4"
+                      cachedName="IdItem"
+                      externalMetadataColumnId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_15]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[IdItem]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].Columns[image_url]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="image_url"
+                      externalMetadataColumnId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_4]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[image_url]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].Columns[NombreMarca]"
+                      cachedDataType="wstr"
+                      cachedLength="2000"
+                      cachedName="NombreMarca"
+                      externalMetadataColumnId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_5]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[NombreMarca]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].Columns[PesoUnidadMedida]"
+                      cachedDataType="numeric"
+                      cachedName="PesoUnidadMedida"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_6]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[PesoUnidadMedida]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].Columns[Precio]"
+                      cachedDataType="cy"
+                      cachedName="Precio"
+                      externalMetadataColumnId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_7]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Precio]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].Columns[PrecioUnidadMedida]"
+                      cachedDataType="numeric"
+                      cachedName="PrecioUnidadMedida"
+                      cachedPrecision="32"
+                      cachedScale="15"
+                      externalMetadataColumnId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_8]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[PrecioUnidadMedida]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].Columns[Presentacion]"
+                      cachedDataType="wstr"
+                      cachedLength="2000"
+                      cachedName="Presentacion"
+                      externalMetadataColumnId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_9]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Presentacion]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].Columns[Referencia]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Referencia"
+                      externalMetadataColumnId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_10]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Referencia]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].Columns[SubCategoria]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="SubCategoria"
+                      externalMetadataColumnId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_11]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[SubCategoria]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].Columns[TipoMarca]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="TipoMarca"
+                      externalMetadataColumnId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_12]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[TipoMarca]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].Columns[UnidadMedida]"
+                      cachedDataType="wstr"
+                      cachedLength="2000"
+                      cachedName="UnidadMedida"
+                      externalMetadataColumnId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_13]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[UnidadMedida]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="120"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="100"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_4]"
+                      dataType="wstr"
+                      length="1000"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_5]"
+                      dataType="wstr"
+                      length="2000"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_6]"
+                      dataType="numeric"
+                      name="Param_6"
+                      precision="10"
+                      scale="2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_7]"
+                      dataType="cy"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_8]"
+                      dataType="numeric"
+                      name="Param_8"
+                      precision="32"
+                      scale="15">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_9]"
+                      dataType="wstr"
+                      length="2000"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_10]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_11]"
+                      codePage="1252"
+                      dataType="str"
+                      length="120"
+                      name="Param_11">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_12]"
+                      dataType="wstr"
+                      length="120"
+                      name="Param_12">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_13]"
+                      dataType="wstr"
+                      length="2000"
+                      name="Param_13">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_14]"
+                      dataType="wstr"
+                      length="80"
+                      name="Param_14">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_15]"
+                      dataType="i4"
+                      name="Param_15">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insertar Productos\Actualizar destino.Outputs[Salida de comando de OLE DB]"
+                  exclusionGroup="1"
+                  name="Salida de comando de OLE DB"
+                  synchronousInputId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insertar Productos\Actualizar destino.Outputs[Salida de error de comando de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de comando de OLE DB"
+                  synchronousInputId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insertar Productos\Actualizar destino.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Actualizar destino.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insertar Productos\Actualizar destino.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insertar Productos\Dimensión de variación lenta"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Dimensión de variación lenta;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;3"
+              description="Actualiza una dimensión del almacenamiento de datos de SQL Server Analysis Services. Actualiza los registros de dimensión existentes e inserta los registros de dimensión que faltan. Por ejemplo, se actualiza la tabla DimProduct de la base de datos OLAP AdventureWorksDW con datos procedentes de la tabla Products de la base de datos OLTP AdventureWorks."
+              name="Dimensión de variación lenta"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SELECT utilizada para crear un conjunto de filas de esquema."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [categoria], [codCategoria], [codigoCiudad], [codSubCategoria], [descripcion], [idItem], [imageUrl], [nombreMarca], [PesoUnidadMedida], [precio], [precioUnidadMedida], [presentacion], [referencia], [subCategoria], [tipoMarca], [unidadMedida] FROM [dbo].[Producto]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la cláusula WHERE de la instrucción SELECT que selecciona la fila actual de entre filas con claves empresariales idénticas."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las actualizaciones de atributos históricos se dirigen a la salida de transformación para actualizaciones de atributos variables."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se produce un error de transformación cuando las columnas con atributos fijos contienen cambios."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre de columna para el miembro deducido."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se detectan las actualizaciones de miembros deducidos."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se produce un error de transformación cuando se produce un error de búsqueda de un registro existente."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica que todas las filas de la entrada sean nuevas o que la transformación detecte el tipo de cambio."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insertar Productos\Dimensión de variación lenta.Connections[LookupConnection]"
+                  connectionManagerID="Package.ConnectionManagers[BDBilleteraVirtual]"
+                  connectionManagerRefId="Package.ConnectionManagers[BDBilleteraVirtual]"
+                  description="Define la conexión que se debe usar para búsquedas en la tabla de dimensiones"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]"
+                  name="Entrada de dimensión de variación lenta">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[Categoria]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Categoria"
+                      externalMetadataColumnId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[categoria]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Categoria]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[cod_categoria]"
+                      cachedDataType="i4"
+                      cachedName="cod_categoria"
+                      externalMetadataColumnId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[codCategoria]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[cod_categoria]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[codigo_ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="codigo_ciudad"
+                      externalMetadataColumnId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[codigoCiudad]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[codigo_ciudad]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[cod_subcategoria]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="cod_subcategoria"
+                      externalMetadataColumnId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[codSubCategoria]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[cod_subcategoria]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[Descripcion]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Descripcion"
+                      externalMetadataColumnId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[descripcion]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Descripcion]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[IdItem]"
+                      cachedDataType="i4"
+                      cachedName="IdItem"
+                      externalMetadataColumnId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[idItem]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[IdItem]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[image_url]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="image_url"
+                      externalMetadataColumnId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[imageUrl]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[image_url]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[NombreMarca]"
+                      cachedDataType="wstr"
+                      cachedLength="2000"
+                      cachedName="NombreMarca"
+                      externalMetadataColumnId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[nombreMarca]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[NombreMarca]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[PesoUnidadMedida]"
+                      cachedDataType="numeric"
+                      cachedName="PesoUnidadMedida"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[PesoUnidadMedida]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[PesoUnidadMedida]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[Precio]"
+                      cachedDataType="cy"
+                      cachedName="Precio"
+                      externalMetadataColumnId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[precio]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Precio]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[PrecioUnidadMedida]"
+                      cachedDataType="numeric"
+                      cachedName="PrecioUnidadMedida"
+                      cachedPrecision="32"
+                      cachedScale="15"
+                      externalMetadataColumnId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[precioUnidadMedida]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[PrecioUnidadMedida]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[Presentacion]"
+                      cachedDataType="wstr"
+                      cachedLength="2000"
+                      cachedName="Presentacion"
+                      externalMetadataColumnId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[presentacion]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Presentacion]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[Referencia]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Referencia"
+                      externalMetadataColumnId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[referencia]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Referencia]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[SubCategoria]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="SubCategoria"
+                      externalMetadataColumnId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[subCategoria]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[SubCategoria]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[TipoMarca]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="TipoMarca"
+                      externalMetadataColumnId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[tipoMarca]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[TipoMarca]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[UnidadMedida]"
+                      cachedDataType="wstr"
+                      cachedLength="2000"
+                      cachedName="UnidadMedida"
+                      externalMetadataColumnId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[unidadMedida]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[UnidadMedida]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[categoria]"
+                      dataType="wstr"
+                      length="120"
+                      name="categoria" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[codCategoria]"
+                      dataType="i4"
+                      name="codCategoria" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[codigoCiudad]"
+                      dataType="wstr"
+                      length="80"
+                      name="codigoCiudad" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[codSubCategoria]"
+                      dataType="wstr"
+                      length="50"
+                      name="codSubCategoria" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[descripcion]"
+                      dataType="wstr"
+                      length="50"
+                      name="descripcion" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[idItem]"
+                      dataType="i4"
+                      name="idItem" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[imageUrl]"
+                      dataType="wstr"
+                      length="1000"
+                      name="imageUrl" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[nombreMarca]"
+                      dataType="wstr"
+                      length="1000"
+                      name="nombreMarca" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[PesoUnidadMedida]"
+                      dataType="numeric"
+                      name="PesoUnidadMedida"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[precio]"
+                      dataType="cy"
+                      name="precio" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[precioUnidadMedida]"
+                      dataType="numeric"
+                      name="precioUnidadMedida"
+                      precision="32"
+                      scale="15" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[presentacion]"
+                      dataType="wstr"
+                      length="1000"
+                      name="presentacion" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[referencia]"
+                      dataType="wstr"
+                      length="50"
+                      name="referencia" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[subCategoria]"
+                      dataType="wstr"
+                      length="120"
+                      name="subCategoria" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[tipoMarca]"
+                      dataType="wstr"
+                      length="120"
+                      name="tipoMarca" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[unidadMedida]"
+                      dataType="wstr"
+                      length="50"
+                      name="unidadMedida" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insertar Productos\Dimensión de variación lenta.Outputs[Salida sin cambios]"
+                  description="Filas sin cambios"
+                  exclusionGroup="1"
+                  name="Salida sin cambios"
+                  synchronousInputId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insertar Productos\Dimensión de variación lenta.Outputs[Nueva salida]"
+                  description="Nuevas filas"
+                  exclusionGroup="1"
+                  name="Nueva salida"
+                  synchronousInputId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insertar Productos\Dimensión de variación lenta.Outputs[Salida de atributo fijo]"
+                  description="Filas con cambios en columnas etiquetadas FixedAttribute"
+                  exclusionGroup="1"
+                  name="Salida de atributo fijo"
+                  synchronousInputId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insertar Productos\Dimensión de variación lenta.Outputs[Salida de actualizaciones de atributos variables]"
+                  description="Estas filas contienen información nueva para cambios de columnas ChangingAttribute (tipo 1)"
+                  exclusionGroup="1"
+                  name="Salida de actualizaciones de atributos variables"
+                  synchronousInputId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insertar Productos\Dimensión de variación lenta.Outputs[Salida de inserciones de atributos históricos]"
+                  description="Los cambios de HistoricalAttribute (tipo 2) crean estas nuevas filas"
+                  exclusionGroup="2"
+                  name="Salida de inserciones de atributos históricos"
+                  synchronousInputId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insertar Productos\Dimensión de variación lenta.Outputs[Salida de actualizaciones de miembros deducidos]"
+                  description="Información para actualizar fila de dimensión inicial sin rellenar"
+                  exclusionGroup="1"
+                  name="Salida de actualizaciones de miembros deducidos"
+                  synchronousInputId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insertar Productos\Insertar destino"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Insertar destino"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[Producto]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insertar Productos\Insertar destino.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[BDBilleteraVirtual]"
+                  connectionManagerRefId="Package.ConnectionManagers[BDBilleteraVirtual]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[IdItem]"
+                      cachedDataType="i4"
+                      cachedName="IdItem"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[idItem]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[IdItem]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[codigo_ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="codigo_ciudad"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[codigoCiudad]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[codigo_ciudad]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[Referencia]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Referencia"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[referencia]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Referencia]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[Descripcion]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Descripcion"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[descripcion]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Descripcion]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[Categoria]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Categoria"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[categoria]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Categoria]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[SubCategoria]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="SubCategoria"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[subCategoria]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[SubCategoria]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[TipoMarca]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="TipoMarca"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[tipoMarca]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[TipoMarca]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[NombreMarca]"
+                      cachedDataType="wstr"
+                      cachedLength="2000"
+                      cachedName="NombreMarca"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombreMarca]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[NombreMarca]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[PesoUnidadMedida]"
+                      cachedDataType="numeric"
+                      cachedName="PesoUnidadMedida"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[PesoUnidadMedida]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[PesoUnidadMedida]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[UnidadMedida]"
+                      cachedDataType="wstr"
+                      cachedLength="2000"
+                      cachedName="UnidadMedida"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[unidadMedida]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[UnidadMedida]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[Presentacion]"
+                      cachedDataType="wstr"
+                      cachedLength="2000"
+                      cachedName="Presentacion"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[presentacion]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Presentacion]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[Precio]"
+                      cachedDataType="cy"
+                      cachedName="Precio"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[precio]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Precio]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[PrecioUnidadMedida]"
+                      cachedDataType="numeric"
+                      cachedName="PrecioUnidadMedida"
+                      cachedPrecision="32"
+                      cachedScale="15"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[precioUnidadMedida]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[PrecioUnidadMedida]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[image_url]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="image_url"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[imageUrl]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[image_url]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[cod_categoria]"
+                      cachedDataType="i4"
+                      cachedName="cod_categoria"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[codCategoria]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[cod_categoria]" />
+                    <inputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[cod_subcategoria]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="cod_subcategoria"
+                      externalMetadataColumnId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[codSubCategoria]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[cod_subcategoria]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[idItem]"
+                      dataType="i4"
+                      name="idItem" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[codigoCiudad]"
+                      dataType="wstr"
+                      length="80"
+                      name="codigoCiudad" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[referencia]"
+                      dataType="wstr"
+                      length="50"
+                      name="referencia" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[descripcion]"
+                      dataType="wstr"
+                      length="50"
+                      name="descripcion" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[categoria]"
+                      dataType="wstr"
+                      length="120"
+                      name="categoria" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[subCategoria]"
+                      codePage="1252"
+                      dataType="str"
+                      length="120"
+                      name="subCategoria" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[tipoMarca]"
+                      dataType="wstr"
+                      length="120"
+                      name="tipoMarca" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[nombreMarca]"
+                      dataType="wstr"
+                      length="2000"
+                      name="nombreMarca" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[PesoUnidadMedida]"
+                      dataType="numeric"
+                      name="PesoUnidadMedida"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[unidadMedida]"
+                      dataType="wstr"
+                      length="2000"
+                      name="unidadMedida" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[presentacion]"
+                      dataType="wstr"
+                      length="2000"
+                      name="presentacion" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[precio]"
+                      dataType="cy"
+                      name="precio" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[precioUnidadMedida]"
+                      dataType="numeric"
+                      name="precioUnidadMedida"
+                      precision="32"
+                      scale="15" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[imageUrl]"
+                      dataType="wstr"
+                      length="1000"
+                      name="imageUrl" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[codCategoria]"
+                      dataType="i4"
+                      name="codCategoria" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[codSubCategoria]"
+                      dataType="wstr"
+                      length="100"
+                      name="codSubCategoria" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insertar Productos\Insertar destino.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insertar Productos\Insertar destino.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Insertar destino.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insertar Productos\Insertar destino.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insertar Productos\Productos"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Productos"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select distinct
+       IdItem,
+        CAST(codigo_ciudad AS nvarchar(80)) codigo_ciudad,
+       CAST(Referencia AS nvarchar(50)) Referencia,  
+       CAST(Descripcion AS nvarchar(40)) Descripcion, 
+       CAST(cod_categoria AS int) cod_categoria,
+       CAST(Categoria AS nvarchar(100)) Categoria,
+       CAST(cod_subcategoria AS nvarchar(100)) cod_subcategoria,
+       SubCategoria,
+       TipoMarca,
+       NombreMarca,
+       PesoUnidadMedida,
+       UnidadMedida,
+       Presentacion,
+       CAST(Precio AS money) Precio,
+       PrecioUnidadMedida,
+       image_url       
+       from VW_Teletendero_Productos_Ciudades</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insertar Productos\Productos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Consultas]"
+                  connectionManagerRefId="Package.ConnectionManagers[Consultas]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[IdItem]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[IdItem]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[IdItem]"
+                      name="IdItem"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[codigo_ciudad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[codigo_ciudad]"
+                      length="80"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[codigo_ciudad]"
+                      name="codigo_ciudad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Referencia]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[Referencia]"
+                      length="50"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Referencia]"
+                      name="Referencia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Descripcion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[Descripcion]"
+                      length="40"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Descripcion]"
+                      name="Descripcion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[cod_categoria]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[cod_categoria]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[cod_categoria]"
+                      name="cod_categoria"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Categoria]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[Categoria]"
+                      length="100"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Categoria]"
+                      name="Categoria"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[cod_subcategoria]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[cod_subcategoria]"
+                      length="100"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[cod_subcategoria]"
+                      name="cod_subcategoria"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[SubCategoria]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[SubCategoria]"
+                      length="100"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[SubCategoria]"
+                      name="SubCategoria"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[TipoMarca]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[TipoMarca]"
+                      length="100"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[TipoMarca]"
+                      name="TipoMarca"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[NombreMarca]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[NombreMarca]"
+                      length="2000"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[NombreMarca]"
+                      name="NombreMarca"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[PesoUnidadMedida]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[PesoUnidadMedida]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[PesoUnidadMedida]"
+                      name="PesoUnidadMedida"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[UnidadMedida]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[UnidadMedida]"
+                      length="2000"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[UnidadMedida]"
+                      name="UnidadMedida"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Presentacion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[Presentacion]"
+                      length="2000"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Presentacion]"
+                      name="Presentacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Precio]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[Precio]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[Precio]"
+                      name="Precio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[PrecioUnidadMedida]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[PrecioUnidadMedida]"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[PrecioUnidadMedida]"
+                      name="PrecioUnidadMedida"
+                      precision="32"
+                      scale="15"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[image_url]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[image_url]"
+                      length="255"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].Columns[image_url]"
+                      name="image_url"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[IdItem]"
+                      dataType="i4"
+                      name="IdItem" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[codigo_ciudad]"
+                      dataType="wstr"
+                      length="80"
+                      name="codigo_ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[Referencia]"
+                      dataType="wstr"
+                      length="50"
+                      name="Referencia" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[Descripcion]"
+                      dataType="wstr"
+                      length="40"
+                      name="Descripcion" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[cod_categoria]"
+                      dataType="i4"
+                      name="cod_categoria" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[Categoria]"
+                      dataType="wstr"
+                      length="100"
+                      name="Categoria" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[cod_subcategoria]"
+                      dataType="wstr"
+                      length="100"
+                      name="cod_subcategoria" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[SubCategoria]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="SubCategoria" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[TipoMarca]"
+                      dataType="wstr"
+                      length="100"
+                      name="TipoMarca" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[NombreMarca]"
+                      dataType="wstr"
+                      length="2000"
+                      name="NombreMarca" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[PesoUnidadMedida]"
+                      dataType="numeric"
+                      name="PesoUnidadMedida"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[UnidadMedida]"
+                      dataType="wstr"
+                      length="2000"
+                      name="UnidadMedida" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[Presentacion]"
+                      dataType="wstr"
+                      length="2000"
+                      name="Presentacion" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[Precio]"
+                      dataType="cy"
+                      name="Precio" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[PrecioUnidadMedida]"
+                      dataType="numeric"
+                      name="PrecioUnidadMedida"
+                      precision="32"
+                      scale="15" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB].ExternalColumns[image_url]"
+                      dataType="wstr"
+                      length="255"
+                      name="image_url" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[IdItem]"
+                      dataType="i4"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[IdItem]"
+                      name="IdItem" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[codigo_ciudad]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[codigo_ciudad]"
+                      name="codigo_ciudad" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[Referencia]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[Referencia]"
+                      name="Referencia" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[Descripcion]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[Descripcion]"
+                      name="Descripcion" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[cod_categoria]"
+                      dataType="i4"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[cod_categoria]"
+                      name="cod_categoria" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[Categoria]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[Categoria]"
+                      name="Categoria" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[cod_subcategoria]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[cod_subcategoria]"
+                      name="cod_subcategoria" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[SubCategoria]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[SubCategoria]"
+                      name="SubCategoria" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[TipoMarca]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[TipoMarca]"
+                      name="TipoMarca" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[NombreMarca]"
+                      dataType="wstr"
+                      length="2000"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[NombreMarca]"
+                      name="NombreMarca" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[PesoUnidadMedida]"
+                      dataType="numeric"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[PesoUnidadMedida]"
+                      name="PesoUnidadMedida"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[UnidadMedida]"
+                      dataType="wstr"
+                      length="2000"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[UnidadMedida]"
+                      name="UnidadMedida" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[Presentacion]"
+                      dataType="wstr"
+                      length="2000"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[Presentacion]"
+                      name="Presentacion" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[Precio]"
+                      dataType="cy"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[Precio]"
+                      name="Precio" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[PrecioUnidadMedida]"
+                      dataType="numeric"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[PrecioUnidadMedida]"
+                      name="PrecioUnidadMedida"
+                      precision="32"
+                      scale="15" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[image_url]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[image_url]"
+                      name="image_url" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insertar Productos\Productos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Insertar Productos.Paths[Nueva salida]"
+              endId="Package\Insertar Productos\Insertar destino.Inputs[Entrada de destino de OLE DB]"
+              name="Nueva salida"
+              startId="Package\Insertar Productos\Dimensión de variación lenta.Outputs[Nueva salida]" />
+            <path
+              refId="Package\Insertar Productos.Paths[Salida de actualizaciones de atributos variables]"
+              endId="Package\Insertar Productos\Actualizar destino.Inputs[Entrada de comando de OLE DB]"
+              name="Salida de actualizaciones de atributos variables"
+              startId="Package\Insertar Productos\Dimensión de variación lenta.Outputs[Salida de actualizaciones de atributos variables]" />
+            <path
+              refId="Package\Insertar Productos.Paths[Salida de origen de OLE DB]"
+              endId="Package\Insertar Productos\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Insertar Productos\Productos.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Registrar Finalización"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{E35A8EDE-595C-485E-B12A-17CD4111D2D9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Registrar Finalización"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A4FCA622-AE3A-486D-8809-1DD871039D74}"
+          SQLTask:SqlStatementSource="INSERT INTO [dbo].[Auditoria]&#xA;           ([tipo]&#xA;           ,[origen]&#xA;           ,[mensaje]&#xA;           ,[fecha])&#xA;     VALUES&#xA;           ('Mensaje'&#xA;           ,'ETL Productos'&#xA;           ,'Finalizó correctamente'&#xA;           ,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Registrar Inicio"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{9DF1433B-BC0F-43F2-82FD-1D60D3C3EC18}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Registrar Inicio"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Registrar Inicio.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{8B9B6199-FF0B-4843-8DF3-36DA027A2900}"
+          DTS:EventID="0"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="La propiedad de propagación del evento"
+              DTS:DTSID="{3CDF95A8-C175-458F-BE59-633FADAFCDE9}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Registrar Inicio.EventHandlers[OnError]\Tarea Ejecutar SQL"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Tarea Ejecutar SQL"
+              DTS:DTSID="{5E85EA40-F429-4E0A-A89E-244C84402855}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Tarea Ejecutar SQL"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A4FCA622-AE3A-486D-8809-1DD871039D74}"
+                  SQLTask:SqlStatementSource="INSERT INTO [dbo].[Auditoria]&#xA;           ([tipo]&#xA;           ,[origen]&#xA;           ,[mensaje]&#xA;           ,[fecha])&#xA;     VALUES&#xA;           ('Error'&#xA;           ,'ETL Productos -'+ ?&#xA;           ,?&#xA;           ,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="System::SourceName"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="System::ErrorDescription"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="129"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A4FCA622-AE3A-486D-8809-1DD871039D74}"
+          SQLTask:SqlStatementSource="INSERT INTO [dbo].[Auditoria]&#xA;           ([tipo]&#xA;           ,[origen]&#xA;           ,[mensaje]&#xA;           ,[fecha])&#xA;     VALUES&#xA;           ('Mensaje'&#xA;           ,'ETL Productos'&#xA;           ,'Inicio Ejecución'&#xA;           ,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{9BE5842D-D5A3-47F6-962E-CEB669A51AD1}"
+      DTS:From="Package\Registrar Inicio"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Insertar Productos" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{7C53EA6D-C1FF-44FD-89D3-F324913F34AB}"
+      DTS:From="Package\Insertar Productos"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\Eliminar Registros" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{5B2F29D8-C69E-4E68-BD77-2CC736DA8D28}"
+      DTS:From="Package\Eliminar Registros"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\Registrar Finalización" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="sql12">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="250,42"
+          Id="Package\Eliminar Registros"
+          TopLeft="74,211" />
+        <NodeLayout
+          Size="251,42"
+          Id="Package\Insertar Productos"
+          TopLeft="80,126" />
+        <NodeLayout
+          Size="241,42"
+          Id="Package\Registrar Finalización"
+          TopLeft="82,294" />
+        <NodeLayout
+          Size="252,42"
+          Id="Package\Registrar Inicio"
+          TopLeft="78,44" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="204.75,86">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="202.25,168">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="200.75,253">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Eliminar Registros">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Eliminar Registros\División condicional"
+          TopLeft="329,266" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Eliminar Registros\Productos Billetera"
+          TopLeft="80,181" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Eliminar Registros\Combinación de mezcla"
+          TopLeft="321,187" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Eliminar Registros\Eliminar Registros"
+          TopLeft="333,358" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Eliminar Registros\Productos"
+          TopLeft="318,103" />
+        <EdgeLayout
+          Id="Package\Eliminar Registros.Paths[Salida de origen de OLE DB1]"
+          TopLeft="415.75,145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Eliminar Registros.Paths[Salida de origen de OLE DB]"
+          TopLeft="247,205">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74,0"
+              Start="0,0"
+              End="66.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Eliminar Registros.Paths[Salida de combinación de mezcla]"
+          TopLeft="417.5,229">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Eliminar Registros.Paths[Elimininar]"
+          TopLeft="420.75,308">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-49.250390625,13.25,62.1346875,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Eliminar Registros.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Eliminar Registros.EventHandlers[OnError]\Tarea Ejecutar SQL"
+          TopLeft="312,73" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Eliminar Registros\Productos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Eliminar Registros\Productos Billetera">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Insertar Productos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="213,42"
+          Id="Package\Insertar Productos\Productos"
+          TopLeft="198.5,5.5" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Insertar Productos\Dimensión de variación lenta"
+          TopLeft="200.5,107.5" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Insertar Productos\Actualizar destino"
+          TopLeft="383.5,217.5" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Insertar Productos\Insertar destino"
+          TopLeft="56.5000000000001,209.5" />
+        <EdgeLayout
+          Id="Package\Insertar Productos.Paths[Salida de origen de OLE DB]"
+          TopLeft="306.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insertar Productos.Paths[Salida de actualizaciones de atributos variables]"
+          TopLeft="342.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="122,68"
+              Start="0,0"
+              End="122,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5013850415512" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.5013850415512"
+                    Point2="0,27.5013850415512"
+                    Point3="4,27.5013850415512" />
+                  <mssgle:LineSegment
+                    End="118,27.5013850415512" />
+                  <mssgle:CubicBezierSegment
+                    Point1="118,27.5013850415512"
+                    Point2="122,27.5013850415512"
+                    Point3="122,31.5013850415512" />
+                  <mssgle:LineSegment
+                    End="122,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-43.2532421875,32.5013850415512,208.506484375,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insertar Productos.Paths[Nueva salida]"
+          TopLeft="273.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-140.5,60"
+              Start="0,0"
+              End="-140.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2659279778393" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2659279778393"
+                    Point2="0,24.2659279778393"
+                    Point3="-4,24.2659279778393" />
+                  <mssgle:LineSegment
+                    End="-136.5,24.2659279778393" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-136.5,24.2659279778393"
+                    Point2="-140.5,24.2659279778393"
+                    Point3="-140.5,28.2659279778393" />
+                  <mssgle:LineSegment
+                    End="-140.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-98.538359375,29.2659279778393,56.57671875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Insertar Productos.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Insertar Productos.EventHandlers[OnError]\Tarea Ejecutar SQL"
+          TopLeft="440,159" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insertar Productos\Productos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insertar Productos\Dimensión de variación lenta">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{A4FCA622-AE3A-486D-8809-1DD871039D74}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[Producto]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[Categoria]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;categoria&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[cod_categoria]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;codCategoria&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[codigo_ciudad]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;codigoCiudad&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[cod_subcategoria]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;codSubCategoria&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[Descripcion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;descripcion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[IdItem]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;idItem&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[image_url]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;imageUrl&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[NombreMarca]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;nombreMarca&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[PesoUnidadMedida]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;PesoUnidadMedida&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[Precio]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;precio&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[PrecioUnidadMedida]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;precioUnidadMedida&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[Presentacion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;presentacion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[Referencia]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;referencia&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[SubCategoria]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;subCategoria&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[TipoMarca]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;tipoMarca&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origen de OLE DB.Salidas[Salida de origen de OLE DB].Columnas[UnidadMedida]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;unidadMedida&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insertar destino&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Comando de OLE DB&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insertar Productos\Insertar destino">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package\Registrar Inicio.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Registrar Inicio.EventHandlers[OnError]\Tarea Ejecutar SQL"
+          TopLeft="428,51" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bonos.Api.Rest</name>
+    </assembly>
+    <members>
+        <member name="M:Bonos.Api.Rest.Controllers.InstitucionController.GetInstituciones">
+            <summary>
+            Método que devuelve las instituciones registrados en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.DominioController.GetTipoDocumentos">
+            <summary>
+            Método que devuelve los tipos de documento registrados en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.DominioController.GetRoles">
+            <summary>
+            Método que devuelve los roles registrados en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.SintomasController.GetSintomas">
+            <summary>
+            Método que devuelve los sintomas registrados en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.SintomasController.CargueMasivoGiftCards(com.mercaderia.bono.Entidades.Dto.SintomasDTO[],System.String)">
+            <summary>
+            Método que registra los sintomas de un usuario
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.UsuarioController.Post(com.mercaderia.bono.Entidades.Dto.UsuarioDto)">
+            <summary>
+            Método que registra el usuario en la aplicacion
+            </summary>
+            <returns></returns>       
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.UsuarioController.ReportTransactionBonoFromPOS(com.mercaderia.bono.Entidades.Dto.UsuarioActivoDto)">
+            <summary>
+            Servicio para activar el usuario,
+            realiza un debito en el bono generado
+            </summary>
+            <param name="numBono"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.UsuarioController.GetValidaUsuario(System.String,System.String,System.String)">
+            <summary>
+            Servicio para dar acceso a la aplicacion se valida tipo documento y numero de documento e institucion
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.UsuarioController.GetUsuario(System.String,System.String)">
+            <summary>
+            Método que consulta informacion de un usuario si ya existe en la base de datos para cargar informacion existente
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Bonos.Api.Rest.Helper.TokenValidationHandler">
+            <summary>
+            Token validator for Authorization Request using a DelegatingHandler
+            </summary>
+        </member>
+        <member name="M:Bonos.Api.Rest.Helper.TokenValidationHandler.HttpResponseIsNotCorsRequest(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            Construye HttpResponseMessage si IsNotCorsRequest
+            </summary>
+        </member>
+        <member name="M:Bonos.Api.Rest.Helper.TokenValidationHandler.HttpResponseIsPreflightRequest(System.Net.Http.HttpRequestMessage,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Construye HttpResponseMessage si isPreflightRequest
+            </summary>
+        </member>
+        <member name="M:Bonos.Api.Rest.Helper.TokenValidationHandler.VerificarRequestLocal(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            Verifica si el metodo es público y valida token
+            </summary>
+        </member>
+        <member name="M:Bonos.Api.Rest.Helper.TokenValidationHandler.VerificarRequest(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            Verifica si el metodo es público y valida token
+            </summary>
+        </member>
+    </members>
+</doc>
