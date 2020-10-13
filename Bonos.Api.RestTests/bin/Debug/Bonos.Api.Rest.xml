@@ -4,9 +4,69 @@
         <name>Bonos.Api.Rest</name>
     </assembly>
     <members>
+        <member name="M:Bonos.Api.Rest.Controllers.InstitucionController.GetInstituciones">
+            <summary>
+            Método que devuelve las instituciones registrados en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Bonos.Api.Rest.Controllers.DominioController.GetTipoDocumentos">
             <summary>
             Método que devuelve los tipos de documento registrados en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.DominioController.GetRoles">
+            <summary>
+            Método que devuelve los roles registrados en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.DominioController.GetSendNotificaciones">
+            <summary>
+            Metodo para enviar notificaciones masivas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.SintomasController.GetSintomas">
+            <summary>
+            Método que devuelve los sintomas registrados en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.SintomasController.CargueMasivoGiftCards(com.mercaderia.bono.Entidades.Dto.SintomasDTO[],System.String)">
+            <summary>
+            Método que registra los sintomas de un usuario
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.UsuarioController.Post(com.mercaderia.bono.Entidades.Dto.UsuarioDto)">
+            <summary>
+            Método que registra el usuario en la aplicacion
+            </summary>
+            <returns></returns>       
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.UsuarioController.ReportTransactionBonoFromPOS(com.mercaderia.bono.Entidades.Dto.UsuarioActivoDto)">
+            <summary>
+            Servicio para activar el usuario       
+            </summary>
+            <returns></returns>   
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.UsuarioController.GetValidaUsuario(System.String,System.String,System.String)">
+            <summary>
+            Servicio para dar acceso a la aplicacion se valida tipo documento y numero de documento e institucion
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.UsuarioController.ReenviarCodActivacion(com.mercaderia.bono.Entidades.Dto.UsuarioActivoDto)">
+            <summary>
+            Servicio para reenviar codigo activacion       
+            </summary>
+            <returns></returns>   
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.UsuarioController.GetUsuario(System.String,System.String)">
+            <summary>
+            Método que consulta informacion de un usuario si ya existe en la base de datos para cargar informacion existente
             </summary>
             <returns></returns>
         </member>

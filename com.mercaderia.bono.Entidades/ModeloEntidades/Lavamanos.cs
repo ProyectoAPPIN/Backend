@@ -12,19 +12,21 @@ namespace com.mercaderia.bono.Entidades.ModeloEntidades
     using System;
     using System.Collections.Generic;
     
-    public partial class Sintoma
+    public partial class Lavamanos
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Sintoma()
+        public Lavamanos()
         {
-            this.RegistroSintoma = new HashSet<RegistroSintoma>();
+            this.RegistroLavado = new HashSet<RegistroLavado>();
         }
     
-        public int codSintoma { get; set; }
+        public int codLavamanos { get; set; }
+        public string codInstitucion { get; set; }
         public string descripcion { get; set; }
-        public Nullable<int> opcion { get; set; }
+        public string codigoQR { get; set; }
     
+        public virtual Institucion Institucion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RegistroSintoma> RegistroSintoma { get; set; }
+        public virtual ICollection<RegistroLavado> RegistroLavado { get; set; }
     }
 }

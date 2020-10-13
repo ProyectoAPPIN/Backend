@@ -19,6 +19,14 @@
         <AssociationConnector Association="BilleteraVirtualModel.FK_Usuario_Perfil" />
         <AssociationConnector Association="BilleteraVirtualModel.FK_RegistroSintoma_Sintoma" />
         <AssociationConnector Association="BilleteraVirtualModel.FK_RegistroSintoma_Usuario" />
+        <EntityTypeShape EntityType="BilleteraVirtualModel.Lavamanos" Width="1.5" PointX="11.5" PointY="1.25" />
+        <EntityTypeShape EntityType="BilleteraVirtualModel.RegistroIngreso" Width="1.5" PointX="11.5" PointY="4.75" />
+        <EntityTypeShape EntityType="BilleteraVirtualModel.RegistroLavado" Width="1.5" PointX="13.75" PointY="4.125" />
+        <AssociationConnector Association="BilleteraVirtualModel.FK_Lavamanos_Institucion" />
+        <AssociationConnector Association="BilleteraVirtualModel.FK_RegistroSintoma_Institucion" />
+        <AssociationConnector Association="BilleteraVirtualModel.FK_RegistroLavado_Lavamanos" />
+        <AssociationConnector Association="BilleteraVirtualModel.FK_RegistroIngreso_Usuario" />
+        <AssociationConnector Association="BilleteraVirtualModel.FKRegistroLavado_Usuario" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -4,30 +4,30 @@
  <Namespaces>
   <Namespace Name="com.mercaderia.bono.Utilidades.Auditoria">
    <Messages>
-    <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-09-29 16:53:14Z" FixCategory="Breaking">
+    <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-10-13 00:20:37Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'bono' en el nombre del espacio de nombres 'com.mercaderia.bono.Utilidades.Auditoria' cambiándolo a 'Bono'.</Issue>
     </Message>
-    <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-09-29 16:53:14Z" FixCategory="Breaking">
+    <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-10-13 00:20:37Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'com' en el nombre del espacio de nombres 'com.mercaderia.bono.Utilidades.Auditoria' cambiándolo a 'Com'.</Issue>
     </Message>
-    <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-09-29 16:53:14Z" FixCategory="Breaking">
+    <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-10-13 00:20:37Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'mercaderia' en el nombre del espacio de nombres 'com.mercaderia.bono.Utilidades.Auditoria' cambiándolo a 'Mercaderia'.</Issue>
     </Message>
    </Messages>
   </Namespace>
  </Namespaces>
  <Targets>
-  <Target Name="C:\Users\mcoral\source\repos\APIAPPIN\back\com.mercaderia.bono.Utilidades.Auditoria\bin\Debug\com.mercaderia.bono.Utilidades.Auditoria.dll">
+  <Target Name="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Auditoria\bin\Debug\com.mercaderia.bono.Utilidades.Auditoria.dll">
    <Modules>
     <Module Name="com.mercaderia.bono.utilidades.auditoria.dll">
      <Messages>
-      <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-09-29 16:53:14Z" FixCategory="Breaking">
+      <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-10-13 00:20:37Z" FixCategory="Breaking">
        <Issue Name="Assembly" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'bono' en el nombre del ensamblado 'com.mercaderia.bono.Utilidades.Auditoria.dll' cambiándolo a 'Bono'.</Issue>
       </Message>
-      <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-09-29 16:53:14Z" FixCategory="Breaking">
+      <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-10-13 00:20:37Z" FixCategory="Breaking">
        <Issue Name="Assembly" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'com' en el nombre del ensamblado 'com.mercaderia.bono.Utilidades.Auditoria.dll' cambiándolo a 'Com'.</Issue>
       </Message>
-      <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-09-29 16:53:14Z" FixCategory="Breaking">
+      <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-10-13 00:20:37Z" FixCategory="Breaking">
        <Issue Name="Assembly" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'mercaderia' en el nombre del ensamblado 'com.mercaderia.bono.Utilidades.Auditoria.dll' cambiándolo a 'Mercaderia'.</Issue>
       </Message>
      </Messages>
@@ -38,8 +38,8 @@
          <Members>
           <Member Name="#EscribirInfo(System.Object)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="t" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2020-09-29 16:53:14Z" FixCategory="NonBreaking">
-             <Issue Certainty="95" Level="Warning" Path="C:\Users\mcoral\source\repos\APIAPPIN\back\com.mercaderia.bono.Utilidades.Auditoria" File="Logger.cs" Line="67">'Logger.EscribirInfo(object)' declara una variable, 't', de tipo 'string', que no se usa nunca o sólo se asigna. Use esta variable o quítela.</Issue>
+            <Message Id="t" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2020-10-13 00:20:37Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Auditoria" File="Logger.cs" Line="67">'Logger.EscribirInfo(object)' declara una variable, 't', de tipo 'string', que no se usa nunca o sólo se asigna. Use esta variable o quítela.</Issue>
             </Message>
            </Messages>
           </Member>

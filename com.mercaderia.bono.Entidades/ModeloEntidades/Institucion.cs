@@ -14,6 +14,13 @@ namespace com.mercaderia.bono.Entidades.ModeloEntidades
     
     public partial class Institucion
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Institucion()
+        {
+            this.Lavamanos = new HashSet<Lavamanos>();
+            this.RegistroIngreso = new HashSet<RegistroIngreso>();
+        }
+    
         public string codInstitucion { get; set; }
         public string nombre { get; set; }
         public string nit { get; set; }
@@ -22,5 +29,9 @@ namespace com.mercaderia.bono.Entidades.ModeloEntidades
         public Nullable<bool> activo { get; set; }
     
         public virtual Municipio Municipio { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Lavamanos> Lavamanos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RegistroIngreso> RegistroIngreso { get; set; }
     }
 }

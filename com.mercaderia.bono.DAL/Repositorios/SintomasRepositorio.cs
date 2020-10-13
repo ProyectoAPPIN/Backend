@@ -22,7 +22,7 @@ namespace com.mercaderia.bono.DAL
         /// <returns></returns>
         public List<Sintoma> ObtenerSintomas()
         {
-            return dbSet.OrderBy(t => new { t.codSintoma, t.descripcion }).ToList<Sintoma>();
+            return dbSet.OrderBy(t => new { t.codSintoma, t.descripcion, t.opcion }).ToList<Sintoma>();
         }
 
         public List<ResponseSintomasDTO> AddSintomasUsuario(SintomasDTO[] sintomasUsuario, string idUsuario)

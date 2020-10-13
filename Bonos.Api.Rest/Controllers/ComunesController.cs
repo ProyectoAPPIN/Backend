@@ -8,10 +8,12 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Collections.Generic;
+using System.Web.Http.Cors;
 
 namespace Bonos.Api.Rest.Controllers
 {
     [RoutePrefix("api/Comunes")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class DominioController : ApiController
     {
         Logger log = Logger.Instancia;
@@ -65,6 +67,39 @@ namespace Bonos.Api.Rest.Controllers
                 }
 
                 return Request.CreateResponse(HttpStatusCode.OK, lstperfil);
+            }
+            catch (ExceptionControlada ex)
+            {
+                log.EscribirLogError(Mensajes.MsgTipoDocumentoError, ex);
+                return Request.CreateResponse(HttpStatusCode.Conflict, new ApiException(HttpStatusCode.Conflict,
+                    ex.Message, ex));
+            }
+            catch (Exception ex)
+            {
+                log.EscribirLogError(Mensajes.MsgErrorNoEspacificado, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError,
+                    new ApiException(HttpStatusCode.InternalServerError, Mensajes.MsgErrorNoEspacificado, ex));
+            }
+        }
+        /// <summary>
+        /// Metodo para enviar notificaciones masivas
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetSendNotificaciones")]
+        public HttpResponseMessage GetSendNotificaciones()
+        {
+            try
+            {
+                NegocioTipoDocumentos negocioComun = new NegocioTipoDocumentos();
+                string retorno = negocioComun.sendNotificacion();
+                if (retorno == "")
+                {
+                    return Request.CreateResponse(HttpStatusCode.NotFound, Mensajes.MsgNotificacionesError);
+                }
+
+                return Request.CreateResponse(HttpStatusCode.OK, retorno);
+                
             }
             catch (ExceptionControlada ex)
             {

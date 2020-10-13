@@ -18,6 +18,8 @@ namespace com.mercaderia.bono.Entidades.ModeloEntidades
         public Usuario()
         {
             this.RegistroSintoma = new HashSet<RegistroSintoma>();
+            this.RegistroIngreso = new HashSet<RegistroIngreso>();
+            this.RegistroLavado = new HashSet<RegistroLavado>();
         }
     
         public int codUsuario { get; set; }
@@ -37,5 +39,9 @@ namespace com.mercaderia.bono.Entidades.ModeloEntidades
         public virtual Perfil Perfil { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RegistroSintoma> RegistroSintoma { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RegistroIngreso> RegistroIngreso { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RegistroLavado> RegistroLavado { get; set; }
     }
 }

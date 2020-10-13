@@ -84,10 +84,19 @@
     <Compile Include="ModeloEntidades\Institucion.cs">
       <DependentUpon>BilleteraModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModeloEntidades\Lavamanos.cs">
+      <DependentUpon>BilleteraModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ModeloEntidades\Municipio.cs">
       <DependentUpon>BilleteraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ModeloEntidades\Perfil.cs">
+      <DependentUpon>BilleteraModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModeloEntidades\RegistroIngreso.cs">
+      <DependentUpon>BilleteraModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModeloEntidades\RegistroLavado.cs">
       <DependentUpon>BilleteraModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ModeloEntidades\RegistroSintoma.cs">

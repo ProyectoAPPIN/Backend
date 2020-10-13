@@ -9,10 +9,12 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Collections.Generic;
 using com.mercaderia.bono.Entidades.Dto;
+using System.Web.Http.Cors;
 
 namespace Bonos.Api.Rest.Controllers
 {
     [RoutePrefix("api/Usuario")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class UsuarioController : ApiController
     {
         Logger log = Logger.Instancia;
@@ -27,21 +29,30 @@ namespace Bonos.Api.Rest.Controllers
             try
             {
                 NegocioUsuario negocioUsuario = new NegocioUsuario();
-                return Content(HttpStatusCode.OK, negocioUsuario.CrearUsuario(usuario));
+                Usuario usuarioCreado = negocioUsuario.CrearUsuario(usuario);
+
+                List<UsuarioActivoDto> usuarioResultante = new List<UsuarioActivoDto>();
+
+                usuarioResultante.Add(new UsuarioActivoDto
+                {
+                    codUsuario = Convert.ToString(usuarioCreado.codUsuario),
+                    codigoActivacion = usuarioCreado.codigoActivacion,
+                    activo = usuarioCreado.activo
+                });
+
+                return Content(HttpStatusCode.OK, usuarioResultante);
             }
             catch (Exception ex)
             {
-                log.EscribirLogError("Error al crear Bono", ex);
+                log.EscribirLogError("Error al crear Usuario", ex);
                 return Content(HttpStatusCode.InternalServerError, Mensajes.DescFallo);
             }
         }
 
         /// <summary>
-        /// Servicio para activar el usuario,
-        /// realiza un debito en el bono generado
+        /// Servicio para activar el usuario       
         /// </summary>
-        /// <param name="numBono"></param>
-        /// <returns></returns>
+        /// <returns></returns>   
         [HttpPost]
         [Route("ActivacionUsuario")]
         public IHttpActionResult ReportTransactionBonoFromPOS([FromBody]UsuarioActivoDto usuario)
@@ -76,7 +87,6 @@ namespace Bonos.Api.Rest.Controllers
             try
             {
                 NegocioUsuario negocioUsuario = new NegocioUsuario();
-
                 List<AccesoUsuarioDto> lstTipoDocResultado = negocioUsuario.ValidaUsuario(tipoDocumento, documento, universidad);
                 if (lstTipoDocResultado.Count == 0)
                 {
@@ -99,6 +109,10 @@ namespace Bonos.Api.Rest.Controllers
             }
         }
 
+        /// <summary>
+        /// Servicio para reenviar codigo activacion       
+        /// </summary>
+        /// <returns></returns>   
         [HttpPost]
         [Route("ReenviarCodigoActivacion")]
         public IHttpActionResult ReenviarCodActivacion([FromBody]UsuarioActivoDto usuario)
@@ -127,18 +141,22 @@ namespace Bonos.Api.Rest.Controllers
             try
             {
                 NegocioUsuario negocioUsuario = new NegocioUsuario();
-                Usuario usuarioResultado = negocioUsuario.UsuarioPreCargue(tipoDocumento, documento);
+
+                List<UsuarioDto> usuarioResultado = negocioUsuario.UsuarioPreCargue(tipoDocumento, documento);
                 if (usuarioResultado == null)
                 {
                     return Request.CreateResponse(HttpStatusCode.NotFound, Mensajes.MsgUsuarioNoExistente);
                 }
                 return Request.CreateResponse(HttpStatusCode.OK, usuarioResultado);
             }
+
+
+
+
             catch (ExceptionControlada ex)
             {
                 log.EscribirLogError(Mensajes.MsgUsuarioError, ex);
-                return Request.CreateResponse(HttpStatusCode.Conflict, new ApiException(HttpStatusCode.Conflict,
-                    ex.Message, ex));
+                return Request.CreateResponse(HttpStatusCode.Conflict, new ApiException(HttpStatusCode.Conflict,  ex.Message, ex));
             }
             catch (Exception ex)
             {

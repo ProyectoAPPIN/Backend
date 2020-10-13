@@ -72,16 +72,19 @@ namespace com.mercaderia.bono.Entidades.Enumeradores
             /// <summary>
             /// Plantilla de correo de bono generado
             /// </summary>
-            plantillaCorreoBonoGenerado,
+            plantillaCorreoActivacionCuenta,
             /// <summary>
             /// Formato de texto de correo de bono generado
             /// </summary>
             emailActivacionFormato,
             /// <summary>
             /// Tipo de movimiento origen de una transacción
-            /// </summary>
+            /// </summary>            
             TipoOrigenMov,
-
+            /// <summary>
+            /// notificacion de lavado
+            /// </summary>
+            notificacionLavado,
             /// <summary>
             /// Terminos y Condiciones
             /// </summary>
@@ -90,7 +93,9 @@ namespace com.mercaderia.bono.Entidades.Enumeradores
             /// <summary>
             /// Número de minutos para el vencimiento
             /// </summary>
-            vencimiento_token_activacion
-        }        
+            vencimiento_token_activacion,
+            asuntoNotificacionLavado,
+            plantillaCorreoNotificacion
+        }
     }
 }

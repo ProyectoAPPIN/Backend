@@ -38,7 +38,7 @@ namespace com.mercaderia.bono.Negocio
         /// </summary>
         /// <param name="usuario"></param>
         /// <returns></returns>
-        public string CrearUsuario(UsuarioDto usuario)
+        public Usuario CrearUsuario(UsuarioDto usuario)
         {
             var codigoActivacion = GenerarCodigoActivacion();
             var usuarioGenerado = RegistrarUsuario(usuario, codigoActivacion);
@@ -48,7 +48,7 @@ namespace com.mercaderia.bono.Negocio
                 EnviarEmail(usuario.correo, codigoActivacion);                
             }
 
-            return Convert.ToString(usuarioGenerado.codUsuario);
+            return usuarioGenerado;
         }
         /// <summary>
         /// Metodo pra registrar el usuario
@@ -157,7 +157,7 @@ namespace com.mercaderia.bono.Negocio
                 if (domonioAsuntoCorreo.IsNull() || string.IsNullOrEmpty(domonioAsuntoCorreo.valor))
                     throw new ExceptionControlada(Mensajes.MsgAsuntoCorreoRegistroPedido);
 
-                Dominio plantillaCorreo = negocioDominio.ConsultarPorId(EnumTablaDominio.plantillaCorreoBonoGenerado.ToString());
+                Dominio plantillaCorreo = negocioDominio.ConsultarPorId(EnumTablaDominio.plantillaCorreoActivacionCuenta.ToString());
                 if (plantillaCorreo.IsNull() || string.IsNullOrEmpty(plantillaCorreo.valor))
                     throw new ExceptionControlada(Mensajes.MsgTextoInicialCorreoRegistroPedido);
 
@@ -226,7 +226,12 @@ namespace com.mercaderia.bono.Negocio
                 }
                 if (lstUsuarioActivo.Count == 0)
                 {
-                    throw new ExceptionControlada(Mensajes.MsgUsuarioActivoErrorInexistente);
+                    lstUsuarioActivo.Add(new AccesoUsuarioDto()
+                    {
+                        codUsuario = -1,
+                        nombres = null,                        
+                        activo = false
+                    });
                 }
             }
             return lstUsuarioActivo;
@@ -279,17 +284,36 @@ namespace com.mercaderia.bono.Negocio
         /// </summary>
         /// <param name="usuario"></param>
         /// <returns></returns>
-        public Usuario UsuarioPreCargue(string tipoDocumento, string documento)
-        {            
+        public List<UsuarioDto> UsuarioPreCargue(string tipoDocumento, string documento)
+        {
+            List<UsuarioDto> lstUsuarioExistente = new List<UsuarioDto>();
             using (UnitOfWork unitOfWork = new UnitOfWork())
             {
-                Usuario lstUsuarioExistente = unitOfWork.UsuarioRepositorio.ObtenerPorCedula(tipoDocumento, documento);
+                lstUsuarioExistente = unitOfWork.UsuarioRepositorio.ObtenerUsuarioExistente(tipoDocumento, documento);
+
                 if (lstUsuarioExistente == null)
                 {
                     throw new ExceptionControlada(Mensajes.MsgUsuarioActivoError);
                 }
-                return lstUsuarioExistente;
-            }            
+
+                if (lstUsuarioExistente.Count == 0)
+                {
+                    lstUsuarioExistente.Add(new UsuarioDto() {
+                        codUsuario = -1,
+                        nombres = null,
+                        apellidos = null,
+                        TipoDocumento = null,
+                        numeroDocumento = null,
+                        celular = null ,
+                        codPerfil = -1,
+                        codInstitucion = null,
+                        correo = null,
+                        sexo = false,
+                        activo = false
+                    });
+                }               
+            }
+            return lstUsuarioExistente;
         }
     }
 }

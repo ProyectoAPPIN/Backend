@@ -26,3 +26,17 @@ C:\Users\mcoral\source\repos\APIAPPIN\back\com.mercaderia.bono.Notificaciones\ob
 C:\Users\mcoral\source\repos\APIAPPIN\back\com.mercaderia.bono.Notificaciones\obj\Debug\com.mercaderia.bono.Notificaciones.csproj.CopyComplete
 C:\Users\mcoral\source\repos\APIAPPIN\back\com.mercaderia.bono.Notificaciones\obj\Debug\com.mercaderia.bono.Notificaciones.dll
 C:\Users\mcoral\source\repos\APIAPPIN\back\com.mercaderia.bono.Notificaciones\obj\Debug\com.mercaderia.bono.Notificaciones.pdb
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\bin\Debug\com.mercaderia.bono.Notificaciones.dll
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\bin\Debug\com.mercaderia.bono.Notificaciones.pdb
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\bin\Debug\com.mercaderia.bono.Entidades.dll
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\bin\Debug\com.mercaderia.bono.Utilidades.Excepciones.dll
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\bin\Debug\Newtonsoft.Json.dll
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\bin\Debug\com.mercaderia.bono.Entidades.pdb
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\bin\Debug\com.mercaderia.bono.Entidades.dll.config
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\bin\Debug\com.mercaderia.bono.Utilidades.Excepciones.pdb
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\bin\Debug\Newtonsoft.Json.xml
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\obj\Debug\com.mercaderia.bono.Notificaciones.csprojAssemblyReference.cache
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\obj\Debug\com.mercaderia.bono.Notificaciones.csproj.CoreCompileInputs.cache
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\obj\Debug\com.mercaderia.bono.Notificaciones.csproj.CopyComplete
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\obj\Debug\com.mercaderia.bono.Notificaciones.dll
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\obj\Debug\com.mercaderia.bono.Notificaciones.pdb

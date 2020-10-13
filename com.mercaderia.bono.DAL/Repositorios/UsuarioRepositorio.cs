@@ -19,7 +19,32 @@ namespace com.mercaderia.bono.DAL
         }
         public Usuario ObtenerPorCedula(string tipoIdentificacion, string identificacion)
         {
-            return dbSet.Where(x => x.TipoDocumento == tipoIdentificacion && x.numeroDocumento == identificacion).FirstOrDefault();
+            return dbSet.Where(x => x.TipoDocumento == tipoIdentificacion && x.numeroDocumento == identificacion && x.activo == false).FirstOrDefault();
+        }
+        public List<UsuarioDto> ObtenerUsuarioExistente(string tipoIdentificacion, string identificacion)
+        {
+            var usuarioExistente = context.Usuario.Where(x => x.TipoDocumento == tipoIdentificacion
+                                              && x.numeroDocumento == identificacion);
+
+            var consulta = (from usu in usuarioExistente
+                            select new UsuarioDto()
+                            {
+                                codUsuario = usu.codUsuario,
+                                nombres = usu.nombres,
+                                apellidos = usu.apellidos,
+                                numeroDocumento = usu.numeroDocumento,
+                                TipoDocumento = usu.TipoDocumento,
+                                codInstitucion = usu.codInstitucion,
+                                codPerfil = usu.codPerfil,
+                                correo = usu.correo,
+                                celular = usu.celular,                                
+                                sexo = false
+                            }).ToList();
+
+            return consulta.ToList();
+
+
+            //return dbSet.Where(x => x.TipoDocumento == tipoIdentificacion && x.numeroDocumento == identificacion && x.activo == false).FirstOrDefault();
         }
         public Usuario ObtenerPorID(int codUsuario)
         {
@@ -29,7 +54,7 @@ namespace com.mercaderia.bono.DAL
         {
             var usuarioActivo =  context.Usuario.Where(x => x.TipoDocumento == tipoIdentificacion
                                                  && x.numeroDocumento == identificacion
-                                                 && x.codInstitucion == idUniversidad);           
+                                                 && x.codInstitucion == idUniversidad && x.activo == true);           
 
             var consulta = (from usu in usuarioActivo
                             select new AccesoUsuarioDto()
@@ -40,6 +65,12 @@ namespace com.mercaderia.bono.DAL
                             }).ToList();
 
             return consulta.ToList(); 
+        }
+        public List<Usuario> ObtenerListaUsuariosActivo()
+        {
+            var listaUsuariosActivo = context.Usuario.Where(x => x.activo == true);            
+
+            return listaUsuariosActivo.ToList();
         }
     }
 }

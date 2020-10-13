@@ -8,10 +8,12 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Collections.Generic;
+using System.Web.Http.Cors;
 
 namespace Bonos.Api.Rest.Controllers
 {
     [RoutePrefix("api/Institucion")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class InstitucionController : ApiController
     {
         Logger log = Logger.Instancia;
@@ -19,7 +21,6 @@ namespace Bonos.Api.Rest.Controllers
         /// Método que devuelve las instituciones registrados en la base de datos
         /// </summary>
         /// <returns></returns>
-
         [HttpGet]
         [Route("GetInstituciones")]
         public HttpResponseMessage GetInstituciones()

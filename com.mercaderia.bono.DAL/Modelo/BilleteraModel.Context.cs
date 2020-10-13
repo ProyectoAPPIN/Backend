@@ -36,6 +36,9 @@ namespace com.mercaderia.bono.Entidades.ModeloEntidades
         public virtual DbSet<Sintoma> Sintoma { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<Dominio> Dominio { get; set; }
+        public virtual DbSet<Lavamanos> Lavamanos { get; set; }
+        public virtual DbSet<RegistroIngreso> RegistroIngreso { get; set; }
+        public virtual DbSet<RegistroLavado> RegistroLavado { get; set; }
     
         public virtual int AddBonosMasivos(string json, string nombreArchivo, string idEncargado)
         {

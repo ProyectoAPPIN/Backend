@@ -1,56 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="BilleteraVirtualModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="Auditoria">
+  <EntityType Name="Departamento">
     <Key>
-      <PropertyRef Name="auditoriaId" />
-    </Key>
-    <Property Name="auditoriaId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="tipo" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="origen" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="mensaje" Type="varchar(max)" Nullable="false" />
-    <Property Name="fecha" Type="datetime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Bono">
-    <Key>
-      <PropertyRef Name="numBono" />
-    </Key>
-    <Property Name="numBono" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="codigoSeguridad" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="numMonedero" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="tipoIdentificacion" Type="varchar" MaxLength="3" Nullable="false" />
-    <Property Name="identificacion" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="valor" Type="decimal" Precision="14" Scale="4" Nullable="false" />
-    <Property Name="fechaOperacion" Type="datetime" Nullable="false" />
-    <Property Name="token" Type="varchar" MaxLength="20" />
-    <Property Name="tokenExpira" Type="datetime" />
-    <Property Name="fechaActualizacion" Type="datetime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Categoria">
-    <Key>
-      <PropertyRef Name="codCategoria" />
-      <PropertyRef Name="codSubCategoria" />
-    </Key>
-    <Property Name="codCategoria" Type="smallint" Nullable="false" />
-    <Property Name="codSubCategoria" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="descripcionCategoria" Type="varchar" MaxLength="120" Nullable="false" />
-    <Property Name="descripcionSubCategoria" Type="varchar" MaxLength="120" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Ciudad">
-    <Key>
-      <PropertyRef Name="codCiudad" />
       <PropertyRef Name="codDepartamento" />
     </Key>
-    <Property Name="codCiudad" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="codDepartamento" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="nombreCiudad" Type="varchar" MaxLength="120" Nullable="false" />
-    <Property Name="nombreDepartamento" Type="varchar" MaxLength="120" Nullable="false" />
-    <Property Name="latitud" Type="varchar" MaxLength="30" Nullable="false" />
-    <Property Name="longitud" Type="varchar" MaxLength="30" Nullable="false" />
-    <Property Name="email" Type="nvarchar" MaxLength="256" Nullable="false" />
-    <Property Name="telefonoDomicilio" Type="nvarchar" MaxLength="30" />
+    <Property Name="codDepartamento" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="activo" Type="bit" />
   </EntityType>
   <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'BDMonederoPanamaVirtualV2.dbo.Dominio' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="Dominio">
     <Key>
       <PropertyRef Name="nombre" />
@@ -61,357 +20,145 @@ advertencia 6002: La tabla o vista 'BDMonederoPanamaVirtualV2.dbo.Dominio' no ti
     <Property Name="valor" Type="varchar(max)" Nullable="false" />
     <Property Name="descripcion" Type="varchar" MaxLength="200" Nullable="false" />
   </EntityType>
-  <EntityType Name="Empresa">
+  <EntityType Name="Institucion">
     <Key>
-      <PropertyRef Name="UIDUsuario" />
+      <PropertyRef Name="codInstitucion" />
     </Key>
-    <Property Name="UIDUsuario" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="nombreEmpresa" Type="varchar" MaxLength="50" />
-    <Property Name="fechaOperacion" Type="datetime" Nullable="false" />
+    <Property Name="codInstitucion" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="nit" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="50" />
+    <Property Name="codMunicipio" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="activo" Type="bit" />
   </EntityType>
-  <EntityType Name="HistoricoPedido">
+  <EntityType Name="Municipio">
     <Key>
-      <PropertyRef Name="historicoId" />
+      <PropertyRef Name="codMunicipio" />
     </Key>
-    <Property Name="historicoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="pedidoId" Type="bigint" Nullable="false" />
-    <Property Name="estado" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="fechaOperacion" Type="datetime" Nullable="false" />
+    <Property Name="codMunicipio" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="codDepartamento" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="activo" Type="bit" />
   </EntityType>
-  <EntityType Name="Monedero">
+  <EntityType Name="Perfil">
     <Key>
-      <PropertyRef Name="numMondero" />
+      <PropertyRef Name="codPerfil" />
     </Key>
-    <Property Name="numMondero" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="tipoIdentificacion" Type="varchar" MaxLength="3" Nullable="false" />
-    <Property Name="identificacion" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="saldo" Type="decimal" Precision="14" Scale="4" Nullable="false" />
-    <Property Name="token" Type="varchar" MaxLength="20" />
-    <Property Name="tokenExpira" Type="datetime" />
-    <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
-    <Property Name="fechaActualizacion" Type="datetime" Nullable="false" />
-    <Property Name="SoporteArchivo" Type="varchar" MaxLength="500" />
+    <Property Name="codPerfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="activo" Type="bit" />
   </EntityType>
-  <EntityType Name="Pedido">
+  <EntityType Name="RegistroSintoma">
     <Key>
-      <PropertyRef Name="pedidoId" />
+      <PropertyRef Name="codRegistro" />
     </Key>
-    <Property Name="pedidoId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="tipoIdentificacion" Type="varchar" MaxLength="3" Nullable="false" />
-    <Property Name="identificacion" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="codCiudad" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="nombreCiudad" Type="varchar" MaxLength="120" Nullable="false" />
-    <Property Name="estado" Type="varchar" MaxLength="3" Nullable="false" />
-    <Property Name="total" Type="decimal" Precision="14" Scale="2" Nullable="false" />
-    <Property Name="direccionEnvio" Type="varchar" MaxLength="400" />
-    <Property Name="barrioEnvio" Type="varchar" MaxLength="400" />
-    <Property Name="InformacionAdicionalEnvio" Type="varchar" MaxLength="400" />
-    <Property Name="medioPago" Type="varchar" MaxLength="100" />
-    <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
-    <Property Name="fechaActualizacion" Type="datetime" Nullable="false" />
+    <Property Name="codRegistro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codSintoma" Type="int" Nullable="false" />
+    <Property Name="codUsuario" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="date" Nullable="false" />
+    <Property Name="activo" Type="bit" />
   </EntityType>
-  <EntityType Name="PedidoAuditoria">
+  <EntityType Name="Sintoma">
     <Key>
-      <PropertyRef Name="auditoriaId" />
+      <PropertyRef Name="codSintoma" />
     </Key>
-    <Property Name="auditoriaId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="pedidoId" Type="bigint" Nullable="false" />
-    <Property Name="versionAnterior" Type="nvarchar(max)" />
-    <Property Name="nuevaVersion" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="fechaOperacion" Type="datetime" Nullable="false" />
-    <Property Name="usuario" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="codSintoma" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="200" Nullable="false" />
   </EntityType>
-  <EntityType Name="PedidoDetalle">
+  <EntityType Name="TipoDocumento">
     <Key>
-      <PropertyRef Name="pedidoDetalleId" />
+      <PropertyRef Name="codDocumento" />
     </Key>
-    <Property Name="pedidoDetalleId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="pedidoId" Type="bigint" Nullable="false" />
-    <Property Name="productoId" Type="int" Nullable="false" />
-    <Property Name="nombreProducto" Type="varchar" MaxLength="400" Nullable="false" />
-    <Property Name="cantidad" Type="int" Nullable="false" />
-    <Property Name="precioUnit" Type="decimal" Precision="14" Scale="4" Nullable="false" />
-    <Property Name="imageUrl" Type="nvarchar" MaxLength="1000" Nullable="false" />
-    <Property Name="referencia" Type="nvarchar" MaxLength="100" />
-    <Property Name="fechaCreacion" Type="datetime" Nullable="false" />
-    <Property Name="fechaActualizacion" Type="datetime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Persona">
-    <Key>
-      <PropertyRef Name="tipoIdentificacion" />
-      <PropertyRef Name="identificacion" />
-    </Key>
-    <Property Name="UIDUsuario" Type="varchar" MaxLength="50" />
-    <Property Name="tipoIdentificacion" Type="varchar" MaxLength="3" Nullable="false" />
-    <Property Name="identificacion" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="nombres" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="apellidos" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="numeroCelular" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="email" Type="varchar" MaxLength="50" />
-    <Property Name="direccion" Type="nvarchar" MaxLength="250" />
-    <Property Name="fechaOperacion" Type="datetime" Nullable="false" />
-    <Property Name="IdProvincia" Type="int" />
-  </EntityType>
-  <EntityType Name="Producto">
-    <Key>
-      <PropertyRef Name="idItem" />
-      <PropertyRef Name="codigoCiudad" />
-    </Key>
-    <Property Name="idItem" Type="int" Nullable="false" />
-    <Property Name="codigoCiudad" Type="nvarchar" MaxLength="80" Nullable="false" />
-    <Property Name="referencia" Type="nvarchar" MaxLength="50" />
-    <Property Name="descripcion" Type="nvarchar" MaxLength="50" />
-    <Property Name="categoria" Type="nvarchar" MaxLength="120" />
-    <Property Name="subCategoria" Type="varchar" MaxLength="120" />
-    <Property Name="tipoMarca" Type="nvarchar" MaxLength="120" />
-    <Property Name="nombreMarca" Type="nvarchar" MaxLength="2000" />
-    <Property Name="PesoUnidadMedida" Type="decimal" Precision="10" Scale="2" />
-    <Property Name="unidadMedida" Type="nvarchar" MaxLength="2000" />
-    <Property Name="presentacion" Type="nvarchar" MaxLength="2000" />
-    <Property Name="precio" Type="money" />
-    <Property Name="precioUnidadMedida" Type="decimal" Precision="32" Scale="15" />
-    <Property Name="imageUrl" Type="nvarchar" MaxLength="1000" />
-    <Property Name="codCategoria" Type="int" />
-    <Property Name="codSubCategoria" Type="nvarchar" MaxLength="100" />
-  </EntityType>
-  <EntityType Name="Provincias">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="Code" Type="varchar" MaxLength="3" Nullable="false" />
-    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
-  <EntityType Name="Tienda">
-    <Key>
-      <PropertyRef Name="codTienda" />
-    </Key>
-    <Property Name="codTienda" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="nombreTienda" Type="nvarchar" MaxLength="120" Nullable="false" />
-    <Property Name="telefono" Type="nvarchar" MaxLength="50" />
-    <Property Name="direccion" Type="nvarchar" MaxLength="1000" />
-    <Property Name="latitud" Type="nvarchar" MaxLength="30" />
-    <Property Name="longitud" Type="nvarchar" MaxLength="30" />
-    <Property Name="codCiudad" Type="nvarchar" MaxLength="100" />
-    <Property Name="nombreCiudad" Type="nvarchar" MaxLength="120" />
-    <Property Name="horaApertura" Type="time" Precision="7" />
-    <Property Name="horaCierre" Type="time" Precision="7" />
-    <Property Name="codDepartamento" Type="nvarchar" MaxLength="100" />
-    <Property Name="nombreDepartamento" Type="nvarchar" MaxLength="120" />
-  </EntityType>
-  <EntityType Name="Transaccion">
-    <Key>
-      <PropertyRef Name="transaccionId" />
-    </Key>
-    <Property Name="transaccionId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="numMonedero" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="tipoMovimiento" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="valor" Type="decimal" Precision="14" Scale="4" Nullable="false" />
-    <Property Name="tipoOrigen" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="numOrigen" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="saldoAnterior" Type="decimal" Precision="14" Scale="4" Nullable="false" />
-    <Property Name="nuevoSaldo" Type="decimal" Precision="14" Scale="4" Nullable="false" />
-    <Property Name="fechaOperacion" Type="datetime" Nullable="false" />
-    <Property Name="soporteTranBonoArchivo" Type="varchar" MaxLength="500" />
-    <Property Name="idAsesorEncargado" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="TransaccionBono">
-    <Key>
-      <PropertyRef Name="transaccionId" />
-    </Key>
-    <Property Name="transaccionId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="numBono" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="tipoMovimiento" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="valor" Type="decimal" Precision="14" Scale="4" Nullable="false" />
-    <Property Name="tipoOrigen" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="saldoAnterior" Type="decimal" Precision="14" Scale="4" Nullable="false" />
-    <Property Name="nuevoSaldo" Type="decimal" Precision="14" Scale="4" Nullable="false" />
-    <Property Name="fechaOperacion" Type="datetime" Nullable="false" />
-    <Property Name="idSucursal" Type="varchar" MaxLength="10" />
-    <Property Name="idTransaccionPost" Type="varchar" MaxLength="50" />
-    <Property Name="idAsesorEncargado" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="Transferencia">
-    <Key>
-      <PropertyRef Name="referencia" />
-    </Key>
-    <Property Name="referencia" Type="varchar" MaxLength="80" Nullable="false" />
-    <Property Name="valor" Type="decimal" Precision="16" Scale="2" Nullable="false" />
-    <Property Name="moneda" Type="varchar" MaxLength="5" Nullable="false" />
-    <Property Name="estado" Type="varchar" MaxLength="12" Nullable="false" />
-    <Property Name="firma" Type="varchar" MaxLength="250" />
-    <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
-    <Property Name="fechaConfirmacion" Type="datetime" />
-    <Property Name="mensaje" Type="varchar" MaxLength="200" />
-    <Property Name="emailTarjetaHab" Type="varchar" MaxLength="50" />
+    <Property Name="codDocumento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomenclatura" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <EntityType Name="Usuario">
     <Key>
-      <PropertyRef Name="UIDUsuario" />
+      <PropertyRef Name="codUsuario" />
     </Key>
-    <Property Name="UIDUsuario" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="codigoImei" Type="varchar" MaxLength="100" />
-    <Property Name="tipoDispositivo" Type="varchar" MaxLength="50" />
-    <Property Name="fechaOperacion" Type="datetime" Nullable="false" />
+    <Property Name="codUsuario" Type="int" Nullable="false" />
+    <Property Name="nombres" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="apellidos" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TipoDocumento" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="numeroDocumento" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="celular" Type="varchar" MaxLength="20" />
+    <Property Name="codPerfil" Type="int" Nullable="false" />
+    <Property Name="codInstitucion" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="correo" Type="varchar" MaxLength="100" />
+    <Property Name="sexo" Type="bit" />
+    <Property Name="activo" Type="bit" />
+    <Property Name="codigoActivacion" Type="varchar" MaxLength="20" />
+    <Property Name="codActivacionExpira" Type="datetime" />
   </EntityType>
-  <Association Name="FK_Bono_Monedero">
-    <End Role="Monedero" Type="Self.Monedero" Multiplicity="1" />
-    <End Role="Bono" Type="Self.Bono" Multiplicity="*" />
+  <Association Name="FK_Institucion_Municipio">
+    <End Role="Municipio" Type="Self.Municipio" Multiplicity="1" />
+    <End Role="Institucion" Type="Self.Institucion" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Monedero">
-        <PropertyRef Name="numMondero" />
+      <Principal Role="Municipio">
+        <PropertyRef Name="codMunicipio" />
       </Principal>
-      <Dependent Role="Bono">
-        <PropertyRef Name="numMonedero" />
+      <Dependent Role="Institucion">
+        <PropertyRef Name="codMunicipio" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Bono_Persona">
-    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
-    <End Role="Bono" Type="Self.Bono" Multiplicity="*" />
+  <Association Name="FK_Municipio_Departamento">
+    <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
+    <End Role="Municipio" Type="Self.Municipio" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Persona">
-        <PropertyRef Name="tipoIdentificacion" />
-        <PropertyRef Name="identificacion" />
+      <Principal Role="Departamento">
+        <PropertyRef Name="codDepartamento" />
       </Principal>
-      <Dependent Role="Bono">
-        <PropertyRef Name="tipoIdentificacion" />
-        <PropertyRef Name="identificacion" />
+      <Dependent Role="Municipio">
+        <PropertyRef Name="codDepartamento" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_HistoricoPedido_Pedido">
-    <End Role="Pedido" Type="Self.Pedido" Multiplicity="1" />
-    <End Role="HistoricoPedido" Type="Self.HistoricoPedido" Multiplicity="*" />
+  <Association Name="FK_RegistroSintoma_Sintoma">
+    <End Role="Sintoma" Type="Self.Sintoma" Multiplicity="1" />
+    <End Role="RegistroSintoma" Type="Self.RegistroSintoma" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Pedido">
-        <PropertyRef Name="pedidoId" />
+      <Principal Role="Sintoma">
+        <PropertyRef Name="codSintoma" />
       </Principal>
-      <Dependent Role="HistoricoPedido">
-        <PropertyRef Name="pedidoId" />
+      <Dependent Role="RegistroSintoma">
+        <PropertyRef Name="codSintoma" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Monedero_Persona">
-    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
-    <End Role="Monedero" Type="Self.Monedero" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Persona">
-        <PropertyRef Name="tipoIdentificacion" />
-        <PropertyRef Name="identificacion" />
-      </Principal>
-      <Dependent Role="Monedero">
-        <PropertyRef Name="tipoIdentificacion" />
-        <PropertyRef Name="identificacion" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PedidoAuditoria_Pedido">
-    <End Role="Pedido" Type="Self.Pedido" Multiplicity="1" />
-    <End Role="PedidoAuditoria" Type="Self.PedidoAuditoria" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Pedido">
-        <PropertyRef Name="pedidoId" />
-      </Principal>
-      <Dependent Role="PedidoAuditoria">
-        <PropertyRef Name="pedidoId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_PedidoDetalle_Pedido">
-    <End Role="Pedido" Type="Self.Pedido" Multiplicity="1" />
-    <End Role="PedidoDetalle" Type="Self.PedidoDetalle" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Pedido">
-        <PropertyRef Name="pedidoId" />
-      </Principal>
-      <Dependent Role="PedidoDetalle">
-        <PropertyRef Name="pedidoId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Persona_Provincias">
-    <End Role="Provincias" Type="Self.Provincias" Multiplicity="0..1" />
-    <End Role="Persona" Type="Self.Persona" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Provincias">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Persona">
-        <PropertyRef Name="IdProvincia" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Persona_Usuario1">
-    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
-    <End Role="Persona" Type="Self.Persona" Multiplicity="*" />
+  <Association Name="FK_RegistroSintoma_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="RegistroSintoma" Type="Self.RegistroSintoma" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Usuario">
-        <PropertyRef Name="UIDUsuario" />
+        <PropertyRef Name="codUsuario" />
       </Principal>
-      <Dependent Role="Persona">
-        <PropertyRef Name="UIDUsuario" />
+      <Dependent Role="RegistroSintoma">
+        <PropertyRef Name="codUsuario" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Transaccion_Bono">
-    <End Role="Bono" Type="Self.Bono" Multiplicity="1" />
-    <End Role="TransaccionBono" Type="Self.TransaccionBono" Multiplicity="*" />
+  <Association Name="FK_Usuario_Perfil">
+    <End Role="Perfil" Type="Self.Perfil" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Bono">
-        <PropertyRef Name="numBono" />
+      <Principal Role="Perfil">
+        <PropertyRef Name="codPerfil" />
       </Principal>
-      <Dependent Role="TransaccionBono">
-        <PropertyRef Name="numBono" />
+      <Dependent Role="Usuario">
+        <PropertyRef Name="codPerfil" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Transaccion_Monedero">
-    <End Role="Monedero" Type="Self.Monedero" Multiplicity="1" />
-    <End Role="Transaccion" Type="Self.Transaccion" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Monedero">
-        <PropertyRef Name="numMondero" />
-      </Principal>
-      <Dependent Role="Transaccion">
-        <PropertyRef Name="numMonedero" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Function Name="AddBonosMasivos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="json" Type="nvarchar(max)" Mode="In" />
-    <Parameter Name="nombreArchivo" Type="varchar" Mode="In" />
-    <Parameter Name="idEncargado" Type="varchar" Mode="In" />
-  </Function>
   <EntityContainer Name="BilleteraVirtualModelStoreContainer">
-    <EntitySet Name="Auditoria" EntityType="Self.Auditoria" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Bono" EntityType="Self.Bono" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Ciudad" EntityType="Self.Ciudad" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Empresa" EntityType="Self.Empresa" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="HistoricoPedido" EntityType="Self.HistoricoPedido" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Monedero" EntityType="Self.Monedero" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Pedido" EntityType="Self.Pedido" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PedidoAuditoria" EntityType="Self.PedidoAuditoria" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PedidoDetalle" EntityType="Self.PedidoDetalle" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Persona" EntityType="Self.Persona" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Provincias" EntityType="Self.Provincias" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Tienda" EntityType="Self.Tienda" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Transaccion" EntityType="Self.Transaccion" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TransaccionBono" EntityType="Self.TransaccionBono" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Transferencia" EntityType="Self.Transferencia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departamento" EntityType="Self.Departamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Institucion" EntityType="Self.Institucion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Municipio" EntityType="Self.Municipio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Perfil" EntityType="Self.Perfil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RegistroSintoma" EntityType="Self.RegistroSintoma" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sintoma" EntityType="Self.Sintoma" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoDocumento" EntityType="Self.TipoDocumento" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Dominio" EntityType="Self.Dominio" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
@@ -420,45 +167,25 @@ advertencia 6002: La tabla o vista 'BDMonederoPanamaVirtualV2.dbo.Dominio' no ti
     [Dominio].[descripcion] AS [descripcion]
     FROM [dbo].[Dominio] AS [Dominio]</DefiningQuery>
     </EntitySet>
-    <AssociationSet Name="FK_Bono_Monedero" Association="Self.FK_Bono_Monedero">
-      <End Role="Monedero" EntitySet="Monedero" />
-      <End Role="Bono" EntitySet="Bono" />
+    <AssociationSet Name="FK_Institucion_Municipio" Association="Self.FK_Institucion_Municipio">
+      <End Role="Municipio" EntitySet="Municipio" />
+      <End Role="Institucion" EntitySet="Institucion" />
     </AssociationSet>
-    <AssociationSet Name="FK_Bono_Persona" Association="Self.FK_Bono_Persona">
-      <End Role="Persona" EntitySet="Persona" />
-      <End Role="Bono" EntitySet="Bono" />
+    <AssociationSet Name="FK_Municipio_Departamento" Association="Self.FK_Municipio_Departamento">
+      <End Role="Departamento" EntitySet="Departamento" />
+      <End Role="Municipio" EntitySet="Municipio" />
     </AssociationSet>
-    <AssociationSet Name="FK_HistoricoPedido_Pedido" Association="Self.FK_HistoricoPedido_Pedido">
-      <End Role="Pedido" EntitySet="Pedido" />
-      <End Role="HistoricoPedido" EntitySet="HistoricoPedido" />
+    <AssociationSet Name="FK_RegistroSintoma_Sintoma" Association="Self.FK_RegistroSintoma_Sintoma">
+      <End Role="Sintoma" EntitySet="Sintoma" />
+      <End Role="RegistroSintoma" EntitySet="RegistroSintoma" />
     </AssociationSet>
-    <AssociationSet Name="FK_Monedero_Persona" Association="Self.FK_Monedero_Persona">
-      <End Role="Persona" EntitySet="Persona" />
-      <End Role="Monedero" EntitySet="Monedero" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PedidoAuditoria_Pedido" Association="Self.FK_PedidoAuditoria_Pedido">
-      <End Role="Pedido" EntitySet="Pedido" />
-      <End Role="PedidoAuditoria" EntitySet="PedidoAuditoria" />
-    </AssociationSet>
-    <AssociationSet Name="FK_PedidoDetalle_Pedido" Association="Self.FK_PedidoDetalle_Pedido">
-      <End Role="Pedido" EntitySet="Pedido" />
-      <End Role="PedidoDetalle" EntitySet="PedidoDetalle" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Persona_Provincias" Association="Self.FK_Persona_Provincias">
-      <End Role="Provincias" EntitySet="Provincias" />
-      <End Role="Persona" EntitySet="Persona" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Persona_Usuario1" Association="Self.FK_Persona_Usuario1">
+    <AssociationSet Name="FK_RegistroSintoma_Usuario" Association="Self.FK_RegistroSintoma_Usuario">
       <End Role="Usuario" EntitySet="Usuario" />
-      <End Role="Persona" EntitySet="Persona" />
+      <End Role="RegistroSintoma" EntitySet="RegistroSintoma" />
     </AssociationSet>
-    <AssociationSet Name="FK_Transaccion_Bono" Association="Self.FK_Transaccion_Bono">
-      <End Role="Bono" EntitySet="Bono" />
-      <End Role="TransaccionBono" EntitySet="TransaccionBono" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Transaccion_Monedero" Association="Self.FK_Transaccion_Monedero">
-      <End Role="Monedero" EntitySet="Monedero" />
-      <End Role="Transaccion" EntitySet="Transaccion" />
+    <AssociationSet Name="FK_Usuario_Perfil" Association="Self.FK_Usuario_Perfil">
+      <End Role="Perfil" EntitySet="Perfil" />
+      <End Role="Usuario" EntitySet="Usuario" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

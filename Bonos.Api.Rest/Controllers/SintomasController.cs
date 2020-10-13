@@ -9,10 +9,12 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Collections.Generic;
 using com.mercaderia.bono.Entidades.Dto;
+using System.Web.Http.Cors;
 
 namespace Bonos.Api.Rest.Controllers
 {
     [RoutePrefix("api/Sintomas")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class SintomasController : ApiController
     {
         Logger log = Logger.Instancia;

@@ -22,6 +22,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Bonos.Api.Rest.Controllers.DominioController.GetSendNotificaciones">
+            <summary>
+            Metodo para enviar notificaciones masivas
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Bonos.Api.Rest.Controllers.SintomasController.GetSintomas">
             <summary>
             Método que devuelve los sintomas registrados en la base de datos
@@ -42,17 +48,21 @@
         </member>
         <member name="M:Bonos.Api.Rest.Controllers.UsuarioController.ReportTransactionBonoFromPOS(com.mercaderia.bono.Entidades.Dto.UsuarioActivoDto)">
             <summary>
-            Servicio para activar el usuario,
-            realiza un debito en el bono generado
+            Servicio para activar el usuario       
             </summary>
-            <param name="numBono"></param>
-            <returns></returns>
+            <returns></returns>   
         </member>
         <member name="M:Bonos.Api.Rest.Controllers.UsuarioController.GetValidaUsuario(System.String,System.String,System.String)">
             <summary>
             Servicio para dar acceso a la aplicacion se valida tipo documento y numero de documento e institucion
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.UsuarioController.ReenviarCodActivacion(com.mercaderia.bono.Entidades.Dto.UsuarioActivoDto)">
+            <summary>
+            Servicio para reenviar codigo activacion       
+            </summary>
+            <returns></returns>   
         </member>
         <member name="M:Bonos.Api.Rest.Controllers.UsuarioController.GetUsuario(System.String,System.String)">
             <summary>
