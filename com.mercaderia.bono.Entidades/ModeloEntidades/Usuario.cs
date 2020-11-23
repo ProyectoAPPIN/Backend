@@ -35,6 +35,7 @@ namespace com.mercaderia.bono.Entidades.ModeloEntidades
         public Nullable<bool> activo { get; set; }
         public string codigoActivacion { get; set; }
         public Nullable<System.DateTime> codActivacionExpira { get; set; }
+        public string tokenDispositivo { get; set; }
     
         public virtual Perfil Perfil { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

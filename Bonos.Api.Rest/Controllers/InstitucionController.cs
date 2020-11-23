@@ -12,8 +12,8 @@ using System.Web.Http.Cors;
 
 namespace Bonos.Api.Rest.Controllers
 {
-    [RoutePrefix("api/Institucion")]
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [EnableCors(origins: "*", headers: "*", methods: "*", exposedHeaders: "X-Custom-Headers")]
+    [RoutePrefix("api/Institucion")]    
     public class InstitucionController : ApiController
     {
         Logger log = Logger.Instancia;

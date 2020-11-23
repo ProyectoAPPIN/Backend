@@ -24,7 +24,7 @@ namespace com.mercaderia.bono.DAL
         public List<UsuarioDto> ObtenerUsuarioExistente(string tipoIdentificacion, string identificacion)
         {
             var usuarioExistente = context.Usuario.Where(x => x.TipoDocumento == tipoIdentificacion
-                                              && x.numeroDocumento == identificacion);
+                                              && x.numeroDocumento == identificacion && x.activo == false);
 
             var consulta = (from usu in usuarioExistente
                             select new UsuarioDto()
@@ -54,21 +54,48 @@ namespace com.mercaderia.bono.DAL
         {
             var usuarioActivo =  context.Usuario.Where(x => x.TipoDocumento == tipoIdentificacion
                                                  && x.numeroDocumento == identificacion
-                                                 && x.codInstitucion == idUniversidad && x.activo == true);           
+                                                 && x.codInstitucion == idUniversidad);
+
+            int codUsuario = usuarioActivo.Select(x => x.codUsuario).FirstOrDefault();
+            Nullable<DateTime> fechaIngreso = DateTime.Now.Date;
+
+            var ingresoActivo = context.RegistroIngreso.Where(x => x.codUsuario == codUsuario && x.fecha == fechaIngreso);
+            int totRegistros = ingresoActivo.Count();
+            int codRegistro = 0;
+
+            if (totRegistros > 0)
+            {
+                codRegistro = ingresoActivo.Max(x => x.codRegistro);
+            }
+
+            string ingActivo = "0";
+            if (codRegistro > 0)
+            {
+                ingActivo = "1";
+            }
 
             var consulta = (from usu in usuarioActivo
                             select new AccesoUsuarioDto()
                             {
                                 codUsuario = usu.codUsuario,
                                 nombres = usu.nombres + " " + usu.apellidos,
-                                activo = usu.activo 
+                                activo = usu.activo,
+                                ingresoActivo = ingActivo
+
                             }).ToList();
 
             return consulta.ToList(); 
         }
         public List<Usuario> ObtenerListaUsuariosActivo()
         {
-            var listaUsuariosActivo = context.Usuario.Where(x => x.activo == true);            
+            var listaUsuariosActivo = context.Usuario.Where(x => x.activo == true && x.tokenDispositivo != null);            
+
+            return listaUsuariosActivo.ToList();
+        }
+
+        public List<Usuario> ObtenerListaUsuariosActivoEmail()
+        {
+            var listaUsuariosActivo = context.Usuario.Where(x => x.activo == true && x.correo != null);
 
             return listaUsuariosActivo.ToList();
         }

@@ -13,8 +13,9 @@ using System.Web.Http.Cors;
 
 namespace Bonos.Api.Rest.Controllers
 {
+
     [RoutePrefix("api/Usuario")]
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [EnableCors(origins: "*", headers: "*", methods: "*", exposedHeaders: "X-Custom-Headers")]
     public class UsuarioController : ApiController
     {
         Logger log = Logger.Instancia;
@@ -60,8 +61,9 @@ namespace Bonos.Api.Rest.Controllers
             try
             {
                 NegocioUsuario negocioUsuario = new NegocioUsuario();
-                Usuario usuarioResultante = negocioUsuario.ActivacionUsuario(usuario);
-                return Content(HttpStatusCode.OK, usuarioResultante);
+                List<respuestaActivacionDto> activacionResultante = negocioUsuario.ActivacionUsuario(usuario);                
+
+                return Content(HttpStatusCode.OK, activacionResultante);
             }
             catch (ExceptionControlada ex)
             {
@@ -76,7 +78,8 @@ namespace Bonos.Api.Rest.Controllers
         }
 
         /// <summary>
-        /// Servicio para dar acceso a la aplicacion se valida tipo documento y numero de documento e institucion
+        /// Servicio para dar acceso a la aplicacion se valida si el tipo documento y numero de documento e institucion existen
+        /// Se verifica si tiene un registro de ingreso
         /// </summary>
         /// <returns></returns>
 
@@ -149,10 +152,6 @@ namespace Bonos.Api.Rest.Controllers
                 }
                 return Request.CreateResponse(HttpStatusCode.OK, usuarioResultado);
             }
-
-
-
-
             catch (ExceptionControlada ex)
             {
                 log.EscribirLogError(Mensajes.MsgUsuarioError, ex);
@@ -165,5 +164,6 @@ namespace Bonos.Api.Rest.Controllers
                     new ApiException(HttpStatusCode.InternalServerError, Mensajes.MsgErrorNoEspacificado, ex));
             }
         }
+
     }
 }

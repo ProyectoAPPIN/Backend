@@ -13,3 +13,11 @@ C:\Users\mcoral\source\repos\APIAPPIN\back\com.mercaderia.bono.Utilidades.Excepc
 C:\Users\mcoral\source\repos\APIAPPIN\back\com.mercaderia.bono.Utilidades.Excepciones\obj\Debug\com.mercaderia.bono.Utilidades.Excepciones.csproj.CoreCompileInputs.cache
 C:\Users\mcoral\source\repos\APIAPPIN\back\com.mercaderia.bono.Utilidades.Excepciones\obj\Debug\com.mercaderia.bono.Utilidades.Excepciones.dll
 C:\Users\mcoral\source\repos\APIAPPIN\back\com.mercaderia.bono.Utilidades.Excepciones\obj\Debug\com.mercaderia.bono.Utilidades.Excepciones.pdb
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Excepciones\bin\Debug\com.mercaderia.bono.Utilidades.Excepciones.dll
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Excepciones\bin\Debug\com.mercaderia.bono.Utilidades.Excepciones.pdb
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Excepciones\bin\Debug\com.mercaderia.bono.Utilidades.Excepciones.dll.CodeAnalysisLog.xml
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Excepciones\bin\Debug\com.mercaderia.bono.Utilidades.Excepciones.dll.lastcodeanalysissucceeded
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Excepciones\obj\Debug\com.mercaderia.bono.Utilidades.Excepciones.csprojAssemblyReference.cache
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Excepciones\obj\Debug\com.mercaderia.bono.Utilidades.Excepciones.csproj.CoreCompileInputs.cache
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Excepciones\obj\Debug\com.mercaderia.bono.Utilidades.Excepciones.dll
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Excepciones\obj\Debug\com.mercaderia.bono.Utilidades.Excepciones.pdb

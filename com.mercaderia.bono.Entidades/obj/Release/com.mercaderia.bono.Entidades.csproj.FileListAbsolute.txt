@@ -10,3 +10,15 @@ C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\
 C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Entidades\obj\Release\com.mercaderia.bono.Entidades.csproj.CopyComplete
 C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Entidades\obj\Release\com.mercaderia.bono.Entidades.dll
 C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Entidades\obj\Release\com.mercaderia.bono.Entidades.pdb
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\bin\Release\com.mercaderia.bono.Entidades.dll.config
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\bin\Release\com.mercaderia.bono.Entidades.dll
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\bin\Release\com.mercaderia.bono.Entidades.pdb
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\bin\Release\com.mercaderia.bono.Entidades.dll.CodeAnalysisLog.xml
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\bin\Release\com.mercaderia.bono.Entidades.dll.lastcodeanalysissucceeded
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\bin\Release\Newtonsoft.Json.dll
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\bin\Release\Newtonsoft.Json.xml
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\obj\Release\com.mercaderia.bono.Entidades.csprojAssemblyReference.cache
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\obj\Release\com.mercaderia.bono.Entidades.csproj.CoreCompileInputs.cache
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\obj\Release\com.mercaderia.bono.Entidades.csproj.CopyComplete
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\obj\Release\com.mercaderia.bono.Entidades.dll
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\obj\Release\com.mercaderia.bono.Entidades.pdb

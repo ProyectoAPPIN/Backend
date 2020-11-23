@@ -31,6 +31,15 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
     <Property Name="codMunicipio" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="activo" Type="bit" />
   </EntityType>
+  <EntityType Name="Lavamanos">
+    <Key>
+      <PropertyRef Name="codLavamanos" />
+    </Key>
+    <Property Name="codLavamanos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codInstitucion" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="codigoQR" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
   <EntityType Name="Municipio">
     <Key>
       <PropertyRef Name="codMunicipio" />
@@ -48,6 +57,28 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
     <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="activo" Type="bit" />
   </EntityType>
+  <EntityType Name="RegistroIngreso">
+    <Key>
+      <PropertyRef Name="codRegistro" />
+    </Key>
+    <Property Name="codRegistro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codUsuario" Type="int" Nullable="false" />
+    <Property Name="codInstitucion" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="fecha" Type="date" Nullable="false" />
+    <Property Name="hora" Type="time" Precision="7" Nullable="false" />
+    <Property Name="temperatura" Type="varchar" MaxLength="10" />
+    <Property Name="oxigenacion" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="RegistroLavado">
+    <Key>
+      <PropertyRef Name="codRegistro" />
+    </Key>
+    <Property Name="codRegistro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="codUsuario" Type="int" Nullable="false" />
+    <Property Name="codLavamanos" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="date" />
+    <Property Name="hora_registro" Type="time" Precision="7" />
+  </EntityType>
   <EntityType Name="RegistroSintoma">
     <Key>
       <PropertyRef Name="codRegistro" />
@@ -64,6 +95,7 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
     </Key>
     <Property Name="codSintoma" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="opcion" Type="int" />
   </EntityType>
   <EntityType Name="TipoDocumento">
     <Key>
@@ -90,6 +122,7 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
     <Property Name="activo" Type="bit" />
     <Property Name="codigoActivacion" Type="varchar" MaxLength="20" />
     <Property Name="codActivacionExpira" Type="datetime" />
+    <Property Name="tokenDispositivo" Type="varchar" MaxLength="1000" />
   </EntityType>
   <Association Name="FK_Institucion_Municipio">
     <End Role="Municipio" Type="Self.Municipio" Multiplicity="1" />
@@ -103,6 +136,18 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Lavamanos_Institucion">
+    <End Role="Institucion" Type="Self.Institucion" Multiplicity="1" />
+    <End Role="Lavamanos" Type="Self.Lavamanos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institucion">
+        <PropertyRef Name="codInstitucion" />
+      </Principal>
+      <Dependent Role="Lavamanos">
+        <PropertyRef Name="codInstitucion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Municipio_Departamento">
     <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
     <End Role="Municipio" Type="Self.Municipio" Multiplicity="*" />
@@ -112,6 +157,42 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
       </Principal>
       <Dependent Role="Municipio">
         <PropertyRef Name="codDepartamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegistroIngreso_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="RegistroIngreso" Type="Self.RegistroIngreso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="codUsuario" />
+      </Principal>
+      <Dependent Role="RegistroIngreso">
+        <PropertyRef Name="codUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegistroLavado_Lavamanos">
+    <End Role="Lavamanos" Type="Self.Lavamanos" Multiplicity="1" />
+    <End Role="RegistroLavado" Type="Self.RegistroLavado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lavamanos">
+        <PropertyRef Name="codLavamanos" />
+      </Principal>
+      <Dependent Role="RegistroLavado">
+        <PropertyRef Name="codLavamanos" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegistroSintoma_Institucion">
+    <End Role="Institucion" Type="Self.Institucion" Multiplicity="1" />
+    <End Role="RegistroIngreso" Type="Self.RegistroIngreso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institucion">
+        <PropertyRef Name="codInstitucion" />
+      </Principal>
+      <Dependent Role="RegistroIngreso">
+        <PropertyRef Name="codInstitucion" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -151,11 +232,26 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FKRegistroLavado_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="RegistroLavado" Type="Self.RegistroLavado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="codUsuario" />
+      </Principal>
+      <Dependent Role="RegistroLavado">
+        <PropertyRef Name="codUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="BilleteraVirtualModelStoreContainer">
     <EntitySet Name="Departamento" EntityType="Self.Departamento" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Institucion" EntityType="Self.Institucion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lavamanos" EntityType="Self.Lavamanos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Municipio" EntityType="Self.Municipio" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Perfil" EntityType="Self.Perfil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RegistroIngreso" EntityType="Self.RegistroIngreso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RegistroLavado" EntityType="Self.RegistroLavado" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RegistroSintoma" EntityType="Self.RegistroSintoma" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sintoma" EntityType="Self.Sintoma" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TipoDocumento" EntityType="Self.TipoDocumento" Schema="dbo" store:Type="Tables" />
@@ -171,9 +267,25 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
       <End Role="Municipio" EntitySet="Municipio" />
       <End Role="Institucion" EntitySet="Institucion" />
     </AssociationSet>
+    <AssociationSet Name="FK_Lavamanos_Institucion" Association="Self.FK_Lavamanos_Institucion">
+      <End Role="Institucion" EntitySet="Institucion" />
+      <End Role="Lavamanos" EntitySet="Lavamanos" />
+    </AssociationSet>
     <AssociationSet Name="FK_Municipio_Departamento" Association="Self.FK_Municipio_Departamento">
       <End Role="Departamento" EntitySet="Departamento" />
       <End Role="Municipio" EntitySet="Municipio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegistroIngreso_Usuario" Association="Self.FK_RegistroIngreso_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="RegistroIngreso" EntitySet="RegistroIngreso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegistroLavado_Lavamanos" Association="Self.FK_RegistroLavado_Lavamanos">
+      <End Role="Lavamanos" EntitySet="Lavamanos" />
+      <End Role="RegistroLavado" EntitySet="RegistroLavado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegistroSintoma_Institucion" Association="Self.FK_RegistroSintoma_Institucion">
+      <End Role="Institucion" EntitySet="Institucion" />
+      <End Role="RegistroIngreso" EntitySet="RegistroIngreso" />
     </AssociationSet>
     <AssociationSet Name="FK_RegistroSintoma_Sintoma" Association="Self.FK_RegistroSintoma_Sintoma">
       <End Role="Sintoma" EntitySet="Sintoma" />
@@ -186,6 +298,10 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
     <AssociationSet Name="FK_Usuario_Perfil" Association="Self.FK_Usuario_Perfil">
       <End Role="Perfil" EntitySet="Perfil" />
       <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FKRegistroLavado_Usuario" Association="Self.FKRegistroLavado_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="RegistroLavado" EntitySet="RegistroLavado" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

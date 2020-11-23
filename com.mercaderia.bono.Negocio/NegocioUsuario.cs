@@ -82,9 +82,47 @@ namespace com.mercaderia.bono.Negocio
                         sexo = usuario.sexo,
                         activo = usuario.activo,
                         codigoActivacion = codigoActivacion,
-                        codActivacionExpira = DateTime.Now.AddMinutes(int.Parse(dominioEncontrado.valor))
+                        codActivacionExpira = DateTime.Now.AddMinutes(int.Parse(dominioEncontrado.valor)),
+                        tokenDispositivo = usuario.token
                 };
                     unitOfWork.UsuarioRepositorio.Adicionar(nuevoUsuario);
+                    unitOfWork.Save();
+                }
+                //Actualizo la informacion del usuario ya existente
+                else
+                {
+                    nuevoUsuario = new Usuario()
+                    {
+                        codUsuario = persona.codUsuario,
+                        nombres = usuario.nombres,
+                        apellidos = usuario.apellidos,
+                        TipoDocumento = usuario.TipoDocumento,
+                        numeroDocumento = usuario.numeroDocumento,
+                        celular = usuario.celular,
+                        codPerfil = usuario.codPerfil,
+                        codInstitucion = usuario.codInstitucion,
+                        correo = usuario.correo,
+                        sexo = usuario.sexo,
+                        activo = usuario.activo,
+                        codigoActivacion = codigoActivacion,
+                        codActivacionExpira = DateTime.Now.AddMinutes(int.Parse(dominioEncontrado.valor)),
+                        tokenDispositivo = usuario.token
+                    };
+                    //Cargo el objeto para modificarlo
+                    persona.nombres = nuevoUsuario.nombres;
+                    persona.apellidos = nuevoUsuario.apellidos;
+                    persona.TipoDocumento = nuevoUsuario.TipoDocumento;
+                    persona.numeroDocumento = nuevoUsuario.numeroDocumento;
+                    persona.celular = nuevoUsuario.celular;
+                    persona.correo = nuevoUsuario.correo;
+                    persona.codPerfil = nuevoUsuario.codPerfil;
+                    persona.codInstitucion = nuevoUsuario.codInstitucion;
+                    persona.sexo = nuevoUsuario.sexo;
+                    persona.activo = nuevoUsuario.activo;
+                    persona.codigoActivacion = nuevoUsuario.codigoActivacion;
+                    persona.codActivacionExpira = nuevoUsuario.codActivacionExpira;
+                    persona.tokenDispositivo = nuevoUsuario.tokenDispositivo;
+                    unitOfWork.UsuarioRepositorio.Actualizar(persona);
                     unitOfWork.Save();
                 }
                 return nuevoUsuario;
@@ -121,8 +159,9 @@ namespace com.mercaderia.bono.Negocio
         {
             Random r = new Random();           
             string code = "";
-            int rInt = r.Next(0, 9999); //Numero Aleatorio 4 digitos
+            int rInt = r.Next(0, 999999); //Numero Aleatorio 4 digitos
             code =  rInt.ToString();
+            code = code.Substring(0, 4);
             return code;
         }
         /// <summary>
@@ -161,12 +200,14 @@ namespace com.mercaderia.bono.Negocio
                 if (plantillaCorreo.IsNull() || string.IsNullOrEmpty(plantillaCorreo.valor))
                     throw new ExceptionControlada(Mensajes.MsgTextoInicialCorreoRegistroPedido);
 
-                var bytes = Convert.FromBase64String(Constantes.IMAGEN_BANNER_EMAIL);                
+                var bytes = Convert.FromBase64String(Constantes.IMAGEN_BANNER_EMAIL);
+                var contents = new MemoryStream(bytes);
 
                 correoEnviar.De = dominioRemitentePrincipal.valor;
                 correoEnviar.Asunto = domonioAsuntoCorreo.valor;
                 correoEnviar.Para = new List<string>() { email };
-                correoEnviar.Cuerpo = plantillaCorreo.valor.Replace("@MESSAGE", message);                
+                correoEnviar.Cuerpo = plantillaCorreo.valor.Replace("@MESSAGE", message);
+                correoEnviar.Adjunto = contents;
                 correoProxy.EnviarCorreo(correoEnviar, true);
             }
             catch (Exception ex)
@@ -181,33 +222,98 @@ namespace com.mercaderia.bono.Negocio
         /// </summary>
         /// <param name="usuario"></param>
         /// <returns></returns>
-        public Usuario ActivacionUsuario(UsuarioActivoDto usuario)
+        public List<respuestaActivacionDto> ActivacionUsuario(UsuarioActivoDto usuario)
         {
+            List<respuestaActivacionDto> respuesta = new List<respuestaActivacionDto>();            
+            int error = 0; 
             if (string.IsNullOrEmpty(usuario.codUsuario))
-                throw new ExceptionControlada(Mensajes.MsgUsuarioVacio, Mensajes.codErrorUsuarioVacio);
+            {
+                respuesta.Add(new respuestaActivacionDto()
+                {
+                    codRespuesta = Mensajes.codErrorUsuarioVacio,
+                    codUsuario = Mensajes.MsgUsuarioVacio,
+                    codigoActivacion = null,
+                    activo = false                    
+                });
+                error = 1;
+            }            
 
             if (string.IsNullOrEmpty(usuario.codigoActivacion))
-                throw new ExceptionControlada(Mensajes.MsgCodigoActivacionVacio, Mensajes.codErrorMsgCodigoActivacionVacio);
-
-            Usuario usuarioEncontrado = this.ConsultarPorId(Convert.ToInt32(usuario.codUsuario));
-
-            if (usuarioEncontrado.IsNull())
-                throw new ExceptionControlada(Mensajes.MsgUsuarioNoExistente, Mensajes.codErrorMsgUsuarioNoExistente);
-
-            if (!usuarioEncontrado.codigoActivacion.Equals(usuario.codigoActivacion))
-                throw new ExceptionControlada(Mensajes.MsgcodMsgtokenErroneo, Mensajes.codMsgcodMsgtokenErroneo);
-
-            if (usuarioEncontrado.codActivacionExpira < DateTime.Now)
-                throw new ExceptionControlada(Mensajes.MsgtokenExpiraErroneo, Mensajes.codMsgtokenExpiraErroneo);
-            
-            using (UnitOfWork unitOfWork = new UnitOfWork())
             {
-                usuarioEncontrado.codUsuario = usuarioEncontrado.codUsuario;
-                usuarioEncontrado.activo = true;                             
-                unitOfWork.UsuarioRepositorio.Actualizar(usuarioEncontrado);               
-                unitOfWork.Save();
+                respuesta.Add(new respuestaActivacionDto()
+                {
+                    codRespuesta = Mensajes.codErrorTokenVacio,
+                    codUsuario = Mensajes.MsgTokenVacio,
+                    codigoActivacion = null,
+                    activo = false
+                });
+                error = 1;
             }
-            return usuarioEncontrado;
+            if (error == 0)
+            {
+                Usuario usuarioEncontrado = this.ConsultarPorId(Convert.ToInt32(usuario.codUsuario));
+
+                if (usuarioEncontrado.IsNull())
+                {
+                    respuesta.Add(new respuestaActivacionDto()
+                    {
+                        codRespuesta = Mensajes.codErrorMsgUsuarioNoExistente,
+                        codUsuario = Mensajes.MsgUsuarioNoExistente,
+                        codigoActivacion = null,
+                        activo = false
+                    });
+                    error = 1;
+                }
+
+                if (!usuarioEncontrado.codigoActivacion.Equals(usuario.codigoActivacion))
+                {
+
+                    respuesta.Add(new respuestaActivacionDto()
+                    {
+                        codRespuesta = Mensajes.codMsgcodMsgtokenErroneo,
+                        codUsuario = Mensajes.MsgcodMsgtokenErroneo,
+                        codigoActivacion = null,
+                        activo = false
+                    });
+                    error = 1;
+                }
+
+                if (usuarioEncontrado.codActivacionExpira < DateTime.Now)
+                {
+                    respuesta.Add(new respuestaActivacionDto()
+                    {
+                        codRespuesta = Mensajes.codMsgtokenExpiraErroneo,
+                        codUsuario = Mensajes.MsgtokenExpiraErroneo,
+                        codigoActivacion = null,
+                        activo = false
+                    });
+                    error = 1;
+                }
+
+                // pasa todas las validaciones realizo la activacion del usuario           
+                if (error == 0)
+                {
+                    using (UnitOfWork unitOfWork = new UnitOfWork())
+                    {
+                        usuarioEncontrado.codUsuario = usuarioEncontrado.codUsuario;
+                        usuarioEncontrado.activo = true;
+                        unitOfWork.UsuarioRepositorio.Actualizar(usuarioEncontrado);
+                        unitOfWork.Save();
+
+                        respuesta.Add(new respuestaActivacionDto()
+                        {
+                            codRespuesta = "1",
+                            codUsuario = Convert.ToString(usuarioEncontrado.codUsuario),
+                            codigoActivacion = usuarioEncontrado.codigoActivacion,
+                            activo = true
+                        });
+
+                    }
+                }
+
+            }   
+               
+            return respuesta;
         }
         /// <summary>
         /// Metodo para validar si el usuario esta activo y dar acceso a la aplicacion

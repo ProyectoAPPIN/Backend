@@ -40,6 +40,29 @@
       <End Role="Usuario" EntitySet="Usuario" />
       <End Role="RegistroSintoma" EntitySet="RegistroSintoma" />
     </AssociationSet>
+    <EntitySet Name="Lavamanos" EntityType="BilleteraVirtualModel.Lavamanos" />
+    <EntitySet Name="RegistroIngreso" EntityType="BilleteraVirtualModel.RegistroIngreso" />
+    <EntitySet Name="RegistroLavado" EntityType="BilleteraVirtualModel.RegistroLavado" />
+    <AssociationSet Name="FK_Lavamanos_Institucion" Association="BilleteraVirtualModel.FK_Lavamanos_Institucion">
+      <End Role="Institucion" EntitySet="Institucion" />
+      <End Role="Lavamanos" EntitySet="Lavamanos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegistroSintoma_Institucion" Association="BilleteraVirtualModel.FK_RegistroSintoma_Institucion">
+      <End Role="Institucion" EntitySet="Institucion" />
+      <End Role="RegistroIngreso" EntitySet="RegistroIngreso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegistroLavado_Lavamanos" Association="BilleteraVirtualModel.FK_RegistroLavado_Lavamanos">
+      <End Role="Lavamanos" EntitySet="Lavamanos" />
+      <End Role="RegistroLavado" EntitySet="RegistroLavado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegistroIngreso_Usuario" Association="BilleteraVirtualModel.FK_RegistroIngreso_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="RegistroIngreso" EntitySet="RegistroIngreso" />
+    </AssociationSet>
+    <AssociationSet Name="FKRegistroLavado_Usuario" Association="BilleteraVirtualModel.FKRegistroLavado_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="RegistroLavado" EntitySet="RegistroLavado" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="TipoDocumento">
     <Key>
@@ -69,6 +92,8 @@
     <Property Name="codMunicipio" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="activo" Type="Boolean" />
     <NavigationProperty Name="Municipio" Relationship="BilleteraVirtualModel.FK_Institucion_Municipio" FromRole="Institucion" ToRole="Municipio" />
+    <NavigationProperty Name="Lavamanos" Relationship="BilleteraVirtualModel.FK_Lavamanos_Institucion" FromRole="Institucion" ToRole="Lavamanos" />
+    <NavigationProperty Name="RegistroIngreso" Relationship="BilleteraVirtualModel.FK_RegistroSintoma_Institucion" FromRole="Institucion" ToRole="RegistroIngreso" />
   </EntityType>
   <EntityType Name="Municipio">
     <Key>
@@ -109,6 +134,7 @@
     <Property Name="codSintoma" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="RegistroSintoma" Relationship="BilleteraVirtualModel.FK_RegistroSintoma_Sintoma" FromRole="Sintoma" ToRole="RegistroSintoma" />
+    <Property Name="opcion" Type="Int32" />
   </EntityType>
   <EntityType Name="Usuario">
     <Key>
@@ -129,6 +155,9 @@
     <Property Name="codigoActivacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="codActivacionExpira" Type="DateTime" Precision="3" />
     <NavigationProperty Name="RegistroSintoma" Relationship="BilleteraVirtualModel.FK_RegistroSintoma_Usuario" FromRole="Usuario" ToRole="RegistroSintoma" />
+    <NavigationProperty Name="RegistroIngreso" Relationship="BilleteraVirtualModel.FK_RegistroIngreso_Usuario" FromRole="Usuario" ToRole="RegistroIngreso" />
+    <NavigationProperty Name="RegistroLavado" Relationship="BilleteraVirtualModel.FKRegistroLavado_Usuario" FromRole="Usuario" ToRole="RegistroLavado" />
+    <Property Name="tokenDispositivo" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Dominio">
     <Key>
@@ -196,6 +225,103 @@
         <PropertyRef Name="codUsuario" />
       </Principal>
       <Dependent Role="RegistroSintoma">
+        <PropertyRef Name="codUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Lavamanos">
+    <Key>
+      <PropertyRef Name="codLavamanos" />
+    </Key>
+    <Property Name="codLavamanos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codInstitucion" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="codigoQR" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Institucion" Relationship="BilleteraVirtualModel.FK_Lavamanos_Institucion" FromRole="Lavamanos" ToRole="Institucion" />
+    <NavigationProperty Name="RegistroLavado" Relationship="BilleteraVirtualModel.FK_RegistroLavado_Lavamanos" FromRole="Lavamanos" ToRole="RegistroLavado" />
+  </EntityType>
+  <EntityType Name="RegistroIngreso">
+    <Key>
+      <PropertyRef Name="codRegistro" />
+    </Key>
+    <Property Name="codRegistro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codUsuario" Type="Int32" Nullable="false" />
+    <Property Name="codInstitucion" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="hora" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="temperatura" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="oxigenacion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Institucion" Relationship="BilleteraVirtualModel.FK_RegistroSintoma_Institucion" FromRole="RegistroIngreso" ToRole="Institucion" />
+    <NavigationProperty Name="Usuario" Relationship="BilleteraVirtualModel.FK_RegistroIngreso_Usuario" FromRole="RegistroIngreso" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="RegistroLavado">
+    <Key>
+      <PropertyRef Name="codRegistro" />
+    </Key>
+    <Property Name="codRegistro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codUsuario" Type="Int32" Nullable="false" />
+    <Property Name="codLavamanos" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Precision="0" />
+    <Property Name="hora_registro" Type="Time" Precision="7" />
+    <NavigationProperty Name="Lavamanos" Relationship="BilleteraVirtualModel.FK_RegistroLavado_Lavamanos" FromRole="RegistroLavado" ToRole="Lavamanos" />
+    <NavigationProperty Name="Usuario" Relationship="BilleteraVirtualModel.FKRegistroLavado_Usuario" FromRole="RegistroLavado" ToRole="Usuario" />
+  </EntityType>
+  <Association Name="FK_Lavamanos_Institucion">
+    <End Type="BilleteraVirtualModel.Institucion" Role="Institucion" Multiplicity="1" />
+    <End Type="BilleteraVirtualModel.Lavamanos" Role="Lavamanos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institucion">
+        <PropertyRef Name="codInstitucion" />
+      </Principal>
+      <Dependent Role="Lavamanos">
+        <PropertyRef Name="codInstitucion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegistroSintoma_Institucion">
+    <End Type="BilleteraVirtualModel.Institucion" Role="Institucion" Multiplicity="1" />
+    <End Type="BilleteraVirtualModel.RegistroIngreso" Role="RegistroIngreso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institucion">
+        <PropertyRef Name="codInstitucion" />
+      </Principal>
+      <Dependent Role="RegistroIngreso">
+        <PropertyRef Name="codInstitucion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegistroLavado_Lavamanos">
+    <End Type="BilleteraVirtualModel.Lavamanos" Role="Lavamanos" Multiplicity="1" />
+    <End Type="BilleteraVirtualModel.RegistroLavado" Role="RegistroLavado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lavamanos">
+        <PropertyRef Name="codLavamanos" />
+      </Principal>
+      <Dependent Role="RegistroLavado">
+        <PropertyRef Name="codLavamanos" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegistroIngreso_Usuario">
+    <End Type="BilleteraVirtualModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="BilleteraVirtualModel.RegistroIngreso" Role="RegistroIngreso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="codUsuario" />
+      </Principal>
+      <Dependent Role="RegistroIngreso">
+        <PropertyRef Name="codUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKRegistroLavado_Usuario">
+    <End Type="BilleteraVirtualModel.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="BilleteraVirtualModel.RegistroLavado" Role="RegistroLavado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="codUsuario" />
+      </Principal>
+      <Dependent Role="RegistroLavado">
         <PropertyRef Name="codUsuario" />
       </Dependent>
     </ReferentialConstraint>

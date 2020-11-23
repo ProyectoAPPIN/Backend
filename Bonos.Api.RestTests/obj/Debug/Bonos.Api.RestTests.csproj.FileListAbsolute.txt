@@ -216,14 +216,15 @@ D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\Microsoft.VisualStudio.Tes
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\Newtonsoft.Json.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\System.Net.Http.Formatting.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\System.Web.Http.dll
+D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\Swagger.Net.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\com.mercaderia.bono.Utilidades.Auditoria.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\Google.Apis.Auth.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\FirebaseAdmin.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\System.Web.Http.Cors.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\com.mercaderia.bono.Negocio.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\com.mercaderia.bono.Utilidades.Excepciones.dll
-D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\System.Web.Mvc.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\System.Web.Http.WebHost.dll
+D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\System.Web.Mvc.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\log4net.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\Google.Apis.Core.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\Google.Apis.dll
@@ -261,8 +262,8 @@ D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\System.Web.Http.Cors.xml
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\com.mercaderia.bono.Negocio.pdb
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\com.mercaderia.bono.Negocio.dll.config
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\com.mercaderia.bono.Utilidades.Excepciones.pdb
-D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\System.Web.Mvc.xml
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\System.Web.Http.WebHost.xml
+D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\System.Web.Mvc.xml
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\log4net.xml
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\Google.Apis.Core.pdb
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\Google.Apis.Core.xml
@@ -285,8 +286,8 @@ D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\System.Web.WebPages.Deploy
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\es\System.Net.Http.Formatting.resources.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\es\System.Web.Http.resources.dll
-D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\es\System.Web.Mvc.resources.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\es\System.Web.Http.WebHost.resources.dll
+D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\es\System.Web.Mvc.resources.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\es\System.Web.WebPages.resources.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\es\System.Web.WebPages.Razor.resources.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.RestTests\bin\Debug\es\System.Web.Razor.resources.dll

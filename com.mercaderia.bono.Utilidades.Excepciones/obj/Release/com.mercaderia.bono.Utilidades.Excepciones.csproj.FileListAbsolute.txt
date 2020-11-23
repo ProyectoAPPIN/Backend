@@ -6,3 +6,11 @@ C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\
 C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Utilidades.Excepciones\obj\Release\com.mercaderia.bono.Utilidades.Excepciones.csproj.CoreCompileInputs.cache
 C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Utilidades.Excepciones\obj\Release\com.mercaderia.bono.Utilidades.Excepciones.dll
 C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Utilidades.Excepciones\obj\Release\com.mercaderia.bono.Utilidades.Excepciones.pdb
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Excepciones\bin\Release\com.mercaderia.bono.Utilidades.Excepciones.dll
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Excepciones\bin\Release\com.mercaderia.bono.Utilidades.Excepciones.pdb
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Excepciones\bin\Release\com.mercaderia.bono.Utilidades.Excepciones.dll.CodeAnalysisLog.xml
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Excepciones\bin\Release\com.mercaderia.bono.Utilidades.Excepciones.dll.lastcodeanalysissucceeded
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Excepciones\obj\Release\com.mercaderia.bono.Utilidades.Excepciones.csprojAssemblyReference.cache
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Excepciones\obj\Release\com.mercaderia.bono.Utilidades.Excepciones.csproj.CoreCompileInputs.cache
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Excepciones\obj\Release\com.mercaderia.bono.Utilidades.Excepciones.dll
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Excepciones\obj\Release\com.mercaderia.bono.Utilidades.Excepciones.pdb

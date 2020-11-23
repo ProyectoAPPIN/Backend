@@ -4,6 +4,12 @@
         <name>Bonos.Api.Rest</name>
     </assembly>
     <members>
+        <member name="M:Bonos.Api.Rest.Controllers.eventosController.ReportTransactionBonoFromPOS(com.mercaderia.bono.Entidades.Dto.IngresoDto)">
+            <summary>
+            Servicio para registrar el ingreso a la sede       
+            </summary>
+            <returns></returns>   
+        </member>
         <member name="M:Bonos.Api.Rest.Controllers.InstitucionController.GetInstituciones">
             <summary>
             Método que devuelve las instituciones registrados en la base de datos
@@ -12,19 +18,37 @@
         </member>
         <member name="M:Bonos.Api.Rest.Controllers.DominioController.GetTipoDocumentos">
             <summary>
-            Método que devuelve los tipos de documento registrados en la base de datos
+            M�todo que devuelve los tipos de documento registrados en la base de datos
             </summary>
             <returns></returns>
         </member>
         <member name="M:Bonos.Api.Rest.Controllers.DominioController.GetRoles">
             <summary>
-            Método que devuelve los roles registrados en la base de datos
+            M�todo que devuelve los roles registrados en la base de datos
             </summary>
             <returns></returns>
         </member>
         <member name="M:Bonos.Api.Rest.Controllers.DominioController.GetSendNotificaciones">
             <summary>
             Metodo para enviar notificaciones masivas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.DominioController.GetSendNotificacionFirebase">
+            <summary>
+            Metodo para enviar notificaciones masivas firebase
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.DominioController.GetUltimoLavadoManos(System.String)">
+            <summary>
+            M�todo que devuelve los tipos de documento registrados en la base de datos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.DominioController.GetRecordatoriosLavadoManos(System.String)">
+            <summary>
+            M�todo que devuelve recordatorio de lavado de manos
             </summary>
             <returns></returns>
         </member>
@@ -54,7 +78,8 @@
         </member>
         <member name="M:Bonos.Api.Rest.Controllers.UsuarioController.GetValidaUsuario(System.String,System.String,System.String)">
             <summary>
-            Servicio para dar acceso a la aplicacion se valida tipo documento y numero de documento e institucion
+            Servicio para dar acceso a la aplicacion se valida si el tipo documento y numero de documento e institucion existen
+            Se verifica si tiene un registro de ingreso
             </summary>
             <returns></returns>
         </member>

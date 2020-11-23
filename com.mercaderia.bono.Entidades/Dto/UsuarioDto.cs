@@ -20,6 +20,7 @@ namespace com.mercaderia.bono.Entidades.Dto
         public bool sexo { get; set; }
         public bool activo { get; set; }
         public string codigoActivacion { get; set; }
-        public DateTime codActivacionExpira { get; set; }      
+        public DateTime codActivacionExpira { get; set; }    
+        public string token { get; set; }
     }
 }

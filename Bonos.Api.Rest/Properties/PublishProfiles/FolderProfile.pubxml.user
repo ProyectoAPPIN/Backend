@@ -16,55 +16,55 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
     <File Include="bin/Bonos.Api.Rest.dll">
-      <publishTime>05/22/2020 15:38:54</publishTime>
+      <publishTime>10/23/2020 15:14:24</publishTime>
     </File>
     <File Include="bin/Bonos.Api.Rest.pdb">
-      <publishTime>05/22/2020 15:38:54</publishTime>
+      <publishTime>10/23/2020 15:14:24</publishTime>
     </File>
     <File Include="bin/com.mercaderia.bono.DAL.dll">
-      <publishTime>05/22/2020 15:38:43</publishTime>
+      <publishTime>10/23/2020 15:14:14</publishTime>
     </File>
     <File Include="bin/com.mercaderia.bono.DAL.dll.config">
-      <publishTime>05/21/2020 15:18:58</publishTime>
+      <publishTime>10/12/2020 16:36:34</publishTime>
     </File>
     <File Include="bin/com.mercaderia.bono.DAL.pdb">
-      <publishTime>05/22/2020 15:38:43</publishTime>
+      <publishTime>10/23/2020 15:14:14</publishTime>
     </File>
     <File Include="bin/com.mercaderia.bono.Entidades.dll">
-      <publishTime>05/22/2020 15:38:33</publishTime>
+      <publishTime>10/23/2020 15:14:05</publishTime>
     </File>
     <File Include="bin/com.mercaderia.bono.Entidades.dll.config">
       <publishTime>05/01/2020 13:05:08</publishTime>
     </File>
     <File Include="bin/com.mercaderia.bono.Entidades.pdb">
-      <publishTime>05/22/2020 15:38:33</publishTime>
+      <publishTime>10/23/2020 15:14:04</publishTime>
     </File>
     <File Include="bin/com.mercaderia.bono.Negocio.dll">
-      <publishTime>05/22/2020 15:38:48</publishTime>
+      <publishTime>10/23/2020 15:14:19</publishTime>
     </File>
     <File Include="bin/com.mercaderia.bono.Negocio.dll.config">
       <publishTime>05/01/2020 13:05:08</publishTime>
     </File>
     <File Include="bin/com.mercaderia.bono.Negocio.pdb">
-      <publishTime>05/22/2020 15:38:48</publishTime>
+      <publishTime>10/23/2020 15:14:19</publishTime>
     </File>
     <File Include="bin/com.mercaderia.bono.Notificaciones.dll">
-      <publishTime>05/22/2020 15:38:39</publishTime>
+      <publishTime>10/23/2020 15:14:11</publishTime>
     </File>
     <File Include="bin/com.mercaderia.bono.Notificaciones.pdb">
-      <publishTime>05/22/2020 15:38:39</publishTime>
+      <publishTime>10/23/2020 15:14:11</publishTime>
     </File>
     <File Include="bin/com.mercaderia.bono.Utilidades.Auditoria.dll">
-      <publishTime>05/22/2020 15:38:39</publishTime>
+      <publishTime>10/23/2020 15:14:11</publishTime>
     </File>
     <File Include="bin/com.mercaderia.bono.Utilidades.Auditoria.pdb">
-      <publishTime>05/22/2020 15:38:39</publishTime>
+      <publishTime>10/23/2020 15:14:11</publishTime>
     </File>
     <File Include="bin/com.mercaderia.bono.Utilidades.Excepciones.dll">
-      <publishTime>05/20/2020 15:59:05</publishTime>
+      <publishTime>10/19/2020 12:52:02</publishTime>
     </File>
     <File Include="bin/com.mercaderia.bono.Utilidades.Excepciones.pdb">
-      <publishTime>05/20/2020 15:59:05</publishTime>
+      <publishTime>10/19/2020 12:52:02</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>11/16/2019 03:00:22</publishTime>
@@ -104,6 +104,9 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     </File>
     <File Include="bin/FirebaseAdmin.dll">
       <publishTime>02/11/2020 19:35:52</publishTime>
+    </File>
+    <File Include="bin/FromHeaderAttribute.dll">
+      <publishTime>04/24/2018 05:39:56</publishTime>
     </File>
     <File Include="bin/Google.Api.Gax.dll">
       <publishTime>03/16/2020 10:12:04</publishTime>
@@ -321,6 +324,9 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="bin/roslyn/VBCSCompiler.exe.config">
       <publishTime>08/08/2018 12:18:16</publishTime>
     </File>
+    <File Include="bin/Swagger.Net.dll">
+      <publishTime>10/13/2020 17:18:16</publishTime>
+    </File>
     <File Include="bin/System.Collections.Immutable.dll">
       <publishTime>05/15/2018 13:29:34</publishTime>
     </File>
@@ -385,7 +391,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>05/01/2020 13:05:08</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/20/2020 15:59:26</publishTime>
+      <publishTime>10/23/2020 15:14:25</publishTime>
     </File>
   </ItemGroup>
 </Project>

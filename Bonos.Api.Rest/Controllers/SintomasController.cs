@@ -13,8 +13,8 @@ using System.Web.Http.Cors;
 
 namespace Bonos.Api.Rest.Controllers
 {
-    [RoutePrefix("api/Sintomas")]
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [EnableCors(origins: "*", headers: "*", methods: "*", exposedHeaders: "X-Custom-Headers")]
+    [RoutePrefix("api/Sintomas")]    
     public class SintomasController : ApiController
     {
         Logger log = Logger.Instancia;
@@ -75,7 +75,6 @@ namespace Bonos.Api.Rest.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, Mensajes.DescFallo);
             }
         }
-
-
+        
     }
 }

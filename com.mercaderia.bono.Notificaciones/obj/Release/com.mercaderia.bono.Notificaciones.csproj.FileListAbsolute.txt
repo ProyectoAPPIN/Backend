@@ -12,3 +12,17 @@ C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\
 C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Notificaciones\obj\Release\com.mercaderia.bono.Notificaciones.csproj.CopyComplete
 C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Notificaciones\obj\Release\com.mercaderia.bono.Notificaciones.dll
 C:\Users\mcoral\source\repos\CO_872_SENCILLO_JUSTOYBUENO_PANAMA_BACK\bonos-back\com.mercaderia.bono.Notificaciones\obj\Release\com.mercaderia.bono.Notificaciones.pdb
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\bin\Release\com.mercaderia.bono.Notificaciones.dll
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\bin\Release\com.mercaderia.bono.Notificaciones.pdb
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\bin\Release\com.mercaderia.bono.Entidades.dll
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\bin\Release\com.mercaderia.bono.Utilidades.Excepciones.dll
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\bin\Release\Newtonsoft.Json.dll
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\bin\Release\com.mercaderia.bono.Entidades.pdb
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\bin\Release\com.mercaderia.bono.Entidades.dll.config
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\bin\Release\com.mercaderia.bono.Utilidades.Excepciones.pdb
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\bin\Release\Newtonsoft.Json.xml
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\obj\Release\com.mercaderia.bono.Notificaciones.csprojAssemblyReference.cache
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\obj\Release\com.mercaderia.bono.Notificaciones.csproj.CoreCompileInputs.cache
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\obj\Release\com.mercaderia.bono.Notificaciones.csproj.CopyComplete
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\obj\Release\com.mercaderia.bono.Notificaciones.dll
+D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Notificaciones\obj\Release\com.mercaderia.bono.Notificaciones.pdb

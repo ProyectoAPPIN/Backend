@@ -19,6 +19,8 @@ namespace com.mercaderia.bono.Entidades.ModeloEntidades
         public int codLavamanos { get; set; }
         public Nullable<System.DateTime> fecha { get; set; }
         public Nullable<System.TimeSpan> hora_registro { get; set; }
+        public Nullable<System.DateTime> fechaCierre { get; set; }
+        public Nullable<System.TimeSpan> hora_cierre { get; set; }
     
         public virtual Lavamanos Lavamanos { get; set; }
         public virtual Usuario Usuario { get; set; }

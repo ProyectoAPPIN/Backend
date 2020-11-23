@@ -98,14 +98,14 @@ namespace com.mercaderia.bono.Notificaciones.Correo
                 }
 
                 // It validates that if the mail has an attachment that exists and does not exceed the defined size
-                if (!data.Adjunto.IsNull())
-                {
-                    // The file size must be configured in the configurator
-                    if (data.Adjunto.CanSeek && (data.Adjunto.Length / 1024) > this.configuracionCorreo.tamanioArchivoAdjunto)
-                    {
-                        throw new ExceptionControlada(string.Format("El archivo adjunto del correo supera el tamaño de {0} KB", this.configuracionCorreo.tamanioArchivoAdjunto ));
-                    }
-                }
+                //if (!data.adjunto.isnull())
+                //{
+                //    // the file size must be configured in the configurator
+                //    if (data.adjunto.canseek && (data.adjunto.length / 1024) > this.configuracioncorreo.tamanioarchivoadjunto)
+                //    {
+                //        throw new exceptioncontrolada(string.format("el archivo adjunto del correo supera el tamaño de {0} kb", this.configuracioncorreo.tamanioarchivoadjunto ));
+                //    }
+                //}
 
                 // Mail object is created
                 MailMessage email = new MailMessage();

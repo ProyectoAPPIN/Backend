@@ -78,6 +78,8 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
     <Property Name="codLavamanos" Type="int" Nullable="false" />
     <Property Name="fecha" Type="date" />
     <Property Name="hora_registro" Type="time" Precision="7" />
+    <Property Name="fechaCierre" Type="date" />
+    <Property Name="hora_cierre" Type="time" Precision="7" />
   </EntityType>
   <EntityType Name="RegistroSintoma">
     <Key>
@@ -122,6 +124,7 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
     <Property Name="activo" Type="bit" />
     <Property Name="codigoActivacion" Type="varchar" MaxLength="20" />
     <Property Name="codActivacionExpira" Type="datetime" />
+    <Property Name="tokenDispositivo" Type="varchar" MaxLength="1000" />
   </EntityType>
   <Association Name="FK_Institucion_Municipio">
     <End Role="Municipio" Type="Self.Municipio" Multiplicity="1" />

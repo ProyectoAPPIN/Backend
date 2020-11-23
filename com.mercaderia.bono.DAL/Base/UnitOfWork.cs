@@ -1,3 +1,4 @@
+using com.mercaderia.bono.DAL.Repositorios;
 using com.mercaderia.bono.Entidades.ModeloEntidades;
 using System;
 
@@ -14,7 +15,9 @@ namespace com.mercaderia.bono.DAL
         private RolesRepositorio rolesRepositorio;
         private SintomasRepositorio sintomasRepositorio;
         private RegistroSintomasRepositorio registroSintomasRepositorio;
-        
+        private EventosRepositorio eventosRepositorio;
+        private RegistroLavadoRepositorio registroLavadoRepositorio;
+
         public TipoDocumentoRepositorio TipoDocumentoRepositorio
         {
             get
@@ -82,6 +85,26 @@ namespace com.mercaderia.bono.DAL
                 if (this.registroSintomasRepositorio == null)
                     this.registroSintomasRepositorio = new RegistroSintomasRepositorio(context);
                 return registroSintomasRepositorio;
+            }
+        }
+
+        public EventosRepositorio EventosRepositorio
+        {
+            get
+            {
+                if (this.eventosRepositorio == null)
+                    this.eventosRepositorio = new EventosRepositorio(context);
+                return eventosRepositorio;
+            }
+        }
+
+        public RegistroLavadoRepositorio RegistroLavadoRepositorio
+        {
+            get
+            {
+                if (this.registroLavadoRepositorio == null)
+                    this.registroLavadoRepositorio = new RegistroLavadoRepositorio(context);
+                return registroLavadoRepositorio;
             }
         }
 

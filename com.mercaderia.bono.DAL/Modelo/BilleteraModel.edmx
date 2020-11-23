@@ -83,6 +83,8 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
           <Property Name="codLavamanos" Type="int" Nullable="false" />
           <Property Name="fecha" Type="date" />
           <Property Name="hora_registro" Type="time" Precision="7" />
+          <Property Name="fechaCierre" Type="date" />
+          <Property Name="hora_cierre" Type="time" Precision="7" />
         </EntityType>
         <EntityType Name="RegistroSintoma">
           <Key>
@@ -127,6 +129,7 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
           <Property Name="activo" Type="bit" />
           <Property Name="codigoActivacion" Type="varchar" MaxLength="20" />
           <Property Name="codActivacionExpira" Type="datetime" />
+          <Property Name="tokenDispositivo" Type="varchar" MaxLength="1000" />
         </EntityType>
         <Association Name="FK_Institucion_Municipio">
           <End Role="Municipio" Type="Self.Municipio" Multiplicity="1" />
@@ -469,6 +472,7 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
           <NavigationProperty Name="RegistroSintoma" Relationship="BilleteraVirtualModel.FK_RegistroSintoma_Usuario" FromRole="Usuario" ToRole="RegistroSintoma" />
           <NavigationProperty Name="RegistroIngreso" Relationship="BilleteraVirtualModel.FK_RegistroIngreso_Usuario" FromRole="Usuario" ToRole="RegistroIngreso" />
           <NavigationProperty Name="RegistroLavado" Relationship="BilleteraVirtualModel.FKRegistroLavado_Usuario" FromRole="Usuario" ToRole="RegistroLavado" />
+          <Property Name="tokenDispositivo" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Dominio">
           <Key>
@@ -576,6 +580,8 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
           <Property Name="hora_registro" Type="Time" Precision="7" />
           <NavigationProperty Name="Lavamanos" Relationship="BilleteraVirtualModel.FK_RegistroLavado_Lavamanos" FromRole="RegistroLavado" ToRole="Lavamanos" />
           <NavigationProperty Name="Usuario" Relationship="BilleteraVirtualModel.FKRegistroLavado_Usuario" FromRole="RegistroLavado" ToRole="Usuario" />
+          <Property Name="fechaCierre" Type="DateTime" Precision="0" />
+          <Property Name="hora_cierre" Type="Time" Precision="7" />
         </EntityType>
         <Association Name="FK_Lavamanos_Institucion">
           <End Type="BilleteraVirtualModel.Institucion" Role="Institucion" Multiplicity="1" />
@@ -715,6 +721,7 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
           <EntitySetMapping Name="Usuario">
             <EntityTypeMapping TypeName="BilleteraVirtualModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="tokenDispositivo" ColumnName="tokenDispositivo" />
                 <ScalarProperty Name="codActivacionExpira" ColumnName="codActivacionExpira" />
                 <ScalarProperty Name="codigoActivacion" ColumnName="codigoActivacion" />
                 <ScalarProperty Name="activo" ColumnName="activo" />
@@ -766,6 +773,8 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
           <EntitySetMapping Name="RegistroLavado">
             <EntityTypeMapping TypeName="BilleteraVirtualModel.RegistroLavado">
               <MappingFragment StoreEntitySet="RegistroLavado">
+                <ScalarProperty Name="hora_cierre" ColumnName="hora_cierre" />
+                <ScalarProperty Name="fechaCierre" ColumnName="fechaCierre" />
                 <ScalarProperty Name="hora_registro" ColumnName="hora_registro" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="codLavamanos" ColumnName="codLavamanos" />

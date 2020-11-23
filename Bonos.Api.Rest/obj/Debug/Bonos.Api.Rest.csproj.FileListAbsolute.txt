@@ -385,6 +385,7 @@ D:\BACKENDAPPIN\Backend\Bonos.Api.Rest\bin\com.mercaderia.bono.Utilidades.Excepc
 D:\BACKENDAPPIN\Backend\Bonos.Api.Rest\bin\EntityFramework.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.Rest\bin\EntityFramework.SqlServer.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.Rest\bin\FirebaseAdmin.dll
+D:\BACKENDAPPIN\Backend\Bonos.Api.Rest\bin\FromHeaderAttribute.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.Rest\bin\Google.Api.Gax.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.Rest\bin\Google.Api.Gax.Rest.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.Rest\bin\Google.Apis.Auth.dll
@@ -400,6 +401,7 @@ D:\BACKENDAPPIN\Backend\Bonos.Api.Rest\bin\Microsoft.IdentityModel.Tokens.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.Rest\bin\Microsoft.Web.Infrastructure.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.Rest\bin\Newtonsoft.Json.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.Rest\bin\Polly.dll
+D:\BACKENDAPPIN\Backend\Bonos.Api.Rest\bin\Swagger.Net.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.Rest\bin\System.Collections.Immutable.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.Rest\bin\System.IdentityModel.Tokens.Jwt.dll
 D:\BACKENDAPPIN\Backend\Bonos.Api.Rest\bin\System.Interactive.Async.dll

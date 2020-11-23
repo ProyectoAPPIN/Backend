@@ -9,16 +9,17 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Collections.Generic;
 using System.Web.Http.Cors;
+using com.mercaderia.bono.Entidades.Dto;
 
 namespace Bonos.Api.Rest.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*", exposedHeaders: "X-Custom-Headers")]
     [RoutePrefix("api/Comunes")]
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class DominioController : ApiController
+     public class DominioController : ApiController
     {
         Logger log = Logger.Instancia;
         /// <summary>
-        /// Método que devuelve los tipos de documento registrados en la base de datos
+        /// Mï¿½todo que devuelve los tipos de documento registrados en la base de datos
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -50,7 +51,7 @@ namespace Bonos.Api.Rest.Controllers
             }
         }
         /// <summary>
-        /// Método que devuelve los roles registrados en la base de datos
+        /// Mï¿½todo que devuelve los roles registrados en la base de datos
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -100,6 +101,90 @@ namespace Bonos.Api.Rest.Controllers
 
                 return Request.CreateResponse(HttpStatusCode.OK, retorno);
                 
+            }
+            catch (ExceptionControlada ex)
+            {
+                log.EscribirLogError(Mensajes.MsgTipoDocumentoError, ex);
+                return Request.CreateResponse(HttpStatusCode.Conflict, new ApiException(HttpStatusCode.Conflict,
+                    ex.Message, ex));
+            }
+            catch (Exception ex)
+            {
+                log.EscribirLogError(Mensajes.MsgErrorNoEspacificado, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError,
+                    new ApiException(HttpStatusCode.InternalServerError, Mensajes.MsgErrorNoEspacificado, ex));
+            }
+        }
+        /// <summary>
+        /// Metodo para enviar notificaciones masivas firebase
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetSendNotificacionFirebase")]
+        public IHttpActionResult GetSendNotificacionFirebase()
+        {
+            try
+            {
+                NegocioTipoDocumentos negocioComun = new NegocioTipoDocumentos();
+                string retorno = negocioComun.sendNotificacionFirebase();
+                return Content(HttpStatusCode.OK, retorno);
+            }
+            catch (Exception ex)
+            {
+                log.EscribirLogError("Error al actualizar Bono", ex);
+                return Content(HttpStatusCode.InternalServerError, Mensajes.DescFallo);
+            }            
+        }
+
+        /// <summary>
+        /// Mï¿½todo que devuelve los tipos de documento registrados en la base de datos
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetUltimoLavadoManos")]
+        public HttpResponseMessage GetUltimoLavadoManos(string codUsuario)
+        {
+            try
+            {
+                NegocioTipoDocumentos negocioComun = new NegocioTipoDocumentos();
+                List<ultimoLavadoDTO> lstUltimoLavado = negocioComun.obtenerUltimoLavadoManos(codUsuario);
+                if (lstUltimoLavado.Count == 0)
+                {
+                    return Request.CreateResponse(HttpStatusCode.NotFound, Mensajes.MsgUltimoLavadoInexistente);
+                }
+                return Request.CreateResponse(HttpStatusCode.OK, lstUltimoLavado);
+            }
+            catch (ExceptionControlada ex)
+            {
+                log.EscribirLogError(Mensajes.MsgTipoDocumentoError, ex);
+                return Request.CreateResponse(HttpStatusCode.Conflict, new ApiException(HttpStatusCode.Conflict,
+                    ex.Message, ex));
+            }
+            catch (Exception ex)
+            {
+                log.EscribirLogError(Mensajes.MsgErrorNoEspacificado, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError,
+                    new ApiException(HttpStatusCode.InternalServerError, Mensajes.MsgErrorNoEspacificado, ex));
+            }
+        }
+
+        /// <summary>
+        /// Mï¿½todo que devuelve recordatorio de lavado de manos
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetRecordatorioLavadoManos")]
+        public HttpResponseMessage GetRecordatoriosLavadoManos(string codUsuario)
+        {
+            try
+            {
+                NegocioTipoDocumentos negocioComun = new NegocioTipoDocumentos();
+                List<RecordatorioDTO> lstRecordatorioLavado = negocioComun.obtenerRecordatorioLavadoManos(codUsuario);
+                if (lstRecordatorioLavado.Count == 0)
+                {
+                    return Request.CreateResponse(HttpStatusCode.NotFound, Mensajes.MsgUltimoLavadoInexistente);
+                }
+                return Request.CreateResponse(HttpStatusCode.OK, lstRecordatorioLavado);
             }
             catch (ExceptionControlada ex)
             {
