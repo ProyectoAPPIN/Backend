@@ -90,6 +90,7 @@
     <Compile Include="Repositorios\DominioRepositorio.cs" />
     <Compile Include="Repositorios\EventosRepositorio.cs" />
     <Compile Include="Repositorios\InstitucionRepositorio.cs" />
+    <Compile Include="Repositorios\LavamanosRepositorio.cs" />
     <Compile Include="Repositorios\RegistroLavadoRepositorio.cs" />
     <Compile Include="Repositorios\RegistroSintomasRepositorio.cs" />
     <Compile Include="Repositorios\RolesRepositorio.cs" />

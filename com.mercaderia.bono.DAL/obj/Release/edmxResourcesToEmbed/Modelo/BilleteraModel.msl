@@ -125,6 +125,8 @@
     <EntitySetMapping Name="RegistroLavado">
       <EntityTypeMapping TypeName="BilleteraVirtualModel.RegistroLavado">
         <MappingFragment StoreEntitySet="RegistroLavado">
+          <ScalarProperty Name="hora_cierre" ColumnName="hora_cierre" />
+          <ScalarProperty Name="fechaCierre" ColumnName="fechaCierre" />
           <ScalarProperty Name="hora_registro" ColumnName="hora_registro" />
           <ScalarProperty Name="fecha" ColumnName="fecha" />
           <ScalarProperty Name="codLavamanos" ColumnName="codLavamanos" />

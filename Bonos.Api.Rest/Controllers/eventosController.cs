@@ -24,12 +24,39 @@ namespace Bonos.Api.Rest.Controllers
         /// <returns></returns>   
         [HttpPost]
         [Route("registrarIngreso")]
-        public IHttpActionResult ReportTransactionBonoFromPOS([FromBody]IngresoDto ingreso)
+        public IHttpActionResult RegistrarIngreso([FromBody]IngresoDto ingreso)
         {
             try
             {
                 NegocioEventos negocioEvento = new NegocioEventos();
                 List<RespuestaIngresoDto> ingresoResultante = negocioEvento.registrarIngreso(ingreso);                
+
+                return Content(HttpStatusCode.OK, ingresoResultante);
+            }
+            catch (ExceptionControlada ex)
+            {
+                log.EscribirLogError(ex.Message, ex);
+                return Content(HttpStatusCode.NotFound, new ApiException(HttpStatusCode.NotFound, ex.Message, ex));
+            }
+            catch (Exception ex)
+            {
+                log.EscribirLogError("Error al activar usuario", ex);
+                return Content(HttpStatusCode.InternalServerError, Mensajes.DescFallo);
+            }
+        }
+
+        /// <summary>
+        /// Servicio para registrar el ingreso a la sede       
+        /// </summary>
+        /// <returns></returns>   
+        [HttpPost]
+        [Route("registrarIngresoLavado")]
+        public IHttpActionResult RegistrarLavado([FromBody]IngresoLavadoManosDto ingresoLavado)
+        {
+            try
+            {
+                NegocioEventos negocioEvento = new NegocioEventos();
+                List<RespuestaIngresoLavadoDto> ingresoResultante = negocioEvento.registrarIngresoLavado(ingresoLavado);
 
                 return Content(HttpStatusCode.OK, ingresoResultante);
             }

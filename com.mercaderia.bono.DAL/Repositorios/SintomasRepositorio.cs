@@ -25,9 +25,11 @@ namespace com.mercaderia.bono.DAL
             return dbSet.OrderBy(t => new { t.codSintoma, t.descripcion, t.opcion }).ToList<Sintoma>();
         }
 
-        public List<ResponseSintomasDTO> AddSintomasUsuario(SintomasDTO[] sintomasUsuario, string idUsuario)
+        public List<ResponseSintomasDTO> AddSintomasUsuario(SintomasDTO[] sintomasUsuario)
         {
             List<ResponseSintomasDTO> LstSintomaUsuario = new List<ResponseSintomasDTO>();
+
+            string idUsuario = sintomasUsuario.Select(x => x.codigoUsuario).FirstOrDefault();
 
             using (UnitOfWork unitOfWork = new UnitOfWork())
             { 

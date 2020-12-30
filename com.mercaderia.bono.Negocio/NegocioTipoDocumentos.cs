@@ -94,12 +94,22 @@ namespace com.mercaderia.bono.Negocio
             using (UnitOfWork unitOfWork = new UnitOfWork())
             {                
                 var persona = unitOfWork.UsuarioRepositorio.ObtenerListaUsuariosActivoEmail();
-
+                string fecha;
+                string hora;
                 if (persona.Count > 0)
                 {
                     foreach (var item in persona)
                     {
-                        EnviarEmail(item.correo);
+                        string usuario = item.codUsuario.ToString();
+                        var lstRecordatorioLavado = unitOfWork.RegistroLavadoRepositorio.ObtenerRecordatorioLavadoEmail(usuario);
+
+                        foreach (var lav in lstRecordatorioLavado)
+                        {
+                            fecha = lav.fecha.ToString();
+                            hora = lav.hora.ToString();
+                            //Envio Email de notificacion
+                            EnviarEmail(item.correo, fecha, hora);
+                        }                        
                     }
                 }
                 return "Notificaciones enviadas correctamente";
@@ -110,7 +120,7 @@ namespace com.mercaderia.bono.Negocio
         /// Metodo para enviar correo notificacion Masivo
         /// </summary>        
         /// <returns></returns>
-        private void EnviarEmail(string email)
+        private void EnviarEmail(string email, string fecha, string hora)
         {
             try
             {
@@ -119,7 +129,7 @@ namespace com.mercaderia.bono.Negocio
 
                 if (emaiNotificacionLavadoFormato.IsNull())
                     throw new ExceptionControlada(string.Format(Mensajes.MsgErrorDominioNoEncontrado, Enums.EnumTablaDominio.sms_formato.ToString()));
-                var message = string.Format(emaiNotificacionLavadoFormato.valor);
+                var message = string.Format(emaiNotificacionLavadoFormato.valor, fecha.Substring(0, 10), hora);
 
                 Dominio dominioSMTP = negocioDominio.ConsultarPorId(EnumTablaDominio.configuracionSMTP.ToString());
                 if (dominioSMTP.IsNull() || string.IsNullOrEmpty(dominioSMTP.valor))

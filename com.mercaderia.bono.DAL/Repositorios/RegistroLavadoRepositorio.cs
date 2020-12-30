@@ -71,18 +71,85 @@ namespace com.mercaderia.bono.DAL
 
             var recordatorioLavado = context.RegistroLavado.Where(x => x.codUsuario == usuario && x.fecha == fechaIngreso);
             Int32 registro = 0;
-
             
-            var consulta = (from lava in recordatorioLavado                               
+            if(recordatorioLavado.Count() > 0)
+            {
+                var consulta = (from lava in recordatorioLavado
+                                select new RecordatorioDTO()
+                                {
+                                    codRegistro = lava.codRegistro,
+                                    codUsuario = lava.codUsuario,
+                                    fecha = lava.fecha,
+                                    hora = lava.hora_registro,
+                                    fechaCierre = lava.fechaCierre,
+                                    horaCierre = lava.hora_cierre
+                                }).ToList();
+
+                foreach (var item in consulta)
+                {
+                    lstRecordatorioLavado.Add(new RecordatorioDTO()
+                    {
+                        codRegistro = item.codRegistro,
+                        codUsuario = item.codUsuario,
+                        fecha = item.fecha,
+                        hora = item.hora,
+                        fechaCierre = item.fechaCierre,
+                        horaCierre = item.horaCierre
+                    });
+                }
+
+                return lstRecordatorioLavado;
+
+            }
+            else
+            {
+                string hora = DateTime.Now.ToString("HH:mm:ss");
+                int[] partes = hora.Split(new char[] { ':' }).Select(x => Convert.ToInt32(x)).ToArray();
+
+                TimeSpan tiempo = new TimeSpan(partes[0], partes[1], partes[2]);
+                lstRecordatorioLavado.Add(new RecordatorioDTO()
+                {
+                    codRegistro = 1,
+                    codUsuario = 6723,
+                    fecha = DateTime.Now,
+                    hora = tiempo,
+                    fechaCierre = null,
+                    horaCierre = null
+                });
+            }
+           
+            return lstRecordatorioLavado;                       
+        }
+
+        public List<RecordatorioDTO> ObtenerRecordatorioLavadoEmail(string codUsuario)
+        {
+            List<RecordatorioDTO> lstRecordatorioLavado = new List<RecordatorioDTO>();
+
+            int usuario = Convert.ToInt32(codUsuario);
+            Nullable<DateTime> fechaIngreso = DateTime.Now.Date;
+
+            var recordatorioLavado = context.RegistroLavado.Where(x => x.codUsuario == usuario 
+                                                                  && x.fecha == fechaIngreso 
+                                                                  && x.fechaCierre != null);            
+
+
+            var consulta = (from lava in recordatorioLavado
                             select new RecordatorioDTO()
                             {
-                              codRegistro = lava.codRegistro,
-                              codUsuario = lava.codUsuario,
-                              fecha = lava.fecha,
-                              hora = lava.hora_registro
+                                codRegistro = lava.codRegistro,
+                                codUsuario = lava.codUsuario,
+                                fecha = lava.fecha,
+                                hora = lava.hora_registro,
+                                fechaCierre = lava.fechaCierre,
+                                horaCierre = lava.hora_cierre
                             }).ToList();
 
-            return consulta.ToList();                       
+            return consulta.ToList();
+        }
+
+        public RegistroLavado ObtenerPorCodRegistro(int codRegistro)
+        {
+            return dbSet.Where(x => x.codRegistro == codRegistro).FirstOrDefault();
         }
     }
 }

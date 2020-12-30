@@ -29,12 +29,26 @@ namespace Bonos.Api.Rest.Controllers
             try
             {
                 NegocioSintomas negocioSintomas = new NegocioSintomas();
+                List<ListaSintomasDto> listaSintomasResultado = new List<ListaSintomasDto>();
                 List<Sintoma> lstSintomasResultado = negocioSintomas.ObtenerSintomas();
+
+                foreach(var sintoma in lstSintomasResultado)
+                {
+                    ListaSintomasDto item = new ListaSintomasDto()
+                    {
+                        codSintoma = sintoma.codSintoma,
+                        descripcion = sintoma.descripcion,
+                        opcion = sintoma.opcion,
+                        estado = false
+                    };
+                    listaSintomasResultado.Add(item);
+                }
+
                 if (lstSintomasResultado.Count == 0)
                 {
                     return Request.CreateResponse(HttpStatusCode.NotFound, Mensajes.MsgSintomasInexistente);
                 }
-                return Request.CreateResponse(HttpStatusCode.OK, lstSintomasResultado);
+                return Request.CreateResponse(HttpStatusCode.OK, listaSintomasResultado);
             }
             catch (ExceptionControlada ex)
             {
@@ -55,13 +69,13 @@ namespace Bonos.Api.Rest.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("loadUsuarioSintomas")]
-        public HttpResponseMessage CargueMasivoGiftCards([FromBody]SintomasDTO[] sintomasUsuario, string idUsuario)
+        public HttpResponseMessage CargueMasivoGiftCards([FromBody]SintomasDTO[] sintomasUsuario)
         {
             try
             {
                 NegocioSintomas negocioSintomas = new NegocioSintomas();
 
-                var lista = negocioSintomas.CargueSintomasUsuario(sintomasUsuario, idUsuario);
+                var lista = negocioSintomas.CargueSintomasUsuario(sintomasUsuario);
                 return Request.CreateResponse(HttpStatusCode.OK, lista);
             }
             catch (ExceptionControlada ex)

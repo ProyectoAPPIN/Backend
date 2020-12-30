@@ -12,5 +12,7 @@ namespace com.mercaderia.bono.Entidades.Dto
         public int codUsuario { get; set; }
         public DateTime? fecha { get; set; }
         public TimeSpan? hora { get; set; }
+        public DateTime? fechaCierre { get; set; }
+        public TimeSpan? horaCierre { get; set; }
     }
 }

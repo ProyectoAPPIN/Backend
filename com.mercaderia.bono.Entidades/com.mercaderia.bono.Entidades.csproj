@@ -66,10 +66,13 @@
   <ItemGroup>
     <Compile Include="Dto\AccesoUsuarioDto.cs" />
     <Compile Include="Dto\IngresoDto.cs" />
+    <Compile Include="Dto\IngresoLavadoManosDto.cs" />
+    <Compile Include="Dto\ListaSintomasDto.cs" />
     <Compile Include="Dto\RecordatorioDTO.cs" />
     <Compile Include="Dto\ResponseSintomasDTO.cs" />
     <Compile Include="Dto\respuestaActivacionDto.cs" />
     <Compile Include="Dto\RespuestaIngresoDto.cs" />
+    <Compile Include="Dto\RespuestaIngresoLavadoDto.cs" />
     <Compile Include="Dto\SintomasDTO.cs" />
     <Compile Include="Dto\ultimoLavadoDTO.cs" />
     <Compile Include="Dto\UsuarioActivoDto.cs" />

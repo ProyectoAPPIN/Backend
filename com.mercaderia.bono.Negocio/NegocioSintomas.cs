@@ -38,7 +38,7 @@ namespace com.mercaderia.bono.Negocio
             return lstSintomas;
         }
 
-        public List<ResponseSintomasDTO> CargueSintomasUsuario(SintomasDTO[] sintomasUsuario, string idUsuario)
+        public List<ResponseSintomasDTO> CargueSintomasUsuario(SintomasDTO[] sintomasUsuario)
         {
            
             //Proceso para registrar sintomas de un usuario en el BD
@@ -46,7 +46,7 @@ namespace com.mercaderia.bono.Negocio
             {
                 List<ResponseSintomasDTO> lstSintomasUsuario = new List<ResponseSintomasDTO>();                
 
-                lstSintomasUsuario = unitOfWork.SintomasRepositorio.AddSintomasUsuario(sintomasUsuario, idUsuario);
+                lstSintomasUsuario = unitOfWork.SintomasRepositorio.AddSintomasUsuario(sintomasUsuario);
                 return lstSintomasUsuario;
             }
         }

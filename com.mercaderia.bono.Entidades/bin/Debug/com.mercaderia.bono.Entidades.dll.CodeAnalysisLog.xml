@@ -4,58 +4,58 @@
  <Namespaces>
   <Namespace Name="com.mercaderia.bono.Entidades.Dto">
    <Messages>
-    <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+    <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'bono' en el nombre del espacio de nombres 'com.mercaderia.bono.Entidades.Dto' cambiándolo a 'Bono'.</Issue>
     </Message>
-    <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+    <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'com' en el nombre del espacio de nombres 'com.mercaderia.bono.Entidades.Dto' cambiándolo a 'Com'.</Issue>
     </Message>
-    <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+    <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'mercaderia' en el nombre del espacio de nombres 'com.mercaderia.bono.Entidades.Dto' cambiándolo a 'Mercaderia'.</Issue>
     </Message>
    </Messages>
   </Namespace>
   <Namespace Name="com.mercaderia.bono.Entidades.Enumeradores">
    <Messages>
-    <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+    <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
      <Issue Certainty="50" Level="Warning">Considere combinar los tipos definidos en 'com.mercaderia.bono.Entidades.Enumeradores' con otro espacio de nombres.</Issue>
     </Message>
-    <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+    <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'bono' en el nombre del espacio de nombres 'com.mercaderia.bono.Entidades.Enumeradores' cambiándolo a 'Bono'.</Issue>
     </Message>
-    <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+    <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'com' en el nombre del espacio de nombres 'com.mercaderia.bono.Entidades.Enumeradores' cambiándolo a 'Com'.</Issue>
     </Message>
-    <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+    <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'mercaderia' en el nombre del espacio de nombres 'com.mercaderia.bono.Entidades.Enumeradores' cambiándolo a 'Mercaderia'.</Issue>
     </Message>
    </Messages>
   </Namespace>
   <Namespace Name="com.mercaderia.bono.Entidades.ModeloEntidades">
    <Messages>
-    <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+    <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'bono' en el nombre del espacio de nombres 'com.mercaderia.bono.Entidades.ModeloEntidades' cambiándolo a 'Bono'.</Issue>
     </Message>
-    <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+    <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'com' en el nombre del espacio de nombres 'com.mercaderia.bono.Entidades.ModeloEntidades' cambiándolo a 'Com'.</Issue>
     </Message>
-    <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+    <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'mercaderia' en el nombre del espacio de nombres 'com.mercaderia.bono.Entidades.ModeloEntidades' cambiándolo a 'Mercaderia'.</Issue>
     </Message>
    </Messages>
   </Namespace>
   <Namespace Name="com.mercaderia.bono.Entidades.Utilidades">
    <Messages>
-    <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+    <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
      <Issue Certainty="50" Level="Warning">Considere combinar los tipos definidos en 'com.mercaderia.bono.Entidades.Utilidades' con otro espacio de nombres.</Issue>
     </Message>
-    <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+    <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'bono' en el nombre del espacio de nombres 'com.mercaderia.bono.Entidades.Utilidades' cambiándolo a 'Bono'.</Issue>
     </Message>
-    <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+    <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'com' en el nombre del espacio de nombres 'com.mercaderia.bono.Entidades.Utilidades' cambiándolo a 'Com'.</Issue>
     </Message>
-    <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+    <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'mercaderia' en el nombre del espacio de nombres 'com.mercaderia.bono.Entidades.Utilidades' cambiándolo a 'Mercaderia'.</Issue>
     </Message>
    </Messages>
@@ -66,13 +66,13 @@
    <Modules>
     <Module Name="com.mercaderia.bono.entidades.dll">
      <Messages>
-      <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+      <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
        <Issue Name="Assembly" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'bono' en el nombre del ensamblado 'com.mercaderia.bono.Entidades.dll' cambiándolo a 'Bono'.</Issue>
       </Message>
-      <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+      <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
        <Issue Name="Assembly" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'com' en el nombre del ensamblado 'com.mercaderia.bono.Entidades.dll' cambiándolo a 'Com'.</Issue>
       </Message>
-      <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+      <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
        <Issue Name="Assembly" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'mercaderia' en el nombre del ensamblado 'com.mercaderia.bono.Entidades.dll' cambiándolo a 'Mercaderia'.</Issue>
       </Message>
      </Messages>
@@ -83,28 +83,28 @@
          <Members>
           <Member Name="#activo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="activo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="activo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="AccesoUsuarioDto.cs" Line="13">Corrija el uso de mayúsculas y minúsculas en 'activo' en el nombre del miembro 'AccesoUsuarioDto.activo' cambiándolo a 'Activo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codUsuario" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="AccesoUsuarioDto.cs" Line="11">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'AccesoUsuarioDto.codUsuario' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ingresoActivo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="ingreso" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="ingreso" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="AccesoUsuarioDto.cs" Line="14">Corrija el uso de mayúsculas y minúsculas en 'ingreso' en el nombre del miembro 'AccesoUsuarioDto.ingresoActivo' cambiándolo a 'Ingreso'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#nombres" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="nombres" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="nombres" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="AccesoUsuarioDto.cs" Line="12">Corrija el uso de mayúsculas y minúsculas en 'nombres' en el nombre del miembro 'AccesoUsuarioDto.nombres' cambiándolo a 'Nombres'.</Issue>
             </Message>
            </Messages>
@@ -115,29 +115,93 @@
          <Members>
           <Member Name="#codQR" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="IngresoDto.cs" Line="15">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'IngresoDto.codQR' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codUsuario" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="IngresoDto.cs" Line="11">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'IngresoDto.codUsuario' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#oxigenacion" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="oxigenacion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="oxigenacion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="IngresoDto.cs" Line="14">Corrija el uso de mayúsculas y minúsculas en 'oxigenacion' en el nombre del miembro 'IngresoDto.oxigenacion' cambiándolo a 'Oxigenacion'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#temperatura" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="temperatura" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="temperatura" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="IngresoDto.cs" Line="13">Corrija el uso de mayúsculas y minúsculas en 'temperatura' en el nombre del miembro 'IngresoDto.temperatura' cambiándolo a 'Temperatura'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="IngresoLavadoManosDto" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#codInstitucion" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="IngresoLavadoManosDto.cs" Line="14">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'IngresoLavadoManosDto.codInstitucion' cambiándolo a 'Cod'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#codLavamanos" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="IngresoLavadoManosDto.cs" Line="13">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'IngresoLavadoManosDto.codLavamanos' cambiándolo a 'Cod'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#codRegistro" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="IngresoLavadoManosDto.cs" Line="11">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'IngresoLavadoManosDto.codRegistro' cambiándolo a 'Cod'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#codUsuario" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="IngresoLavadoManosDto.cs" Line="12">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'IngresoLavadoManosDto.codUsuario' cambiándolo a 'Cod'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ListaSintomasDto" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#codSintoma" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="ListaSintomasDto.cs" Line="11">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'ListaSintomasDto.codSintoma' cambiándolo a 'Cod'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#descripcion" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="descripcion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="ListaSintomasDto.cs" Line="12">Corrija el uso de mayúsculas y minúsculas en 'descripcion' en el nombre del miembro 'ListaSintomasDto.descripcion' cambiándolo a 'Descripcion'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#estado" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="estado" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="ListaSintomasDto.cs" Line="14">Corrija el uso de mayúsculas y minúsculas en 'estado' en el nombre del miembro 'ListaSintomasDto.estado' cambiándolo a 'Estado'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#opcion" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="opcion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="ListaSintomasDto.cs" Line="13">Corrija el uso de mayúsculas y minúsculas en 'opcion' en el nombre del miembro 'ListaSintomasDto.opcion' cambiándolo a 'Opcion'.</Issue>
             </Message>
            </Messages>
           </Member>
@@ -145,36 +209,50 @@
         </Type>
         <Type Name="RecordatorioDTO" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message Id="DTO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+          <Message Id="DTO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
            <Issue Name="Type" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'DTO' en el nombre del tipo 'RecordatorioDTO' cambiándolo a 'Dto'.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#codRegistro" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="RecordatorioDTO.cs" Line="11">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'RecordatorioDTO.codRegistro' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codUsuario" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="RecordatorioDTO.cs" Line="12">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'RecordatorioDTO.codUsuario' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#fecha" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="fecha" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="fecha" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="RecordatorioDTO.cs" Line="13">Corrija el uso de mayúsculas y minúsculas en 'fecha' en el nombre del miembro 'RecordatorioDTO.fecha' cambiándolo a 'Fecha'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#fechaCierre" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="fecha" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="RecordatorioDTO.cs" Line="15">Corrija el uso de mayúsculas y minúsculas en 'fecha' en el nombre del miembro 'RecordatorioDTO.fechaCierre' cambiándolo a 'Fecha'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#hora" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="hora" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="hora" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="RecordatorioDTO.cs" Line="14">Corrija el uso de mayúsculas y minúsculas en 'hora' en el nombre del miembro 'RecordatorioDTO.hora' cambiándolo a 'Hora'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#horaCierre" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="hora" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="RecordatorioDTO.cs" Line="16">Corrija el uso de mayúsculas y minúsculas en 'hora' en el nombre del miembro 'RecordatorioDTO.horaCierre' cambiándolo a 'Hora'.</Issue>
             </Message>
            </Messages>
           </Member>
@@ -182,21 +260,21 @@
         </Type>
         <Type Name="ResponseSintomasDTO" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message Id="DTO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+          <Message Id="DTO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
            <Issue Name="Type" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'DTO' en el nombre del tipo 'ResponseSintomasDTO' cambiándolo a 'Dto'.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#cod" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="ResponseSintomasDTO.cs" Line="11">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'ResponseSintomasDTO.cod' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#mensaje" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="mensaje" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="mensaje" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="ResponseSintomasDTO.cs" Line="12">Corrija el uso de mayúsculas y minúsculas en 'mensaje' en el nombre del miembro 'ResponseSintomasDTO.mensaje' cambiándolo a 'Mensaje'.</Issue>
             </Message>
            </Messages>
@@ -205,35 +283,35 @@
         </Type>
         <Type Name="respuestaActivacionDto" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message Id="respuesta" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+          <Message Id="respuesta" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
            <Issue Name="Type" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'respuesta' en el nombre del tipo 'respuestaActivacionDto' cambiándolo a 'Respuesta'.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#activo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="activo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="activo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="respuestaActivacionDto.cs" Line="14">Corrija el uso de mayúsculas y minúsculas en 'activo' en el nombre del miembro 'respuestaActivacionDto.activo' cambiándolo a 'Activo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codigoActivacion" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="codigo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="codigo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="respuestaActivacionDto.cs" Line="13">Corrija el uso de mayúsculas y minúsculas en 'codigo' en el nombre del miembro 'respuestaActivacionDto.codigoActivacion' cambiándolo a 'Codigo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codRespuesta" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="respuestaActivacionDto.cs" Line="11">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'respuestaActivacionDto.codRespuesta' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codUsuario" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="respuestaActivacionDto.cs" Line="12">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'respuestaActivacionDto.codUsuario' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
@@ -244,29 +322,68 @@
          <Members>
           <Member Name="#codUsuario" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="RespuestaIngresoDto.cs" Line="11">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'RespuestaIngresoDto.codUsuario' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#fecha" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="fecha" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="fecha" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="RespuestaIngresoDto.cs" Line="12">Corrija el uso de mayúsculas y minúsculas en 'fecha' en el nombre del miembro 'RespuestaIngresoDto.fecha' cambiándolo a 'Fecha'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#hora" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="hora" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="hora" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="RespuestaIngresoDto.cs" Line="13">Corrija el uso de mayúsculas y minúsculas en 'hora' en el nombre del miembro 'RespuestaIngresoDto.hora' cambiándolo a 'Hora'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#sede" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="sede" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="sede" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="RespuestaIngresoDto.cs" Line="14">Corrija el uso de mayúsculas y minúsculas en 'sede' en el nombre del miembro 'RespuestaIngresoDto.sede' cambiándolo a 'Sede'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="RespuestaIngresoLavadoDto" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#codLavamanos" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="RespuestaIngresoLavadoDto.cs" Line="14">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'RespuestaIngresoLavadoDto.codLavamanos' cambiándolo a 'Cod'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#codUsuario" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="RespuestaIngresoLavadoDto.cs" Line="11">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'RespuestaIngresoLavadoDto.codUsuario' cambiándolo a 'Cod'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#fecha" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="fecha" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="RespuestaIngresoLavadoDto.cs" Line="12">Corrija el uso de mayúsculas y minúsculas en 'fecha' en el nombre del miembro 'RespuestaIngresoLavadoDto.fecha' cambiándolo a 'Fecha'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#hora" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="hora" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="RespuestaIngresoLavadoDto.cs" Line="13">Corrija el uso de mayúsculas y minúsculas en 'hora' en el nombre del miembro 'RespuestaIngresoLavadoDto.hora' cambiándolo a 'Hora'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#institucion" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="institucion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="RespuestaIngresoLavadoDto.cs" Line="15">Corrija el uso de mayúsculas y minúsculas en 'institucion' en el nombre del miembro 'RespuestaIngresoLavadoDto.institucion' cambiándolo a 'Institucion'.</Issue>
             </Message>
            </Messages>
           </Member>
@@ -274,22 +391,29 @@
         </Type>
         <Type Name="SintomasDTO" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message Id="DTO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+          <Message Id="DTO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
            <Issue Name="Type" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'DTO' en el nombre del tipo 'SintomasDTO' cambiándolo a 'Dto'.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#codigo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="codigo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="SintomasDTO.cs" Line="11">Corrija el uso de mayúsculas y minúsculas en 'codigo' en el nombre del miembro 'SintomasDTO.codigo' cambiándolo a 'Codigo'.</Issue>
+            <Message Id="codigo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="SintomasDTO.cs" Line="12">Corrija el uso de mayúsculas y minúsculas en 'codigo' en el nombre del miembro 'SintomasDTO.codigo' cambiándolo a 'Codigo'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#codigoUsuario" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="codigo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="SintomasDTO.cs" Line="11">Corrija el uso de mayúsculas y minúsculas en 'codigo' en el nombre del miembro 'SintomasDTO.codigoUsuario' cambiándolo a 'Codigo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#estado" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="estado" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
-             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="SintomasDTO.cs" Line="12">Corrija el uso de mayúsculas y minúsculas en 'estado' en el nombre del miembro 'SintomasDTO.estado' cambiándolo a 'Estado'.</Issue>
+            <Message Id="estado" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
+             <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="SintomasDTO.cs" Line="13">Corrija el uso de mayúsculas y minúsculas en 'estado' en el nombre del miembro 'SintomasDTO.estado' cambiándolo a 'Estado'.</Issue>
             </Message>
            </Messages>
           </Member>
@@ -297,31 +421,31 @@
         </Type>
         <Type Name="ultimoLavadoDTO" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message Id="DTO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+          <Message Id="DTO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
            <Issue Name="Type" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'DTO' en el nombre del tipo 'ultimoLavadoDTO' cambiándolo a 'Dto'.</Issue>
           </Message>
-          <Message Id="ultimo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+          <Message Id="ultimo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
            <Issue Name="Type" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'ultimo' en el nombre del tipo 'ultimoLavadoDTO' cambiándolo a 'Ultimo'.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#codUsuario" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="ultimoLavadoDTO.cs" Line="11">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'ultimoLavadoDTO.codUsuario' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#fecha" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="fecha" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="fecha" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="ultimoLavadoDTO.cs" Line="12">Corrija el uso de mayúsculas y minúsculas en 'fecha' en el nombre del miembro 'ultimoLavadoDTO.fecha' cambiándolo a 'Fecha'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#hora" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="hora" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="hora" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="ultimoLavadoDTO.cs" Line="13">Corrija el uso de mayúsculas y minúsculas en 'hora' en el nombre del miembro 'ultimoLavadoDTO.hora' cambiándolo a 'Hora'.</Issue>
             </Message>
            </Messages>
@@ -332,21 +456,21 @@
          <Members>
           <Member Name="#activo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="activo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="activo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="UsuarioActivoDto.cs" Line="13">Corrija el uso de mayúsculas y minúsculas en 'activo' en el nombre del miembro 'UsuarioActivoDto.activo' cambiándolo a 'Activo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codigoActivacion" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="codigo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="codigo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="UsuarioActivoDto.cs" Line="12">Corrija el uso de mayúsculas y minúsculas en 'codigo' en el nombre del miembro 'UsuarioActivoDto.codigoActivacion' cambiándolo a 'Codigo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codUsuario" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="UsuarioActivoDto.cs" Line="11">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'UsuarioActivoDto.codUsuario' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
@@ -357,91 +481,91 @@
          <Members>
           <Member Name="#activo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="activo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="activo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="UsuarioDto.cs" Line="21">Corrija el uso de mayúsculas y minúsculas en 'activo' en el nombre del miembro 'UsuarioDto.activo' cambiándolo a 'Activo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#apellidos" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="apellidos" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="apellidos" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="UsuarioDto.cs" Line="13">Corrija el uso de mayúsculas y minúsculas en 'apellidos' en el nombre del miembro 'UsuarioDto.apellidos' cambiándolo a 'Apellidos'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#celular" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="celular" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="celular" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="UsuarioDto.cs" Line="16">Corrija el uso de mayúsculas y minúsculas en 'celular' en el nombre del miembro 'UsuarioDto.celular' cambiándolo a 'Celular'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codActivacionExpira" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="UsuarioDto.cs" Line="23">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'UsuarioDto.codActivacionExpira' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codigoActivacion" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="codigo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="codigo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="UsuarioDto.cs" Line="22">Corrija el uso de mayúsculas y minúsculas en 'codigo' en el nombre del miembro 'UsuarioDto.codigoActivacion' cambiándolo a 'Codigo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codInstitucion" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="UsuarioDto.cs" Line="18">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'UsuarioDto.codInstitucion' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codPerfil" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="UsuarioDto.cs" Line="17">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'UsuarioDto.codPerfil' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codUsuario" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="UsuarioDto.cs" Line="11">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'UsuarioDto.codUsuario' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#correo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="correo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="correo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="UsuarioDto.cs" Line="19">Corrija el uso de mayúsculas y minúsculas en 'correo' en el nombre del miembro 'UsuarioDto.correo' cambiándolo a 'Correo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#nombres" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="nombres" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="nombres" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="UsuarioDto.cs" Line="12">Corrija el uso de mayúsculas y minúsculas en 'nombres' en el nombre del miembro 'UsuarioDto.nombres' cambiándolo a 'Nombres'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#numeroDocumento" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="numero" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="numero" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="UsuarioDto.cs" Line="15">Corrija el uso de mayúsculas y minúsculas en 'numero' en el nombre del miembro 'UsuarioDto.numeroDocumento' cambiándolo a 'Numero'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#sexo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="sexo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="sexo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="UsuarioDto.cs" Line="20">Corrija el uso de mayúsculas y minúsculas en 'sexo' en el nombre del miembro 'UsuarioDto.sexo' cambiándolo a 'Sexo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#token" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="token" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="token" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\Dto" File="UsuarioDto.cs" Line="24">Corrija el uso de mayúsculas y minúsculas en 'token' en el nombre del miembro 'UsuarioDto.token' cambiándolo a 'Token'.</Issue>
             </Message>
            </Messages>
@@ -456,202 +580,202 @@
          <Members>
           <Member Name="#asuntoCorreoRegistroPedido" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="asunto" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="asunto" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'asunto' en el nombre del miembro 'Enums.EnumTablaDominio.asuntoCorreoRegistroPedido' cambiándolo a 'Asunto'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#asuntoCorreoUsuarioGenerado" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="asunto" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="asunto" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'asunto' en el nombre del miembro 'Enums.EnumTablaDominio.asuntoCorreoUsuarioGenerado' cambiándolo a 'Asunto'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#asuntoNotificacionLavado" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="asunto" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="asunto" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'asunto' en el nombre del miembro 'Enums.EnumTablaDominio.asuntoNotificacionLavado' cambiándolo a 'Asunto'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#configuracionSMTP" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="SMTP" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="SMTP" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'SMTP' en el nombre del miembro 'Enums.EnumTablaDominio.configuracionSMTP' cambiándolo a 'Smtp'.</Issue>
             </Message>
-            <Message Id="configuracion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="configuracion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'configuracion' en el nombre del miembro 'Enums.EnumTablaDominio.configuracionSMTP' cambiándolo a 'Configuracion'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#correoRemitentePrincipal" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="correo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="correo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'correo' en el nombre del miembro 'Enums.EnumTablaDominio.correoRemitentePrincipal' cambiándolo a 'Correo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#emailActivacionFormato" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="email" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="email" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'email' en el nombre del miembro 'Enums.EnumTablaDominio.emailActivacionFormato' cambiándolo a 'Email'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#mobie_prefix_colombia" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="colombia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="colombia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'colombia' en el nombre del miembro 'Enums.EnumTablaDominio.mobie_prefix_colombia' cambiándolo a 'Colombia'.</Issue>
             </Message>
-            <Message Id="mobie" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="mobie" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'mobie' en el nombre del miembro 'Enums.EnumTablaDominio.mobie_prefix_colombia' cambiándolo a 'Mobie'.</Issue>
             </Message>
-            <Message Id="prefix" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="prefix" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'prefix' en el nombre del miembro 'Enums.EnumTablaDominio.mobie_prefix_colombia' cambiándolo a 'Prefix'.</Issue>
             </Message>
-            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="95" Level="Error">Quite los caracteres de subrayado del nombre del miembro 'Enums.EnumTablaDominio.mobie_prefix_colombia'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#notificacionLavado" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="notificacion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="notificacion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'notificacion' en el nombre del miembro 'Enums.EnumTablaDominio.notificacionLavado' cambiándolo a 'Notificacion'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#notificacionLavadoPush" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="notificacion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="notificacion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'notificacion' en el nombre del miembro 'Enums.EnumTablaDominio.notificacionLavadoPush' cambiándolo a 'Notificacion'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#plantillaCorreoActivacionCuenta" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="plantilla" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="plantilla" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'plantilla' en el nombre del miembro 'Enums.EnumTablaDominio.plantillaCorreoActivacionCuenta' cambiándolo a 'Plantilla'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#plantillaCorreoNotificacion" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="plantilla" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="plantilla" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'plantilla' en el nombre del miembro 'Enums.EnumTablaDominio.plantillaCorreoNotificacion' cambiándolo a 'Plantilla'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#plantillaCorreoRegistroPedido" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="plantilla" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="plantilla" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'plantilla' en el nombre del miembro 'Enums.EnumTablaDominio.plantillaCorreoRegistroPedido' cambiándolo a 'Plantilla'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#sms_bonus_from" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="bonus" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="bonus" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'bonus' en el nombre del miembro 'Enums.EnumTablaDominio.sms_bonus_from' cambiándolo a 'Bonus'.</Issue>
             </Message>
-            <Message Id="from" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="from" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'from' en el nombre del miembro 'Enums.EnumTablaDominio.sms_bonus_from' cambiándolo a 'From'.</Issue>
             </Message>
-            <Message Id="sms" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="sms" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'sms' en el nombre del miembro 'Enums.EnumTablaDominio.sms_bonus_from' cambiándolo a 'Sms'.</Issue>
             </Message>
-            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="95" Level="Error">Quite los caracteres de subrayado del nombre del miembro 'Enums.EnumTablaDominio.sms_bonus_from'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#sms_formato" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="formato" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="formato" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'formato' en el nombre del miembro 'Enums.EnumTablaDominio.sms_formato' cambiándolo a 'Formato'.</Issue>
             </Message>
-            <Message Id="sms" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="sms" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'sms' en el nombre del miembro 'Enums.EnumTablaDominio.sms_formato' cambiándolo a 'Sms'.</Issue>
             </Message>
-            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="95" Level="Error">Quite los caracteres de subrayado del nombre del miembro 'Enums.EnumTablaDominio.sms_formato'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#sms_service_url" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="service" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="service" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'service' en el nombre del miembro 'Enums.EnumTablaDominio.sms_service_url' cambiándolo a 'Service'.</Issue>
             </Message>
-            <Message Id="sms" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="sms" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'sms' en el nombre del miembro 'Enums.EnumTablaDominio.sms_service_url' cambiándolo a 'Sms'.</Issue>
             </Message>
-            <Message Id="url" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="url" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'url' en el nombre del miembro 'Enums.EnumTablaDominio.sms_service_url' cambiándolo a 'Url'.</Issue>
             </Message>
-            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="95" Level="Error">Quite los caracteres de subrayado del nombre del miembro 'Enums.EnumTablaDominio.sms_service_url'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#terminos_y_condiciones" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="condiciones" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="condiciones" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'condiciones' en el nombre del miembro 'Enums.EnumTablaDominio.terminos_y_condiciones' cambiándolo a 'Condiciones'.</Issue>
             </Message>
-            <Message Id="terminos" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="terminos" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'terminos' en el nombre del miembro 'Enums.EnumTablaDominio.terminos_y_condiciones' cambiándolo a 'Terminos'.</Issue>
             </Message>
-            <Message Id="y" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="y" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'y' en el nombre del miembro 'Enums.EnumTablaDominio.terminos_y_condiciones' cambiándolo a 'Y'.</Issue>
             </Message>
-            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="95" Level="Error">Quite los caracteres de subrayado del nombre del miembro 'Enums.EnumTablaDominio.terminos_y_condiciones'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#tipo_identificacion" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="identificacion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="identificacion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'identificacion' en el nombre del miembro 'Enums.EnumTablaDominio.tipo_identificacion' cambiándolo a 'Identificacion'.</Issue>
             </Message>
-            <Message Id="tipo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="tipo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'tipo' en el nombre del miembro 'Enums.EnumTablaDominio.tipo_identificacion' cambiándolo a 'Tipo'.</Issue>
             </Message>
-            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="95" Level="Error">Quite los caracteres de subrayado del nombre del miembro 'Enums.EnumTablaDominio.tipo_identificacion'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#vencimiento_token_activacion" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="activacion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="activacion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'activacion' en el nombre del miembro 'Enums.EnumTablaDominio.vencimiento_token_activacion' cambiándolo a 'Activacion'.</Issue>
             </Message>
-            <Message Id="token" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="token" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'token' en el nombre del miembro 'Enums.EnumTablaDominio.vencimiento_token_activacion' cambiándolo a 'Token'.</Issue>
             </Message>
-            <Message Id="vencimiento" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="vencimiento" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'vencimiento' en el nombre del miembro 'Enums.EnumTablaDominio.vencimiento_token_activacion' cambiándolo a 'Vencimiento'.</Issue>
             </Message>
-            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="95" Level="Error">Quite los caracteres de subrayado del nombre del miembro 'Enums.EnumTablaDominio.vencimiento_token_activacion'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#vencimiento_token_monedero" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="monedero" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="monedero" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'monedero' en el nombre del miembro 'Enums.EnumTablaDominio.vencimiento_token_monedero' cambiándolo a 'Monedero'.</Issue>
             </Message>
-            <Message Id="token" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="token" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'token' en el nombre del miembro 'Enums.EnumTablaDominio.vencimiento_token_monedero' cambiándolo a 'Token'.</Issue>
             </Message>
-            <Message Id="vencimiento" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="vencimiento" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'vencimiento' en el nombre del miembro 'Enums.EnumTablaDominio.vencimiento_token_monedero' cambiándolo a 'Vencimiento'.</Issue>
             </Message>
-            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="95" Level="Error">Quite los caracteres de subrayado del nombre del miembro 'Enums.EnumTablaDominio.vencimiento_token_monedero'.</Issue>
             </Message>
            </Messages>
@@ -666,113 +790,113 @@
          <Members>
           <Member Name="#APPROVED" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="APPROVED" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="APPROVED" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'APPROVED' en el nombre del miembro 'Constantes.APPROVED' cambiándolo a 'Approved'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#DOMINIO_INTENTOS_CODIGO_VERIFIACION" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="CODIGO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="CODIGO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'CODIGO' en el nombre del miembro 'Constantes.DOMINIO_INTENTOS_CODIGO_VERIFIACION' cambiándolo a 'Codigo'.</Issue>
             </Message>
-            <Message Id="DOMINIO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="DOMINIO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'DOMINIO' en el nombre del miembro 'Constantes.DOMINIO_INTENTOS_CODIGO_VERIFIACION' cambiándolo a 'Dominio'.</Issue>
             </Message>
-            <Message Id="INTENTOS" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="INTENTOS" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'INTENTOS' en el nombre del miembro 'Constantes.DOMINIO_INTENTOS_CODIGO_VERIFIACION' cambiándolo a 'Intentos'.</Issue>
             </Message>
-            <Message Id="VERIFIACION" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="VERIFIACION" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'VERIFIACION' en el nombre del miembro 'Constantes.DOMINIO_INTENTOS_CODIGO_VERIFIACION' cambiándolo a 'Verifiacion'.</Issue>
             </Message>
-            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="95" Level="Error">Quite los caracteres de subrayado del nombre del miembro 'Constantes.DOMINIO_INTENTOS_CODIGO_VERIFIACION'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#DOMINIO_MENSAJE_VERIFICAICON" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="DOMINIO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="DOMINIO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'DOMINIO' en el nombre del miembro 'Constantes.DOMINIO_MENSAJE_VERIFICAICON' cambiándolo a 'Dominio'.</Issue>
             </Message>
-            <Message Id="MENSAJE" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="MENSAJE" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'MENSAJE' en el nombre del miembro 'Constantes.DOMINIO_MENSAJE_VERIFICAICON' cambiándolo a 'Mensaje'.</Issue>
             </Message>
-            <Message Id="VERIFICAICON" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="VERIFICAICON" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'VERIFICAICON' en el nombre del miembro 'Constantes.DOMINIO_MENSAJE_VERIFICAICON' cambiándolo a 'Verificaicon'.</Issue>
             </Message>
-            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="95" Level="Error">Quite los caracteres de subrayado del nombre del miembro 'Constantes.DOMINIO_MENSAJE_VERIFICAICON'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ERROR" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="ERROR" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="ERROR" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'ERROR' en el nombre del miembro 'Constantes.ERROR' cambiándolo a 'Error'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#FORMATO_DECIMAL_PESOS" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="DECIMAL" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="DECIMAL" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'DECIMAL' en el nombre del miembro 'Constantes.FORMATO_DECIMAL_PESOS' cambiándolo a 'Decimal'.</Issue>
             </Message>
-            <Message Id="FORMATO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="FORMATO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'FORMATO' en el nombre del miembro 'Constantes.FORMATO_DECIMAL_PESOS' cambiándolo a 'Formato'.</Issue>
             </Message>
-            <Message Id="PESOS" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="PESOS" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'PESOS' en el nombre del miembro 'Constantes.FORMATO_DECIMAL_PESOS' cambiándolo a 'Pesos'.</Issue>
             </Message>
-            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="95" Level="Error">Quite los caracteres de subrayado del nombre del miembro 'Constantes.FORMATO_DECIMAL_PESOS'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IMAGEN_BANNER_EMAIL" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="BANNER" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="BANNER" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'BANNER' en el nombre del miembro 'Constantes.IMAGEN_BANNER_EMAIL' cambiándolo a 'Banner'.</Issue>
             </Message>
-            <Message Id="EMAIL" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="EMAIL" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'EMAIL' en el nombre del miembro 'Constantes.IMAGEN_BANNER_EMAIL' cambiándolo a 'Email'.</Issue>
             </Message>
-            <Message Id="IMAGEN" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="IMAGEN" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'IMAGEN' en el nombre del miembro 'Constantes.IMAGEN_BANNER_EMAIL' cambiándolo a 'Imagen'.</Issue>
             </Message>
-            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="95" Level="Error">Quite los caracteres de subrayado del nombre del miembro 'Constantes.IMAGEN_BANNER_EMAIL'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#IMAGEN_BANNER_NOTI" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="BANNER" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="BANNER" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'BANNER' en el nombre del miembro 'Constantes.IMAGEN_BANNER_NOTI' cambiándolo a 'Banner'.</Issue>
             </Message>
-            <Message Id="IMAGEN" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="IMAGEN" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'IMAGEN' en el nombre del miembro 'Constantes.IMAGEN_BANNER_NOTI' cambiándolo a 'Imagen'.</Issue>
             </Message>
-            <Message Id="NOTI" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="NOTI" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'NOTI' en el nombre del miembro 'Constantes.IMAGEN_BANNER_NOTI' cambiándolo a 'Noti'.</Issue>
             </Message>
-            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="95" Level="Error">Quite los caracteres de subrayado del nombre del miembro 'Constantes.IMAGEN_BANNER_NOTI'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#INI_CODIGO_USUARIO" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="CODIGO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="CODIGO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'CODIGO' en el nombre del miembro 'Constantes.INI_CODIGO_USUARIO' cambiándolo a 'Codigo'.</Issue>
             </Message>
-            <Message Id="INI" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="INI" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'INI' en el nombre del miembro 'Constantes.INI_CODIGO_USUARIO' cambiándolo a 'Ini'.</Issue>
             </Message>
-            <Message Id="USUARIO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="USUARIO" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'USUARIO' en el nombre del miembro 'Constantes.INI_CODIGO_USUARIO' cambiándolo a 'Usuario'.</Issue>
             </Message>
-            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="95" Level="Error">Quite los caracteres de subrayado del nombre del miembro 'Constantes.INI_CODIGO_USUARIO'.</Issue>
             </Message>
            </Messages>
@@ -783,21 +907,21 @@
          <Members>
           <Member Name="#activo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="activo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="activo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Departamento.cs" Line="25">Corrija el uso de mayúsculas y minúsculas en 'activo' en el nombre del miembro 'Departamento.activo' cambiándolo a 'Activo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codDepartamento" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Departamento.cs" Line="23">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'Departamento.codDepartamento' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#nombre" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="nombre" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="nombre" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Departamento.cs" Line="24">Corrija el uso de mayúsculas y minúsculas en 'nombre' en el nombre del miembro 'Departamento.nombre' cambiándolo a 'Nombre'.</Issue>
             </Message>
            </Messages>
@@ -808,21 +932,21 @@
          <Members>
           <Member Name="#descripcion" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="descripcion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="descripcion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Dominio.cs" Line="19">Corrija el uso de mayúsculas y minúsculas en 'descripcion' en el nombre del miembro 'Dominio.descripcion' cambiándolo a 'Descripcion'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#nombre" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="nombre" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="nombre" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Dominio.cs" Line="17">Corrija el uso de mayúsculas y minúsculas en 'nombre' en el nombre del miembro 'Dominio.nombre' cambiándolo a 'Nombre'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#valor" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="valor" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="valor" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Dominio.cs" Line="18">Corrija el uso de mayúsculas y minúsculas en 'valor' en el nombre del miembro 'Dominio.valor' cambiándolo a 'Valor'.</Issue>
             </Message>
            </Messages>
@@ -833,42 +957,42 @@
          <Members>
           <Member Name="#activo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="activo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="activo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Institucion.cs" Line="29">Corrija el uso de mayúsculas y minúsculas en 'activo' en el nombre del miembro 'Institucion.activo' cambiándolo a 'Activo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codInstitucion" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Institucion.cs" Line="24">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'Institucion.codInstitucion' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codMunicipio" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Institucion.cs" Line="28">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'Institucion.codMunicipio' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#nit" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="nit" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="nit" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Institucion.cs" Line="26">Corrija el uso de mayúsculas y minúsculas en 'nit' en el nombre del miembro 'Institucion.nit' cambiándolo a 'Nit'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#nombre" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="nombre" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="nombre" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Institucion.cs" Line="25">Corrija el uso de mayúsculas y minúsculas en 'nombre' en el nombre del miembro 'Institucion.nombre' cambiándolo a 'Nombre'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#tipo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="tipo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="tipo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Institucion.cs" Line="27">Corrija el uso de mayúsculas y minúsculas en 'tipo' en el nombre del miembro 'Institucion.tipo' cambiándolo a 'Tipo'.</Issue>
             </Message>
            </Messages>
@@ -879,28 +1003,28 @@
          <Members>
           <Member Name="#codigoQR" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="codigo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="codigo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Lavamanos.cs" Line="26">Corrija el uso de mayúsculas y minúsculas en 'codigo' en el nombre del miembro 'Lavamanos.codigoQR' cambiándolo a 'Codigo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codInstitucion" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Lavamanos.cs" Line="24">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'Lavamanos.codInstitucion' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codLavamanos" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Lavamanos.cs" Line="23">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'Lavamanos.codLavamanos' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#descripcion" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="descripcion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="descripcion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Lavamanos.cs" Line="25">Corrija el uso de mayúsculas y minúsculas en 'descripcion' en el nombre del miembro 'Lavamanos.descripcion' cambiándolo a 'Descripcion'.</Issue>
             </Message>
            </Messages>
@@ -911,7 +1035,7 @@
          <Members>
           <Member Name="#ErrorEnCatalogo" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="En" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="En" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'En' en el nombre del miembro 'Log.ErrorEnCatalogo' cambiándolo a 'EN'.</Issue>
             </Message>
            </Messages>
@@ -922,56 +1046,56 @@
          <Members>
           <Member Name="#codErrorMsgCodigoActivacionVacio" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'Mensajes.codErrorMsgCodigoActivacionVacio' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codErrorMsgUsuarioNoExistente" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'Mensajes.codErrorMsgUsuarioNoExistente' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codErrorTokenVacio" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'Mensajes.codErrorTokenVacio' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codErrorUsuarioVacio" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'Mensajes.codErrorUsuarioVacio' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codMsgcodMsgtokenErroneo" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'Mensajes.codMsgcodMsgtokenErroneo' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codMsgtokenExpiraErroneo" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'Mensajes.codMsgtokenExpiraErroneo' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codUsuarioActivoError" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'Mensajes.codUsuarioActivoError' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#MsgConfiguracionSMTPRequerida" Kind="Field" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="SMTP" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="SMTP" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'SMTP' en el nombre del miembro 'Mensajes.MsgConfiguracionSMTPRequerida' cambiándolo a 'Smtp'.</Issue>
             </Message>
            </Messages>
@@ -982,28 +1106,28 @@
          <Members>
           <Member Name="#activo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="activo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="activo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Municipio.cs" Line="26">Corrija el uso de mayúsculas y minúsculas en 'activo' en el nombre del miembro 'Municipio.activo' cambiándolo a 'Activo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codDepartamento" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Municipio.cs" Line="25">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'Municipio.codDepartamento' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codMunicipio" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Municipio.cs" Line="23">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'Municipio.codMunicipio' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#nombre" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="nombre" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="nombre" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Municipio.cs" Line="24">Corrija el uso de mayúsculas y minúsculas en 'nombre' en el nombre del miembro 'Municipio.nombre' cambiándolo a 'Nombre'.</Issue>
             </Message>
            </Messages>
@@ -1014,21 +1138,21 @@
          <Members>
           <Member Name="#activo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="activo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="activo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Perfil.cs" Line="25">Corrija el uso de mayúsculas y minúsculas en 'activo' en el nombre del miembro 'Perfil.activo' cambiándolo a 'Activo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codPerfil" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Perfil.cs" Line="23">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'Perfil.codPerfil' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#nombre" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="nombre" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="nombre" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Perfil.cs" Line="24">Corrija el uso de mayúsculas y minúsculas en 'nombre' en el nombre del miembro 'Perfil.nombre' cambiándolo a 'Nombre'.</Issue>
             </Message>
            </Messages>
@@ -1039,49 +1163,49 @@
          <Members>
           <Member Name="#codInstitucion" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroIngreso.cs" Line="19">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'RegistroIngreso.codInstitucion' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codRegistro" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroIngreso.cs" Line="17">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'RegistroIngreso.codRegistro' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codUsuario" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroIngreso.cs" Line="18">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'RegistroIngreso.codUsuario' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#fecha" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="fecha" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="fecha" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroIngreso.cs" Line="20">Corrija el uso de mayúsculas y minúsculas en 'fecha' en el nombre del miembro 'RegistroIngreso.fecha' cambiándolo a 'Fecha'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#hora" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="hora" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="hora" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroIngreso.cs" Line="21">Corrija el uso de mayúsculas y minúsculas en 'hora' en el nombre del miembro 'RegistroIngreso.hora' cambiándolo a 'Hora'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#oxigenacion" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="oxigenacion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="oxigenacion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroIngreso.cs" Line="23">Corrija el uso de mayúsculas y minúsculas en 'oxigenacion' en el nombre del miembro 'RegistroIngreso.oxigenacion' cambiándolo a 'Oxigenacion'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#temperatura" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="temperatura" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="temperatura" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroIngreso.cs" Line="22">Corrija el uso de mayúsculas y minúsculas en 'temperatura' en el nombre del miembro 'RegistroIngreso.temperatura' cambiándolo a 'Temperatura'.</Issue>
             </Message>
            </Messages>
@@ -1092,61 +1216,61 @@
          <Members>
           <Member Name="#codLavamanos" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroLavado.cs" Line="19">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'RegistroLavado.codLavamanos' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codRegistro" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroLavado.cs" Line="17">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'RegistroLavado.codRegistro' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codUsuario" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroLavado.cs" Line="18">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'RegistroLavado.codUsuario' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#fecha" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="fecha" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="fecha" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroLavado.cs" Line="20">Corrija el uso de mayúsculas y minúsculas en 'fecha' en el nombre del miembro 'RegistroLavado.fecha' cambiándolo a 'Fecha'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#fechaCierre" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="fecha" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="fecha" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroLavado.cs" Line="22">Corrija el uso de mayúsculas y minúsculas en 'fecha' en el nombre del miembro 'RegistroLavado.fechaCierre' cambiándolo a 'Fecha'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#hora_cierre" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cierre" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cierre" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroLavado.cs" Line="23">Corrija el uso de mayúsculas y minúsculas en 'cierre' en el nombre del miembro 'RegistroLavado.hora_cierre' cambiándolo a 'Cierre'.</Issue>
             </Message>
-            <Message Id="hora" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="hora" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroLavado.cs" Line="23">Corrija el uso de mayúsculas y minúsculas en 'hora' en el nombre del miembro 'RegistroLavado.hora_cierre' cambiándolo a 'Hora'.</Issue>
             </Message>
-            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="95" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroLavado.cs" Line="23">Quite los caracteres de subrayado del nombre del miembro 'RegistroLavado.hora_cierre'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#hora_registro" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="hora" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="hora" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroLavado.cs" Line="21">Corrija el uso de mayúsculas y minúsculas en 'hora' en el nombre del miembro 'RegistroLavado.hora_registro' cambiándolo a 'Hora'.</Issue>
             </Message>
-            <Message Id="registro" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="registro" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroLavado.cs" Line="21">Corrija el uso de mayúsculas y minúsculas en 'registro' en el nombre del miembro 'RegistroLavado.hora_registro' cambiándolo a 'Registro'.</Issue>
             </Message>
-            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="95" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroLavado.cs" Line="21">Quite los caracteres de subrayado del nombre del miembro 'RegistroLavado.hora_registro'.</Issue>
             </Message>
            </Messages>
@@ -1157,35 +1281,35 @@
          <Members>
           <Member Name="#activo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="activo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="activo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroSintoma.cs" Line="20">Corrija el uso de mayúsculas y minúsculas en 'activo' en el nombre del miembro 'RegistroSintoma.activo' cambiándolo a 'Activo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codRegistro" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroSintoma.cs" Line="17">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'RegistroSintoma.codRegistro' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codSintoma" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroSintoma.cs" Line="18">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'RegistroSintoma.codSintoma' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codUsuario" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroSintoma.cs" Line="21">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'RegistroSintoma.codUsuario' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#fecha" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="fecha" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="fecha" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="RegistroSintoma.cs" Line="19">Corrija el uso de mayúsculas y minúsculas en 'fecha' en el nombre del miembro 'RegistroSintoma.fecha' cambiándolo a 'Fecha'.</Issue>
             </Message>
            </Messages>
@@ -1196,21 +1320,21 @@
          <Members>
           <Member Name="#codSintoma" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Sintoma.cs" Line="23">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'Sintoma.codSintoma' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#descripcion" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="descripcion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="descripcion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Sintoma.cs" Line="24">Corrija el uso de mayúsculas y minúsculas en 'descripcion' en el nombre del miembro 'Sintoma.descripcion' cambiándolo a 'Descripcion'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#opcion" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="opcion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="opcion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Sintoma.cs" Line="25">Corrija el uso de mayúsculas y minúsculas en 'opcion' en el nombre del miembro 'Sintoma.opcion' cambiándolo a 'Opcion'.</Issue>
             </Message>
            </Messages>
@@ -1221,21 +1345,21 @@
          <Members>
           <Member Name="#codDocumento" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="TipoDocumento.cs" Line="18">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'TipoDocumento.codDocumento' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#descripcion" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="descripcion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="descripcion" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="TipoDocumento.cs" Line="17">Corrija el uso de mayúsculas y minúsculas en 'descripcion' en el nombre del miembro 'TipoDocumento.descripcion' cambiándolo a 'Descripcion'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#nomenclatura" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="nomenclatura" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="nomenclatura" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="TipoDocumento.cs" Line="19">Corrija el uso de mayúsculas y minúsculas en 'nomenclatura' en el nombre del miembro 'TipoDocumento.nomenclatura' cambiándolo a 'Nomenclatura'.</Issue>
             </Message>
            </Messages>
@@ -1246,91 +1370,91 @@
          <Members>
           <Member Name="#activo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="activo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="activo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Usuario.cs" Line="35">Corrija el uso de mayúsculas y minúsculas en 'activo' en el nombre del miembro 'Usuario.activo' cambiándolo a 'Activo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#apellidos" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="apellidos" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="apellidos" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Usuario.cs" Line="27">Corrija el uso de mayúsculas y minúsculas en 'apellidos' en el nombre del miembro 'Usuario.apellidos' cambiándolo a 'Apellidos'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#celular" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="celular" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="celular" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Usuario.cs" Line="30">Corrija el uso de mayúsculas y minúsculas en 'celular' en el nombre del miembro 'Usuario.celular' cambiándolo a 'Celular'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codActivacionExpira" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Usuario.cs" Line="37">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'Usuario.codActivacionExpira' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codigoActivacion" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="codigo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="codigo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Usuario.cs" Line="36">Corrija el uso de mayúsculas y minúsculas en 'codigo' en el nombre del miembro 'Usuario.codigoActivacion' cambiándolo a 'Codigo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codInstitucion" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Usuario.cs" Line="32">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'Usuario.codInstitucion' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codPerfil" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Usuario.cs" Line="31">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'Usuario.codPerfil' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#codUsuario" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="cod" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Usuario.cs" Line="25">Corrija el uso de mayúsculas y minúsculas en 'cod' en el nombre del miembro 'Usuario.codUsuario' cambiándolo a 'Cod'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#correo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="correo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="correo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Usuario.cs" Line="33">Corrija el uso de mayúsculas y minúsculas en 'correo' en el nombre del miembro 'Usuario.correo' cambiándolo a 'Correo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#nombres" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="nombres" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="nombres" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Usuario.cs" Line="26">Corrija el uso de mayúsculas y minúsculas en 'nombres' en el nombre del miembro 'Usuario.nombres' cambiándolo a 'Nombres'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#numeroDocumento" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="numero" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="numero" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Usuario.cs" Line="29">Corrija el uso de mayúsculas y minúsculas en 'numero' en el nombre del miembro 'Usuario.numeroDocumento' cambiándolo a 'Numero'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#sexo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="sexo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="sexo" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Usuario.cs" Line="34">Corrija el uso de mayúsculas y minúsculas en 'sexo' en el nombre del miembro 'Usuario.sexo' cambiándolo a 'Sexo'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#tokenDispositivo" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="token" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-11-23 22:22:15Z" FixCategory="Breaking">
+            <Message Id="token" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-11 13:24:27Z" FixCategory="Breaking">
              <Issue Name="Member" Certainty="85" Level="Error" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Entidades\ModeloEntidades" File="Usuario.cs" Line="38">Corrija el uso de mayúsculas y minúsculas en 'token' en el nombre del miembro 'Usuario.tokenDispositivo' cambiándolo a 'Token'.</Issue>
             </Message>
            </Messages>

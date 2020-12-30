@@ -4,7 +4,13 @@
         <name>Bonos.Api.Rest</name>
     </assembly>
     <members>
-        <member name="M:Bonos.Api.Rest.Controllers.eventosController.ReportTransactionBonoFromPOS(com.mercaderia.bono.Entidades.Dto.IngresoDto)">
+        <member name="M:Bonos.Api.Rest.Controllers.eventosController.RegistrarIngreso(com.mercaderia.bono.Entidades.Dto.IngresoDto)">
+            <summary>
+            Servicio para registrar el ingreso a la sede       
+            </summary>
+            <returns></returns>   
+        </member>
+        <member name="M:Bonos.Api.Rest.Controllers.eventosController.RegistrarLavado(com.mercaderia.bono.Entidades.Dto.IngresoLavadoManosDto)">
             <summary>
             Servicio para registrar el ingreso a la sede       
             </summary>
@@ -58,7 +64,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Bonos.Api.Rest.Controllers.SintomasController.CargueMasivoGiftCards(com.mercaderia.bono.Entidades.Dto.SintomasDTO[],System.String)">
+        <member name="M:Bonos.Api.Rest.Controllers.SintomasController.CargueMasivoGiftCards(com.mercaderia.bono.Entidades.Dto.SintomasDTO[])">
             <summary>
             Método que registra los sintomas de un usuario
             </summary>

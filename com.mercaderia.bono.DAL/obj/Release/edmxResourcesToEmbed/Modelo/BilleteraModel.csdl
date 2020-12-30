@@ -265,6 +265,8 @@
     <Property Name="hora_registro" Type="Time" Precision="7" />
     <NavigationProperty Name="Lavamanos" Relationship="BilleteraVirtualModel.FK_RegistroLavado_Lavamanos" FromRole="RegistroLavado" ToRole="Lavamanos" />
     <NavigationProperty Name="Usuario" Relationship="BilleteraVirtualModel.FKRegistroLavado_Usuario" FromRole="RegistroLavado" ToRole="Usuario" />
+    <Property Name="fechaCierre" Type="DateTime" Precision="0" />
+    <Property Name="hora_cierre" Type="Time" Precision="7" />
   </EntityType>
   <Association Name="FK_Lavamanos_Institucion">
     <End Type="BilleteraVirtualModel.Institucion" Role="Institucion" Multiplicity="1" />

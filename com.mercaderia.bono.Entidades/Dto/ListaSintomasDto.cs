@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace com.mercaderia.bono.Entidades.Dto
 {
-    public class SintomasDTO
+    public class ListaSintomasDto
     {
-        public string codigoUsuario { get; set; }
-        public string codigo { get; set; }
+        public int codSintoma { get; set; }
+        public string descripcion { get; set; }
+        public int? opcion { get; set; }
         public bool estado { get; set; }
     }
 }

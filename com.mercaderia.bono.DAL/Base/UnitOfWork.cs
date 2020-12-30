@@ -17,6 +17,7 @@ namespace com.mercaderia.bono.DAL
         private RegistroSintomasRepositorio registroSintomasRepositorio;
         private EventosRepositorio eventosRepositorio;
         private RegistroLavadoRepositorio registroLavadoRepositorio;
+        private LavamanosRepositorio lavamanosRepositorio;
 
         public TipoDocumentoRepositorio TipoDocumentoRepositorio
         {
@@ -105,6 +106,16 @@ namespace com.mercaderia.bono.DAL
                 if (this.registroLavadoRepositorio == null)
                     this.registroLavadoRepositorio = new RegistroLavadoRepositorio(context);
                 return registroLavadoRepositorio;
+            }
+        }
+
+        public LavamanosRepositorio LavamanosRepositorio
+        {
+            get
+            {
+                if (this.lavamanosRepositorio == null)
+                    this.lavamanosRepositorio = new LavamanosRepositorio(context);
+                return lavamanosRepositorio;
             }
         }
 

@@ -10,6 +10,7 @@ using System.Web.Http;
 using System.Collections.Generic;
 using System.Web.Http.Cors;
 using com.mercaderia.bono.Entidades.Dto;
+using System.Linq;
 
 namespace Bonos.Api.Rest.Controllers
 {
@@ -179,11 +180,27 @@ namespace Bonos.Api.Rest.Controllers
             try
             {
                 NegocioTipoDocumentos negocioComun = new NegocioTipoDocumentos();
-                List<RecordatorioDTO> lstRecordatorioLavado = negocioComun.obtenerRecordatorioLavadoManos(codUsuario);
-                if (lstRecordatorioLavado.Count == 0)
-                {
-                    return Request.CreateResponse(HttpStatusCode.NotFound, Mensajes.MsgUltimoLavadoInexistente);
-                }
+                List<RecordatorioDTO> lstRecordatorioLavado = new List<RecordatorioDTO>();
+                lstRecordatorioLavado = negocioComun.obtenerRecordatorioLavadoManos(codUsuario);
+                //if (lstRecordatorioLavado.Count == 0)
+                //{
+                 
+                //    string hora = DateTime.Now.ToString("HH:mm:ss");
+                //    int[] partes = hora.Split(new char[] { ':' }).Select(x => Convert.ToInt32(x)).ToArray();
+
+                //    TimeSpan tiempo = new TimeSpan(partes[0], partes[1], partes[2]);
+                //    lstRecordatorioLavado.Add(new RecordatorioDTO()
+                //    {
+                //        codRegistro = 1,
+                //        codUsuario = 6723,
+                //        fecha = DateTime.Now,
+                //        hora = tiempo,
+                //        fechaCierre = null,
+                //        horaCierre = null
+                //    });
+                      
+                //    return Request.CreateResponse(HttpStatusCode.NotFound, lstRecordatorioLavado);
+                //}
                 return Request.CreateResponse(HttpStatusCode.OK, lstRecordatorioLavado);
             }
             catch (ExceptionControlada ex)

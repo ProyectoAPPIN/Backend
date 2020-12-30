@@ -4,13 +4,13 @@
  <Namespaces>
   <Namespace Name="com.mercaderia.bono.Utilidades.Excepciones">
    <Messages>
-    <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-10-19 17:52:04Z" FixCategory="Breaking">
+    <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-09 15:04:55Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'bono' en el nombre del espacio de nombres 'com.mercaderia.bono.Utilidades.Excepciones' cambiándolo a 'Bono'.</Issue>
     </Message>
-    <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-10-19 17:52:04Z" FixCategory="Breaking">
+    <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-09 15:04:55Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'com' en el nombre del espacio de nombres 'com.mercaderia.bono.Utilidades.Excepciones' cambiándolo a 'Com'.</Issue>
     </Message>
-    <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-10-19 17:52:04Z" FixCategory="Breaking">
+    <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-09 15:04:55Z" FixCategory="Breaking">
      <Issue Name="Namespace" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'mercaderia' en el nombre del espacio de nombres 'com.mercaderia.bono.Utilidades.Excepciones' cambiándolo a 'Mercaderia'.</Issue>
     </Message>
    </Messages>
@@ -21,13 +21,13 @@
    <Modules>
     <Module Name="com.mercaderia.bono.utilidades.excepciones.dll">
      <Messages>
-      <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-10-19 17:52:04Z" FixCategory="Breaking">
+      <Message Id="bono" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-09 15:04:55Z" FixCategory="Breaking">
        <Issue Name="Assembly" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'bono' en el nombre del ensamblado 'com.mercaderia.bono.Utilidades.Excepciones.dll' cambiándolo a 'Bono'.</Issue>
       </Message>
-      <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-10-19 17:52:04Z" FixCategory="Breaking">
+      <Message Id="com" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-09 15:04:55Z" FixCategory="Breaking">
        <Issue Name="Assembly" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'com' en el nombre del ensamblado 'com.mercaderia.bono.Utilidades.Excepciones.dll' cambiándolo a 'Com'.</Issue>
       </Message>
-      <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-10-19 17:52:04Z" FixCategory="Breaking">
+      <Message Id="mercaderia" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Active" Created="2020-12-09 15:04:55Z" FixCategory="Breaking">
        <Issue Name="Assembly" Certainty="85" Level="Error">Corrija el uso de mayúsculas y minúsculas en 'mercaderia' en el nombre del ensamblado 'com.mercaderia.bono.Utilidades.Excepciones.dll' cambiándolo a 'Mercaderia'.</Issue>
       </Message>
      </Messages>
@@ -36,39 +36,39 @@
        <Types>
         <Type Name="ExceptionControlada" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Status="Active" Created="2020-10-19 17:52:04Z" FixCategory="NonBreaking">
+          <Message TypeName="ImplementStandardExceptionConstructors" Category="Microsoft.Design" CheckId="CA1032" Status="Active" Created="2020-12-09 15:04:55Z" FixCategory="NonBreaking">
            <Issue Name="MissingConstructor" Certainty="95" Level="Error">Agregue el siguiente constructor a 'ExceptionControlada': protected ExceptionControlada(SerializationInfo, StreamingContext).</Issue>
            <Issue Name="MissingConstructor" Certainty="95" Level="Error">Agregue el siguiente constructor a 'ExceptionControlada': public ExceptionControlada(String, Exception).</Issue>
           </Message>
-          <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Status="Active" Created="2020-10-19 17:52:04Z" FixCategory="NonBreaking">
+          <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Status="Active" Created="2020-12-09 15:04:55Z" FixCategory="NonBreaking">
            <Issue Certainty="95" Level="Error">Agregue [Serializable] a 'ExceptionControlada', ya que este tipo implementa ISerializable.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#.ctor(System.String,System.String,System.Array)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2020-10-19 17:52:04Z" FixCategory="NonBreaking">
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2020-12-09 15:04:55Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="CriticalWarning" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Excepciones" File="ExceptionControlada.cs" Line="44">'ExceptionControlada.ExceptionControlada(string, string, Array)' contiene una cadena de llamada que da como resultado un llamada a un método virtual definido por la clase. Revise la siguiente pila de llamadas para comprobar las consecuencias no intencionadas: &#xD;&#xA;&#xD;&#xA;ExceptionControlada..ctor(String, String, Array)&#xD;&#xA;Exception.get_Data():IDictionary</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#.ctor(System.String,System.String,System.Decimal)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2020-10-19 17:52:04Z" FixCategory="NonBreaking">
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2020-12-09 15:04:55Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="CriticalWarning" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Excepciones" File="ExceptionControlada.cs" Line="36">'ExceptionControlada.ExceptionControlada(string, string, decimal)' contiene una cadena de llamada que da como resultado un llamada a un método virtual definido por la clase. Revise la siguiente pila de llamadas para comprobar las consecuencias no intencionadas: &#xD;&#xA;&#xD;&#xA;ExceptionControlada..ctor(String, String, Decimal)&#xD;&#xA;Exception.get_Data():IDictionary</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#.ctor(System.String,System.String,System.Decimal,System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2020-10-19 17:52:04Z" FixCategory="NonBreaking">
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2020-12-09 15:04:55Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="CriticalWarning" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Excepciones" File="ExceptionControlada.cs" Line="39">'ExceptionControlada.ExceptionControlada(string, string, decimal, string, string, string)' contiene una cadena de llamada que da como resultado un llamada a un método virtual definido por la clase. Revise la siguiente pila de llamadas para comprobar las consecuencias no intencionadas: &#xD;&#xA;&#xD;&#xA;ExceptionControlada..ctor(String, String, Decimal, String, String, String)&#xD;&#xA;Exception.get_Data():IDictionary</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#.ctor(System.String,System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2020-10-19 17:52:04Z" FixCategory="NonBreaking">
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2020-12-09 15:04:55Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="CriticalWarning" Path="D:\BACKENDAPPIN\Backend\com.mercaderia.bono.Utilidades.Excepciones" File="ExceptionControlada.cs" Line="47">'ExceptionControlada.ExceptionControlada(string, string, string, string)' contiene una cadena de llamada que da como resultado un llamada a un método virtual definido por la clase. Revise la siguiente pila de llamadas para comprobar las consecuencias no intencionadas: &#xD;&#xA;&#xD;&#xA;ExceptionControlada..ctor(String, String, String, String)&#xD;&#xA;Exception.get_Data():IDictionary</Issue>
             </Message>
            </Messages>

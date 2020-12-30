@@ -69,6 +69,7 @@
     <Compile Include="NegocioDominio.cs" />
     <Compile Include="NegocioEventos.cs" />
     <Compile Include="NegocioInstituciones.cs" />
+    <Compile Include="NegocioLavamanos.cs" />
     <Compile Include="NegocioSintomas.cs" />
     <Compile Include="NegocioTipoDocumentos.cs" />
     <Compile Include="NegocioUsuario.cs" />
