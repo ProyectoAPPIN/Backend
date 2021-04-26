@@ -94,6 +94,7 @@
     <NavigationProperty Name="Municipio" Relationship="BilleteraVirtualModel.FK_Institucion_Municipio" FromRole="Institucion" ToRole="Municipio" />
     <NavigationProperty Name="Lavamanos" Relationship="BilleteraVirtualModel.FK_Lavamanos_Institucion" FromRole="Institucion" ToRole="Lavamanos" />
     <NavigationProperty Name="RegistroIngreso" Relationship="BilleteraVirtualModel.FK_RegistroSintoma_Institucion" FromRole="Institucion" ToRole="RegistroIngreso" />
+    <Property Name="aforo" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Municipio">
     <Key>

@@ -96,7 +96,8 @@ namespace com.mercaderia.bono.Entidades.Enumeradores
             vencimiento_token_activacion,
             asuntoNotificacionLavado,
             plantillaCorreoNotificacion,
-            notificacionLavadoPush
+            notificacionLavadoPush,
+            capacidadSede
         }
     }
 }

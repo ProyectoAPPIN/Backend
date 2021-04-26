@@ -78,7 +78,8 @@ namespace com.mercaderia.bono.DAL
                             select new AccesoUsuarioDto()
                             {
                                 codUsuario = usu.codUsuario,
-                                nombres = usu.nombres + " " + usu.apellidos,
+                                nombres = usu.nombres,
+                                apellidos = usu.apellidos,
                                 activo = usu.activo,
                                 ingresoActivo = ingActivo
 

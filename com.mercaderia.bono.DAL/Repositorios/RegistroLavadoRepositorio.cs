@@ -22,7 +22,7 @@ namespace com.mercaderia.bono.DAL
             List<ultimoLavadoDTO> lstUltimoLavado = new List<ultimoLavadoDTO>();
 
             int usuario = Convert.ToInt32(codUsuario);
-            var ultimoLavado = context.RegistroLavado.Where(x => x.codUsuario == usuario);
+            var ultimoLavado = context.RegistroLavado.Where(x => x.codUsuario == usuario && x.fechaCierre != null);
             Int32 registro = 0;
 
             if (ultimoLavado.Count() == 0)
@@ -151,5 +151,11 @@ namespace com.mercaderia.bono.DAL
         {
             return dbSet.Where(x => x.codRegistro == codRegistro).FirstOrDefault();
         }
+        public int totalregistroUsuario()
+        {
+            Nullable<DateTime> fechaIngreso = DateTime.Now.Date;           
+            return context.RegistroIngreso.Where(x => x.fecha == fechaIngreso).Count();
+        }
+
     }
 }

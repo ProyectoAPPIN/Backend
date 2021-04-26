@@ -272,5 +272,33 @@ namespace com.mercaderia.bono.Negocio
                 return recordatorioLavado;
             }
         }
+
+        /// <summary>
+        /// Método que obtiene estadisticas
+        /// </summary>
+        /// <returns></returns>
+        /// 
+        public List<EstadisticasDto> ObtenerEstadisticas(string idInstitucion)
+        {
+            List<EstadisticasDto> lstEstadisticas = new List<EstadisticasDto>();
+
+            //NegocioDominio negocioDominio = new NegocioDominio();
+            //Dominio totalAforo = negocioDominio.ConsultarPorId(Enums.EnumTablaDominio.capacidadSede.ToString());
+            NegocioInstituciones negocioInstitucion = new NegocioInstituciones();
+            Institucion lstTipoDocResultado = negocioInstitucion.ObtenerInstitucionPorCodigo(idInstitucion);
+
+            int totalafotoSede = Convert.ToInt32(lstTipoDocResultado.aforo);            
+
+            NegocioEventos negocioEvento = new NegocioEventos();
+            int ingresoResultante = negocioEvento.obtenerTotalUsuarios();
+
+            lstEstadisticas.Add(new EstadisticasDto()
+            {
+                totalAforoSede = totalafotoSede,
+                totUsuariosRegistrados = ingresoResultante
+            });
+
+            return lstEstadisticas;
+        }
     }
 }

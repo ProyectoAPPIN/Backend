@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dto\AccesoUsuarioDto.cs" />
+    <Compile Include="Dto\EstadisticasDto.cs" />
     <Compile Include="Dto\IngresoDto.cs" />
     <Compile Include="Dto\IngresoLavadoManosDto.cs" />
     <Compile Include="Dto\ListaSintomasDto.cs" />

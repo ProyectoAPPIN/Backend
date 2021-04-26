@@ -10,6 +10,7 @@ namespace com.mercaderia.bono.Entidades.Dto
     {
         public int codUsuario { get; set; }
         public string nombres { get; set; }
+        public string apellidos { get; set; }
         public bool? activo { get; set; }
         public string ingresoActivo { get; set; }
     }

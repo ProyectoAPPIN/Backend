@@ -30,6 +30,7 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
     <Property Name="tipo" Type="varchar" MaxLength="50" />
     <Property Name="codMunicipio" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="activo" Type="bit" />
+    <Property Name="aforo" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Lavamanos">
     <Key>

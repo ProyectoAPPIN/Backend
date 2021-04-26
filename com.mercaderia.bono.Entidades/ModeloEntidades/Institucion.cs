@@ -27,6 +27,7 @@ namespace com.mercaderia.bono.Entidades.ModeloEntidades
         public string tipo { get; set; }
         public string codMunicipio { get; set; }
         public Nullable<bool> activo { get; set; }
+        public int aforo { get; set; }
     
         public virtual Municipio Municipio { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -22,6 +22,7 @@
     <EntitySetMapping Name="Institucion">
       <EntityTypeMapping TypeName="BilleteraVirtualModel.Institucion">
         <MappingFragment StoreEntitySet="Institucion">
+          <ScalarProperty Name="aforo" ColumnName="aforo" />
           <ScalarProperty Name="activo" ColumnName="activo" />
           <ScalarProperty Name="codMunicipio" ColumnName="codMunicipio" />
           <ScalarProperty Name="tipo" ColumnName="tipo" />

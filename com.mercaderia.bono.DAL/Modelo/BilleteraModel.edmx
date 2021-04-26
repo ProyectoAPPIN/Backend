@@ -35,6 +35,7 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
           <Property Name="tipo" Type="varchar" MaxLength="50" />
           <Property Name="codMunicipio" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="activo" Type="bit" />
+          <Property Name="aforo" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Lavamanos">
           <Key>
@@ -409,6 +410,7 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
           <NavigationProperty Name="Municipio" Relationship="BilleteraVirtualModel.FK_Institucion_Municipio" FromRole="Institucion" ToRole="Municipio" />
           <NavigationProperty Name="Lavamanos" Relationship="BilleteraVirtualModel.FK_Lavamanos_Institucion" FromRole="Institucion" ToRole="Lavamanos" />
           <NavigationProperty Name="RegistroIngreso" Relationship="BilleteraVirtualModel.FK_RegistroSintoma_Institucion" FromRole="Institucion" ToRole="RegistroIngreso" />
+          <Property Name="aforo" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Municipio">
           <Key>
@@ -670,6 +672,7 @@ advertencia 6002: La tabla o vista 'APPINCovid.dbo.Dominio' no tiene definida ni
           <EntitySetMapping Name="Institucion">
             <EntityTypeMapping TypeName="BilleteraVirtualModel.Institucion">
               <MappingFragment StoreEntitySet="Institucion">
+                <ScalarProperty Name="aforo" ColumnName="aforo" />
                 <ScalarProperty Name="activo" ColumnName="activo" />
                 <ScalarProperty Name="codMunicipio" ColumnName="codMunicipio" />
                 <ScalarProperty Name="tipo" ColumnName="tipo" />

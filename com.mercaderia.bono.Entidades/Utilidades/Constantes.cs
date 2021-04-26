@@ -71,5 +71,7 @@ namespace com.mercaderia.bono.Entidades.ModeloEntidades
         public const string MsgSintomasInexistente = "No existe un sintoma con el código especificado";
         public const string MsgNotificacionesError = "Error al enviar las notificacione de lavado de manos";
         public const string MsgUltimoLavadoInexistente = "No existe un registro de lavado";
+        public const string MsgTipoEstadisticasInexistente = "No existe usuarios registrados";
+        public const string MsgTipoEstadisticasError = "Ocurrió un eror al intentar obtener las estadisticas";
     }
 }

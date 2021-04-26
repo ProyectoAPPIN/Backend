@@ -118,7 +118,7 @@ namespace com.mercaderia.bono.Negocio
                 {
                     using (UnitOfWork unitOfWork = new UnitOfWork())
                     {
-                        if(IngresoDto.codRegistro == "")
+                        if(IngresoDto.codRegistro == "-1")
                         {
                             codRegistro = 0;
                         }
@@ -188,6 +188,15 @@ namespace com.mercaderia.bono.Negocio
             }
 
             return respuesta;
+        }
+
+        public int obtenerTotalUsuarios()
+        {
+            using (UnitOfWork unitOfWork = new UnitOfWork())
+            {
+                int totalUsuarioRegistrados = unitOfWork.RegistroLavadoRepositorio.totalregistroUsuario();
+                return totalUsuarioRegistrados;
+            }
         }
     }
 }

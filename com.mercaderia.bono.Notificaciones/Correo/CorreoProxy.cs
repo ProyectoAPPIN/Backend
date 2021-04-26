@@ -150,9 +150,9 @@ namespace com.mercaderia.bono.Notificaciones.Correo
                 smtp.Host = this.configuracionCorreo.servidorSMTP;
                 smtp.Port = this.configuracionCorreo.puertoServidorSMTP;
                 smtp.EnableSsl = this.configuracionCorreo.habilitaSSLServidorSMTP;
-                smtp.UseDefaultCredentials = true;
+                smtp.UseDefaultCredentials = true;                
                 smtp.Credentials = new System.Net.NetworkCredential(this.configuracionCorreo.usuarioServidorSMTP, this.configuracionCorreo.claveUsuarioServidorSMTP);
-
+               
                 // The mail is sent and released
                 smtp.Send(email);
                 email.Dispose();

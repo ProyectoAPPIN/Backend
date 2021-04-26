@@ -216,5 +216,40 @@ namespace Bonos.Api.Rest.Controllers
                     new ApiException(HttpStatusCode.InternalServerError, Mensajes.MsgErrorNoEspacificado, ex));
             }
         }
+
+        /// <summary>
+        /// M�todo que devuelve los tipos de documento registrados en la base de datos
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetEstadisticas")]
+        public HttpResponseMessage GetEstadisticas(string idInstitucion)
+        {
+            try
+            {
+                NegocioTipoDocumentos negocioComun = new NegocioTipoDocumentos();
+                List<EstadisticasDto> lstEstadisticas = negocioComun.ObtenerEstadisticas(idInstitucion);
+                if (lstEstadisticas.Count == 0)
+                {
+                    return Request.CreateResponse(HttpStatusCode.NotFound, Mensajes.MsgTipoEstadisticasInexistente);
+                }
+
+                return Request.CreateResponse(HttpStatusCode.OK, lstEstadisticas);
+            }
+            catch (ExceptionControlada ex)
+            {
+                log.EscribirLogError(Mensajes.MsgTipoEstadisticasError, ex);
+                return Request.CreateResponse(HttpStatusCode.Conflict, new ApiException(HttpStatusCode.Conflict,
+                    ex.Message, ex));
+            }
+            catch (Exception ex)
+            {
+                log.EscribirLogError(Mensajes.MsgErrorNoEspacificado, ex);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError,
+                    new ApiException(HttpStatusCode.InternalServerError, Mensajes.MsgErrorNoEspacificado, ex));
+            }
+        }
+
+
     }
 }
